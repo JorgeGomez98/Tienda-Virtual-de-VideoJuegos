@@ -8,5 +8,5 @@ using System.Web;
 /// </summary>
 public class Prueba
 {
-    //HIJUEPUTA;
+    //HIJUEPUTA alguna pendejada; 
 }
