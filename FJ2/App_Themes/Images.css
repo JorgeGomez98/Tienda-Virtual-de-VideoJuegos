@@ -1,0 +1,43 @@
+﻿body {
+}
+
+.fondoImagenLogin {
+    text-align: center;
+    height: 626px;
+    background-image: url('../Imagenes/mario.jpg');
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.fondoImagenCrude {
+    text-align: center;
+    height: 626px;
+    background-image: url('../Imagenes/Zelda.jpg');
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.espacioTablaslaterales{
+    width:16%;
+}
+
+.espacioTablaCentral{
+    width:68%;
+}
+
+.fondoElemento {
+    background-color: transparent;
+    text-align: center;
+    font-size: 38px;
+    font-family: "Agency FB";
+    color:white;
+    position:center;
+}
+
+
