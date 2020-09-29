@@ -8,6 +8,6 @@ using System.Web;
 /// </summary>
 public class Prueba
 {
-    
+    private int estaOtra;
 
 }
