@@ -8,7 +8,6 @@ using System.Web;
 /// </summary>
 public class Prueba
 {
-    private int hola;
-    private int adios;
-    private int kakaka;
+    
+
 }
