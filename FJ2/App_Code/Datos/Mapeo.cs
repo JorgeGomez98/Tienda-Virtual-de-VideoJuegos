@@ -20,6 +20,9 @@ public class Mapeo : DbContext
     }
 
     public DbSet<Usuario> user { get; set; }
+    public DbSet<Rol> rol { get; set; }
+    public DbSet<Administrador> admin { get; set; }
+
 
     protected override void OnModelCreating(DbModelBuilder builder)
     {
