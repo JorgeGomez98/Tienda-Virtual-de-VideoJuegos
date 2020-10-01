@@ -1,10 +1,9 @@
-﻿body {
-}
+﻿
 
 .fondoImagenLogin {
     text-align: center;
     height: 626px;
-    background-image: url('../Imagenes/mario.jpg');
+    background-image: url('../Imagenes/ImagenesSistema/galaga.jpg');
     width: 100%;
     background-position: center center;
     background-size: cover;
@@ -15,7 +14,7 @@
 .fondoImagenCrude {
     text-align: center;
     height: 626px;
-    background-image: url('../Imagenes/Zelda.jpg');
+    background-image: url('../Imagenes/ImagenesSistema/Zelda.jpg');
     width: 100%;
     background-position: center center;
     background-size: cover;
