@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Web;
+﻿using System.Data.Entity;
 
 /// <summary>
 /// Descripción breve de Mapeo
@@ -20,6 +16,11 @@ public class Mapeo : DbContext
     }
 
     public DbSet<Usuario> user { get; set; }
+    public DbSet<Administrador> admin { get; set; }
+    public DbSet<Moderador> mod { get; set; }
+    public DbSet<Rol> rol { get; set; }
+    
+
 
     protected override void OnModelCreating(DbModelBuilder builder)
     {
