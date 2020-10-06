@@ -7,8 +7,7 @@ using System.Web;
 /// <summary>
 /// Descripción breve de DAOUsuario
 /// </summary>
-[Serializable]
-[Table ("usuario", Schema = "fj2")]
+
 public class DAOUsuario
 {
     public Usuario login(Usuario usuario)
