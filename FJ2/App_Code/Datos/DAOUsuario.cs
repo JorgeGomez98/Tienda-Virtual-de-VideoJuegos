@@ -1,8 +1,14 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
 
 /// <summary>
 /// Descripción breve de DAOUsuario
 /// </summary>
+[Serializable]
+[Table ("usuario", Schema = "fj2")]
 public class DAOUsuario
 {
     public Usuario login(Usuario usuario)
@@ -12,17 +18,4 @@ public class DAOUsuario
 
     }
 
-    public Administrador loginAdmin(Administrador administrador)
-    {
-        return new Mapeo().admin.Where(y => y.Nickname.ToUpper().Equals(administrador.Nickname.ToUpper()) && y.Contraseña.Equals(administrador.Contraseña)).FirstOrDefault();
-        //return new Mapeo().user.FirstOrDefault();
-
-    }
-
-    public Moderador loginModerador(Moderador moderador)
-    {
-        return new Mapeo().mod.Where(z => z.Nickname.ToUpper().Equals(moderador.Nickname.ToUpper()) && z.Contraseña.Equals(moderador.Contraseña)).FirstOrDefault();
-        //return new Mapeo().user.FirstOrDefault();
-
-    }
 }

@@ -16,8 +16,6 @@ public class Mapeo : DbContext
     }
 
     public DbSet<Usuario> user { get; set; }
-    public DbSet<Administrador> admin { get; set; }
-    public DbSet<Moderador> mod { get; set; }
     public DbSet<Rol> rol { get; set; }
     
 

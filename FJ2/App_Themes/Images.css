@@ -1,9 +1,14 @@
-﻿
+﻿body {
+    background-image: url('../Imagenes/ImagenesSistema/fondoLogin.jpg');
+    background-size: cover;
+    /*background-position: center center;*/
+    background-repeat: no-repeat;
+    /*position: relative;*/
+}
 
 .fondoImagenLogin {
     text-align: center;
     height: 626px;
-    background-image: url('../Imagenes/ImagenesSistema/galaga.jpg');
     width: 100%;
     background-position: center center;
     background-size: cover;
@@ -28,13 +33,14 @@
 
 .espacioTablaCentral{
     width:68%;
+    height:33%;
 }
 
 .fondoElemento {
     background-color: transparent;
     text-align: center;
-    font-size: 38px;
-    font-family: "Agency FB";
+    font-size: 34px;
+    font-family: Prototype;
     color:white;
     position:center;
 }
