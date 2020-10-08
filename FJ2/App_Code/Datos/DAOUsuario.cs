@@ -7,15 +7,22 @@ using System.Web;
 /// <summary>
 /// Descripción breve de DAOUsuario
 /// </summary>
-[Serializable]
-[Table ("usuario", Schema = "fj2")]
+
 public class DAOUsuario
 {
     public Usuario login(Usuario usuario)
     {
-        return new Mapeo().user.Where(x => x.Nickname.ToUpper().Equals(usuario.Nickname.ToUpper()) && x.Contraseña.Equals(usuario.Contraseña)).FirstOrDefault();
-        //return new Mapeo().user.FirstOrDefault();
+        //return new Mapeo().user.Where(x => x.Nickname.ToUpper().Equals(usuario.Nickname.ToUpper()) && x.Contraseña.Equals(usuario.Contraseña)).FirstOrDefault();
+        return new Mapeo().user.FirstOrDefault();
 
+    }
+    public void insertUsuario(Usuario usuario)
+    {
+        using (var db = new Mapeo())
+        {
+            db.user.Add(usuario);
+            db.SaveChanges();
+        }
     }
 
 }

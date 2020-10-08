@@ -9,35 +9,24 @@ using System.ComponentModel.DataAnnotations.Schema;
 [Table("usuario", Schema = "fj2")]
 public class Usuario
 {
-    private int id_usuario;
-    private string nombre;
-    private string nickname;
-    private string contraseña;
-    private decimal creditos;
-    private int id_rol;
-    private string correo;
-
     [Key]
     [Column("id_usuario")]
-    public int Id_usuario { get => id_usuario; set => id_usuario = value; }
+    public int Id_usuario { get; set; }
 
     [Column("nombre")]
-    public string Nombre { get => nombre; set => nombre = value; }
+    public string Nombre { get; set; }
 
     [Column("nickname")]
-    public string Nickname { get => nickname; set => nickname = value; }
+    public string Nickname { get; set; }
 
     [Column("contraseña")]
-    public string Contraseña { get => contraseña; set => contraseña = value; }
-
-    [Column("creditos")]
-    public decimal Creditos { get => creditos; set => creditos = value; }
+    public string Contraseña { get; set; }
 
     [Column("id_rol")]
-    public int Id_rol { get => id_rol; set => id_rol = value; }
+    public int Id_rol { get; set; }
 
     [Column("correo")]
-    public string Correo { get => correo; set => correo = value; }
+    public string Correo { get; set; }
 
     /*[NotMapped]
     public string NombreRol { get; set; }*/

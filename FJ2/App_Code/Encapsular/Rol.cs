@@ -12,13 +12,10 @@ using System.Web;
 [Table("rol", Schema = "fj2")]
 public class Rol
 {
-    private int id_rol;
-    private string descripcion;
-
     [Key]
     [Column("id_rol")]
-    public int Id_rol { get => id_rol; set => id_rol = value; }
+    public int Id_rol { get; set; }
     [Column("descripcion")]
-    public string Descripcion { get => descripcion; set => descripcion = value; }
+    public string Descripcion { get; set; }
 
 }
