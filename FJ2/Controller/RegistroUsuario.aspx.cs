@@ -22,7 +22,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
             usuario.Contraseña = TB_Contraseña.Text;
             usuario.Correo = TB_Correo.Text;
             usuario.Id_rol = 1; 
-
+        //una prueba
 
             new DAOUsuario().insertUsuario(usuario);
 
