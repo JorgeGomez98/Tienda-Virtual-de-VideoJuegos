@@ -28,6 +28,6 @@ public class Usuario
     [Column("correo")]
     public string Correo { get; set; }
 
-    /*[NotMapped]
+    [NotMapped]
     public string NombreRol { get; set; }*/
 }

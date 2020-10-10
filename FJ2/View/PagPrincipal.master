@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/PagPrincipal.master.cs" Inherits="View_PagPrincipal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            height: 23px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+        <table class="auto-style1">
+            <tr>
+                <td class="auto-style2" colspan="2"></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">&nbsp;</td>
+            </tr>
+        </table>
+    
+    </form>
+</body>
+</html>
