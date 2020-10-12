@@ -62,7 +62,7 @@
             <td class="auto-style2">&nbsp;</td>
             <td class="auto-style4">Contraseña: </td>
             <td class="auto-style2">
-                <asp:TextBox ID="TB_Contraseña" runat="server" CssClass="fondoElemento"></asp:TextBox>
+                <asp:TextBox ID="TB_Contraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
             </td>
             <td class="auto-style2">&nbsp;</td>
         </tr>
@@ -73,10 +73,12 @@
             <td class="auto-style2">&nbsp;</td>
             <td class="auto-style5" colspan="2">
                 <asp:Button ID="BT_Registro" runat="server" CssClass="fondoElemento" OnClick="Button1_Click" Text="Registrar" />
+                
             </td>
             <td class="auto-style2">&nbsp;</td>
         </tr>
     </table>
+        <asp:Label ID="LB_mensaje" Text="" CssClass="fondoElemento" runat="server" />
     </form>
 </body>
 </html>

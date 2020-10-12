@@ -24,5 +24,9 @@ public class DAOUsuario
             db.SaveChanges();
         }
     }
+    public Usuario ValidacionUsuario(Usuario usuario)
+    {
+        return new Mapeo().user.Where(x => x.Nickname.Trim().ToUpper().Contains(usuario.Nickname.Trim().ToUpper())|| x.Correo.Trim().ToUpper().Contains(usuario.Correo.Trim().ToUpper())).FirstOrDefault();
+    }    
 
 }
