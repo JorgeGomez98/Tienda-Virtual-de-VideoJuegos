@@ -28,13 +28,7 @@
             color: #FFFFFF;
             text-align: center;
         }
-        .auto-style6 {
-            height: 23px;
-            font-family: Prototype;
-            font-size: 34px;
-            color: #FFFFFF;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -77,7 +71,7 @@
         </tr>
         <tr>
             <td></td>
-            <td class="auto-style6" colspan="3">Confirmar Contraseña:<asp:TextBox ID="TextBox1" runat="server" CssClass="fondoElemento"></asp:TextBox>
+            <td class="auto-style5" colspan="3">Confirmar Contraseña:<asp:TextBox ID="TB_Ccontraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
         <tr>
