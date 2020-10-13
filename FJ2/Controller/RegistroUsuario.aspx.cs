@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,16 +18,28 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
         
-            Usuario usuario = new Usuario();
-            usuario.Nickname = TB_Nick.Text;
-            usuario.Contraseña = TB_Contraseña.Text;
-            usuario.Correo = TB_Correo.Text;
-            usuario.Id_rol = 1; 
+        Usuario usuario = new Usuario();
+        usuario.Nickname = TB_Nick.Text;
+        usuario.Contraseña = TB_Contraseña.Text;
+        usuario.Correo = TB_Correo.Text;
+        usuario.Id_rol = 1;
         //una prueba
-
+        
+        Usuario validacion = new DAOUsuario().ValidacionUsuario(usuario);
+        if (validacion==null)
+        {
             new DAOUsuario().insertUsuario(usuario);
-
             Response.Redirect("Login.aspx");
-      
+        }
+        else
+        {
+            LB_mensaje.ForeColor = Color.Red;
+            LB_mensaje.Text = "ya existe un Correo registrado";
+            LB_mensaje.Text = "ya existe un Nickname registrado";
+            TB_Nick.Text = string.Empty;
+            TB_Contraseña.Text = string.Empty;
+            TB_Correo.Text = string.Empty;
+        }       
+              
     }
 }
