@@ -14,7 +14,6 @@ public class DAOUsuario
     {
         return new Mapeo().user.Where(x => x.Nickname.ToUpper().Equals(usuario.Nickname.ToUpper()) && x.Contraseña.Equals(usuario.Contraseña)).FirstOrDefault();
         //return new Mapeo().user.FirstOrDefault();
-
     }
     public void insertUsuario(Usuario usuario)
     {
