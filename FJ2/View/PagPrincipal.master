@@ -16,7 +16,7 @@
             height: 23px;
         }
         .auto-style3 {
-            width: 20%;
+            width: 15%;
         }
     </style>
 </head>
@@ -28,7 +28,33 @@
                 <td class="auto-style2" colspan="2"></td>
             </tr>
             <tr>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style3">
+                    <asp:Menu ID="M_Admin" runat="server">
+                        <Items>
+                            <asp:MenuItem Text="Menu admin" Value="Menu admin">
+                                <asp:MenuItem Text="Administrar usuarios" Value="Administrar usuarios"></asp:MenuItem>
+                                <asp:MenuItem Text="Administrar moderadores" Value="Administrar moderadores"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                    <asp:Menu ID="M_Moderador" runat="server">
+                        <Items>
+                            <asp:MenuItem Text="Menu moderador" Value="Menu moderador">
+                                <asp:MenuItem Text="Administrar usuarios" Value="Administrar usuarios"></asp:MenuItem>
+                                <asp:MenuItem Text="Administrar moderadores" Value="Administrar moderadores"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                    <asp:Menu ID="M_Usuario" runat="server">
+                        <Items>
+                            <asp:MenuItem Text="Menu usuario" Value="Menu usuario">
+                                <asp:MenuItem Text="Administrar usuarios" Value="Administrar usuarios"></asp:MenuItem>
+                                <asp:MenuItem Text="Administrar moderadores" Value="Administrar moderadores"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                    <br />
+                </td>
                 <td>
     
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">

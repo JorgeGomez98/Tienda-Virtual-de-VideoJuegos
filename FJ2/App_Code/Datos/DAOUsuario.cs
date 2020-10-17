@@ -28,4 +28,10 @@ public class DAOUsuario
         return new Mapeo().user.Where(x => x.Nickname.Trim().ToUpper().Contains(usuario.Nickname.Trim().ToUpper())|| x.Correo.Trim().ToUpper().Contains(usuario.Correo.Trim().ToUpper())).FirstOrDefault();
     }    
 
+    public Usuario obtenerUsuario(Usuario usuario)
+    {
+
+        return new Mapeo().user;
+    }
+
 }
