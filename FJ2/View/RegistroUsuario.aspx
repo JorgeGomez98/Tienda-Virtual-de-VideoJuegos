@@ -28,7 +28,7 @@
             color: #FFFFFF;
             text-align: center;
         }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -68,6 +68,11 @@
         </tr>
         <tr>
             <td class="auto-style2" colspan="4">&nbsp;</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="auto-style5" colspan="3">Confirmar Contraseña:<asp:TextBox ID="TB_Ccontraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
+            </td>
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
