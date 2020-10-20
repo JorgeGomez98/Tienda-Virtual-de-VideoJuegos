@@ -84,6 +84,14 @@
                                                     <asp:Button ID="LoginButton" runat="server" CommandName="Login" CssClass="fondoElemento" Text="Inicio de sesión" ValidationGroup="Login1" />
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td class="fondoElemento" colspan="2">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="fondoElemento" colspan="2">
+                                                    <asp:Button ID="B_Registrar" runat="server" CssClass="fondoElemento" OnClick="B_Registrar_Click" Text="Registrar" />
+                                                </td>
+                                            </tr>
                                         </table>
                                     </td>
                                 </tr>

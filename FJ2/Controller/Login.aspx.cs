@@ -42,11 +42,13 @@ public partial class View_Login : System.Web.UI.Page
         else
         {
             Session["user"] = usuario;
-            if (usuario.Id_rol == 1)
-            {
-                Response.Redirect("Perfil.aspx");
-            }
-            Response.Redirect("Crude.aspx");
+            
+            Response.Redirect("Perfil.aspx");
         }
+    }
+
+    protected void B_Registrar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("RegistroUsuasrio.aspx");
     }
 }

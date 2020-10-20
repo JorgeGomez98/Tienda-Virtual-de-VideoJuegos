@@ -18,7 +18,13 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
             }
             menu();
         }
+        else
+        {
+            sinRol();
+        }
     }
+
+
 
     private void menu()
     {
@@ -36,9 +42,21 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
                     rolUsuario();
                     break;
                 default:
+                    sinRol();
                     break;
             }
         }
+        else
+        {
+            sinRol();
+        }
+    }
+
+    private void sinRol()
+    {
+        M_Admin.Visible = false;
+        M_Moderador.Visible = false;
+        M_Usuario.Visible = false;
     }
 
     private void rolUsuario()

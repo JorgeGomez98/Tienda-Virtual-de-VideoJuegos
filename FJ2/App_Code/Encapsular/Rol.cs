@@ -13,9 +13,9 @@ using System.Web;
 public class Rol
 {
     [Key]
-    [Column("id_rol"]
+    [Column("id_rol")]
     public int Id_rol { get; set; }
 
-    [Column("descripcion"]
+    [Column("descripcion")]
     public string Descripcion { get; set; }
 }
