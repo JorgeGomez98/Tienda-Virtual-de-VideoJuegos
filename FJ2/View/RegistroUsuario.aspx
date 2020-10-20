@@ -82,6 +82,15 @@
             </td>
             <td class="auto-style2">&nbsp;</td>
         </tr>
+        <tr>
+            <td class="auto-style2">&nbsp;</td>
+            <td class="auto-style5" colspan="2">
+                ¿Ya estás registrado?:
+                <asp:Button ID="BT_inicioSesion" runat="server" CssClass="fondoElemento" OnClick="BT_inicioSesion_Click" Text="Inicia sesion" />
+                
+            </td>
+            <td class="auto-style2">&nbsp;</td>
+        </tr>
     </table>
         <asp:Label ID="LB_mensaje" Text="" CssClass="fondoElemento" runat="server" />
     </form>
