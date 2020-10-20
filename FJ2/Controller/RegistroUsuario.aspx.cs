@@ -57,7 +57,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
 
             }
         }
-
+    
 
 
 
