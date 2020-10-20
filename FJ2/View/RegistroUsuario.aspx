@@ -28,59 +28,57 @@
             color: #FFFFFF;
             text-align: center;
         }
+        .auto-style6 {
+            text-align: center;
+        }
         </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <table class="auto-style1">
         <tr>
-            <td class="auto-style2" colspan="4"></td>
+            <td class="auto-style2" colspan="2"></td>
         </tr>
         <tr>
             <td class="auto-style2"></td>
-            <td class="auto-style4">NickName: </td>
-            <td class="auto-style2">
+            <td class="auto-style4">NickName: 
                 <asp:TextBox ID="TB_Nick" runat="server" CssClass="fondoElemento"></asp:TextBox>
             </td>
-            <td class="auto-style2"></td>
         </tr>
         <tr>
-            <td class="auto-style2" colspan="4"></td>
+            <td class="auto-style2" colspan="2"></td>
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style4">Correo:</td>
-            <td class="auto-style2">
-                <asp:TextBox ID="TB_Correo" runat="server" CssClass="fondoElemento"></asp:TextBox>
+            <td class="auto-style4">Correo:<asp:TextBox ID="TB_Correo" runat="server" CssClass="fondoElemento"></asp:TextBox>
             </td>
-            <td class="auto-style2">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style2" colspan="4">&nbsp;</td>
+            <td class="auto-style2" colspan="2">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style4">Contraseña: </td>
-            <td class="auto-style2">
+            <td class="auto-style4">Contraseña: 
                 <asp:TextBox ID="TB_Contraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
             </td>
-            <td class="auto-style2">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style2" colspan="4">&nbsp;</td>
+            <td class="auto-style2" colspan="2">&nbsp;</td>
         </tr>
         <tr>
             <td></td>
-            <td class="auto-style5" colspan="3">Confirmar Contraseña:<asp:TextBox ID="TB_Ccontraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
+            <td class="auto-style4">Confirmar Contraseña:<asp:TextBox ID="TB_Ccontraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
         <tr>
+            <td class="auto-style2" colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
             <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style5" colspan="2">
+            <td class="auto-style5">
                 <asp:Button ID="BT_Registro" runat="server" CssClass="fondoElemento" OnClick="Button1_Click" Text="Registrar" />
                 
             </td>
-            <td class="auto-style2">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
@@ -92,7 +90,9 @@
             <td class="auto-style2">&nbsp;</td>
         </tr>
     </table>
+        <div class="auto-style6">
         <asp:Label ID="LB_mensaje" Text="" CssClass="fondoElemento" runat="server" />
+        </div>
     </form>
 </body>
 </html>
