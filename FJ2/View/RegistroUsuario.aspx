@@ -14,13 +14,6 @@
         .auto-style2 {
             height: 23px;
         }
-        .auto-style4 {
-            height: 23px;
-            font-family: Prototype;
-            font-size: 34px;
-            color: #FFFFFF;
-            text-align: right;
-        }
         .auto-style5 {
             height: 23px;
             font-family: Prototype;
@@ -41,7 +34,7 @@
         </tr>
         <tr>
             <td class="auto-style2"></td>
-            <td class="auto-style4">NickName: 
+            <td class="auto-style5">NickName: 
                 <asp:TextBox ID="TB_Nick" runat="server" CssClass="fondoElemento"></asp:TextBox>
             </td>
         </tr>
@@ -50,7 +43,7 @@
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style4">Correo:<asp:TextBox ID="TB_Correo" runat="server" CssClass="fondoElemento"></asp:TextBox>
+            <td class="auto-style5">Correo:<asp:TextBox ID="TB_Correo" runat="server" CssClass="fondoElemento"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -58,7 +51,7 @@
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style4">Contraseña: 
+            <td class="auto-style5">Contraseña: 
                 <asp:TextBox ID="TB_Contraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
@@ -67,7 +60,7 @@
         </tr>
         <tr>
             <td></td>
-            <td class="auto-style4">Confirmar Contraseña:<asp:TextBox ID="TB_Ccontraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
+            <td class="auto-style5">Confirmar Contraseña:<asp:TextBox ID="TB_Ccontraseña" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
         <tr>
