@@ -57,13 +57,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
 
             }
         }
-    
-
-
-
-
-
-
+         
     }
 
     protected void BT_inicioSesion_Click(object sender, EventArgs e)
