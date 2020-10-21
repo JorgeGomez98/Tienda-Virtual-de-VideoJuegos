@@ -11,7 +11,6 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
     {
         if (!Page.AppRelativeVirtualPath.Contains("Login.aspx"))
         {
-            Response.Redirect("Login.aspx");
             if (Session["user"] == null)
             {
                 Response.Redirect("Login.aspx");
