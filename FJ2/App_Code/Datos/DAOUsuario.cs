@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -26,12 +27,29 @@ public class DAOUsuario
     public Usuario ValidacionUsuario(Usuario usuario)
     {
         return new Mapeo().user.Where(x => x.Nickname.Trim().ToUpper().Contains(usuario.Nickname.Trim().ToUpper())|| x.Correo.Trim().ToUpper().Contains(usuario.Correo.Trim().ToUpper())).FirstOrDefault();
-    }    
+    }
 
-    /*public Usuario obtenerUsuario(Usuario usuario)
+    public void updateUsuario(Usuario usuario)
     {
+        using (var db = new Mapeo())
+        {
+            Usuario usuarioAnterior = db.user.Where(x => x.Id_usuario == usuario.Id_usuario).First();
+            usuarioAnterior.Correo = usuario.Correo;
+            usuarioAnterior.Nombre = usuario.Nombre;
+            usuarioAnterior.Nickname = usuario.Nickname;
+            usuarioAnterior.Imagen = usuario.Imagen;
+       
+            db.user.Attach(usuarioAnterior);
 
-        return new Mapeo().user;
+            var entry = db.Entry(usuarioAnterior);
+            entry.State = EntityState.Modified;
+            db.SaveChanges();
+        }
+    }
+/*
+    public Usuario obtenerUsuario(Usuario usuario)
+    {
+        return new Mapeo().user.Where(;
     }*/
 
 }

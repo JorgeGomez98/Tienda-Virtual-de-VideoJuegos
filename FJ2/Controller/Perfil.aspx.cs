@@ -9,16 +9,27 @@ public partial class View_Perfil : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        TB_Nombre.Text = ((Usuario)Session["user"]).Nombre;
+        TB_Nickname.Text = ((Usuario)Session["user"]).Nickname;
+        TB_Correo.Text = ((Usuario)Session["user"]).Correo;
     }
 
-    protected void B_ImagenPerfil_Click(object sender, EventArgs e)
+    protected void B_Editar_Click(object sender, EventArgs e)
+    {
+        TB_Nickname.ReadOnly = false;
+        TB_Nombre.ReadOnly = false;
+        TB_Correo.ReadOnly = false;
+        B_Guardar.Visible = true;
+        B_Editar.Visible = false;
+    }
+
+    protected void B_Guardar_Click(object sender, EventArgs e)
     {
         ClientScriptManager cm = this.ClientScript;
         string nombreArchivo = System.IO.Path.GetFileName(FU_ImagenPerfil.PostedFile.FileName);
         string extension = System.IO.Path.GetExtension(FU_ImagenPerfil.PostedFile.FileName);
 
-        string saveLocation = Server.MapPath("~\\Imagenes") + "\\" + nombreArchivo;
+        string saveLocation = Server.MapPath("~\\FJ2") + "\\" + nombreArchivo;
 
         if (!(extension.Equals(".jpg") || extension.Equals(".gif") || extension.Equals(".JPEG") || extension.Equals(".png")))
         {
@@ -39,24 +50,17 @@ public partial class View_Perfil : System.Web.UI.Page
 
             Usuario usuario = new Usuario();
             usuario.Imagen = "~\\FJ2" + "\\" + nombreArchivo;
+            usuario.Correo = TB_Correo.Text;
+            usuario.Nickname = TB_Nickname.Text;
             usuario.Nombre = TB_Nombre.Text;
             //usuario.Precio = Double.Parse(TB_Precio.Text);
 
-            new DAOUsuario().insertUsuario(usuario);
+            new DAOUsuario().updateUsuario(usuario);
         }
         catch (Exception exc)
         {
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Error: ');</script>");
             return;
         }
-    }
-
-    protected void B_Editar_Click(object sender, EventArgs e)
-    {
-        TB_Nickname.ReadOnly = false;
-        TB_Nombre.ReadOnly = false;
-        TB_Correo.ReadOnly = false;
-        B_Guardar.Visible = true;
-        B_Editar.Visible = false;
     }
 }

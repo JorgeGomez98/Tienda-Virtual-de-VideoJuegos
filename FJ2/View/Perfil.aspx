@@ -87,13 +87,13 @@
         </tr>
         <tr>
             <td class="auto-style4">
-                <asp:Button ID="B_ImagenPerfil" runat="server" Text="Cargar imagen" OnClick="B_ImagenPerfil_Click" />
+                <asp:Button ID="B_ImagenPerfil" runat="server" Text="Cargar imagen"/>
             </td>
             <td class="auto-style8">
                 <asp:Button ID="B_Editar" runat="server" OnClick="B_Editar_Click" Text="Editar" />
             </td>
             <td class="auto-style8">
-                <asp:Button ID="B_Guardar" runat="server" Text="Guardar" Visible="False" />
+                <asp:Button ID="B_Guardar" runat="server" Text="Guardar" Visible="False" OnClick="B_Guardar_Click" />
             </td>
         </tr>
     </table>
