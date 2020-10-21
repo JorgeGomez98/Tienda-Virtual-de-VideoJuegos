@@ -29,4 +29,9 @@ public partial class View_Login : System.Web.UI.Page
     {
         Response.Redirect("RegistroUsuario.aspx");
     }
+
+    protected void LoginButton_Click(object sender, EventArgs e)
+    {
+
+    }
 }
