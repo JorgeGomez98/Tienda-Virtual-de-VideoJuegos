@@ -11,4 +11,11 @@ public partial class View_VideoJuego : System.Web.UI.Page
     {
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Usuario usuario = new Usuario();
+        Videojuego videojuego = new Videojuego();
+        usuario.Id_usuario = ((Usuario)Session["user"]).Id_usuario;
+    }
 }

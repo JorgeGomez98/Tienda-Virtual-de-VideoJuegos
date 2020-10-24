@@ -46,10 +46,5 @@ public class DAOUsuario
             db.SaveChanges();
         }
     }
-/*
-    public Usuario obtenerUsuario(Usuario usuario)
-    {
-        return new Mapeo().user.Where(;
-    }*/
-
+    
 }

@@ -17,7 +17,9 @@ public class Mapeo : DbContext
     }
 
     public DbSet<Usuario> user { get; set; }
-    public DbSet<Rol> rol { get; set; } 
+    public DbSet<Rol> rol { get; set; }
+    public DbSet<Videojuego> videojuego { get; set; }
+    public DbSet<Estado> estado { get; set; }
 
     protected override void OnModelCreating(DbModelBuilder builder)
     {

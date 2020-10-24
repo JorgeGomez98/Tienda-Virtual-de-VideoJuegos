@@ -9,10 +9,6 @@
         .auto-style5 {
             width: 50%;
         }
-        .auto-style6 {
-        text-align: right;
-        width: 146px;
-    }
         .auto-style7 {
             text-align: center;
             height: 23px;
@@ -38,8 +34,24 @@
             font-family: Prototype;
             font-size: 20px;
         }
+        .auto-style15 {
+            text-align: justify;
+            width: 146px;
+            font-family: Prototype;
+            font-size: 20px;
+        }
+        .auto-style16 {
+            font-size: 20px;
+            font-family: Prototype;
+            color: black;
+        }
+        .auto-style17 {
+            font-family: Prototype;
+            font-size: 20px;
+        }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
     <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
@@ -59,9 +71,10 @@
                 <asp:Image ID="I_Perfil" runat="server" Width="60%" />
             </td>
             <td class="auto-style14">
-                VideoJuego</td>
+                Nombre</td>
             <td>
-                &nbsp;</td>
+                <asp:TextBox ID="TB_nombreJ" runat="server" CssClass="auto-style16" Height="43px" ReadOnly="True" TextMode="MultiLine" Width="400px"></asp:TextBox>
+            </td>
             <td>
                 &nbsp;</td>
         </tr>
@@ -71,39 +84,52 @@
         </tr>
         <tr>
             <td class="auto-style14">
-                Nombre Vendedor</td>
+                Descripción</td>
             <td colspan="2">
-                <asp:TextBox ID="TB_Nombre" runat="server" ReadOnly="True" CssClass="fuenteNegra"></asp:TextBox>
+                <asp:TextBox ID="TB_descripcion" runat="server" CssClass="auto-style16" Height="115px" ReadOnly="True" TextMode="MultiLine" Width="424px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style11" colspan="3">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style6">
-                <asp:Label ID="L_Correo" runat="server" Text="Correo:" CssClass="fuenteNegra"></asp:Label>
-            </td>
+            <td class="auto-style15">
+                Añadir a lista de deseos</td>
             <td colspan="2">
-                <asp:TextBox ID="TB_Correo" runat="server" ReadOnly="True" CssClass="fuenteNegra"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" CssClass="fuenteNegra" OnClick="Button1_Click" Text="Aquí ;v" />
             </td>
         </tr>
         <tr>
-            <td class="auto-style9" colspan="3"></td>
+            <td class="auto-style9" colspan="3">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style2"></td>
+            <td class="auto-style17">Categoria</td>
+            <td class="auto-style7" colspan="2">
+                <asp:TextBox ID="TB_categoria" runat="server" CssClass="auto-style16" Height="172px" ReadOnly="True" TextMode="MultiLine" Width="427px"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="auto-style7" colspan="3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style2"></td>
+            <td class="auto-style7" colspan="3">
+            </td>
         </tr>
         <tr>
             <td class="auto-style7" colspan="4">
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style4">
-                <asp:Button ID="B_ImagenPerfil" runat="server" Text="Cargar imagen" CssClass="fuenteNegra"/>
-            </td>
+                &nbsp;</td>
             <td class="auto-style13">
-                <asp:Button ID="B_Editar" runat="server" OnClick="B_Editar_Click" Text="Editar" CssClass="fuenteNegra" />
-            </td>
+                &nbsp;</td>
             <td class="auto-style8" colspan="2">
-                <asp:Button ID="B_Guardar" runat="server" Text="Guardar" Visible="False" OnClick="B_Guardar_Click" CssClass="fuenteNegra" />
-            </td>
+                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>
