@@ -15,20 +15,14 @@
         .auto-style2 {
             height: 23px;
         }
-        .auto-style3 {
-            width: 15%;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
     
         <table class="auto-style1">
             <tr>
-                <td class="auto-style2" colspan="2"></td>
-            </tr>
-            <tr>
-                <td class="auto-style3">
+                <td class="auto-style2">
                     <asp:Menu ID="M_Admin" runat="server">
                         <Items>
                             <asp:MenuItem Text="Menu admin" Value="Menu admin">
@@ -53,8 +47,9 @@
                             </asp:MenuItem>
                         </Items>
                     </asp:Menu>
-                    <br />
-                </td>
+                    </td>
+            </tr>
+            <tr>
                 <td>
     
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
@@ -64,7 +59,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="2">&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
         </table>
     

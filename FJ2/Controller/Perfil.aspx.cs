@@ -29,7 +29,7 @@ public partial class View_Perfil : System.Web.UI.Page
         string nombreArchivo = System.IO.Path.GetFileName(FU_ImagenPerfil.PostedFile.FileName);
         string extension = System.IO.Path.GetExtension(FU_ImagenPerfil.PostedFile.FileName);
 
-        string saveLocation = Server.MapPath("~\\FJ2") + "\\" + nombreArchivo;
+        string saveLocation = Server.MapPath("~\\Imagenes\\ImagenesPerfil") + "\\" + nombreArchivo;
 
         if (!(extension.Equals(".jpg") || extension.Equals(".gif") || extension.Equals(".JPEG") || extension.Equals(".png")))
         {
@@ -49,7 +49,7 @@ public partial class View_Perfil : System.Web.UI.Page
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo ha sido cargado');</script>");
 
             Usuario usuario = new Usuario();
-            usuario.Imagen = "~\\FJ2" + "\\" + nombreArchivo;
+            usuario.Imagen = "~\\Imagenes\\ImagenesPerfil" + "\\" + nombreArchivo;
             usuario.Correo = TB_Correo.Text;
             usuario.Nickname = TB_Nickname.Text;
             usuario.Nombre = TB_Nombre.Text;
