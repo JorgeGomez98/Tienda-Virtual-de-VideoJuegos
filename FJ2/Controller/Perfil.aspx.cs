@@ -49,6 +49,7 @@ public partial class View_Perfil : System.Web.UI.Page
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo ha sido cargado');</script>");
 
             Usuario usuario = new Usuario();
+            usuario.Id_usuario = ((Usuario)Session["user"]).Id_usuario;
             usuario.Imagen = "~\\Imagenes\\ImagenesPerfil" + "\\" + nombreArchivo;
             usuario.Correo = TB_Correo.Text;
             usuario.Nickname = TB_Nickname.Text;
