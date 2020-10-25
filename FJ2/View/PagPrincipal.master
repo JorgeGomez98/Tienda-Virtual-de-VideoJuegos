@@ -47,6 +47,7 @@
                             </asp:MenuItem>
                         </Items>
                     </asp:Menu>
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Catalogo" />
                     </td>
             </tr>
             <tr>

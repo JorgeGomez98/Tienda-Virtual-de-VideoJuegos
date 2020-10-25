@@ -78,4 +78,9 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
         M_Moderador.Visible = true;
         M_Usuario.Visible = true;
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Catalogo.aspx");
+    }
 }

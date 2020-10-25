@@ -1,9 +1,30 @@
 ﻿body {
+
 }
 
 .fuenteNegra {
-
     font-size: 20px;
     font-family: Prototype;
     color: black;
+}
+
+.fuenteBlanca {
+    font-size: 20px;
+    font-family: Prototype;
+    color: black;
+}
+
+.fuenteGris {
+    font-size: 18px;
+    font-family: Prototype;
+    color: gray;
+}
+
+.fondoElemento {
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+    font-family: Prototype;
+    color: black;
+    position: center;
 }
