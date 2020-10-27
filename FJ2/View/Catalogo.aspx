@@ -21,7 +21,11 @@
     <table class="auto-style1">
         <tr>
             <td>
-                <asp:DataList ID="DataList1" runat="server" Width="80%">
+                <asp:DataList ID="DataList1" runat="server" Width="80%" CellPadding="4" ForeColor="#333333">
+                    <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <ItemStyle BackColor="#F7F6F3" ForeColor="#333333" />
                     <ItemTemplate>
                         <table class="auto-style1">
                             <tr>
@@ -66,6 +70,7 @@
                             </tr>
                         </table>
                     </ItemTemplate>
+                    <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
                 </asp:DataList>
             </td>
         </tr>
