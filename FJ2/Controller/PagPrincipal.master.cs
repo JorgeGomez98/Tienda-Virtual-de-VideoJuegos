@@ -13,7 +13,8 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
         {
             if (Session["user"] == null)
             {
-                Response.Redirect("Login.aspx");
+                sinRol();
+                // Response.Redirect("Login.aspx");
             }
             menu();
         }
@@ -53,6 +54,7 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
 
     private void sinRol()
     {
+        
         M_Admin.Visible = false;
         M_Moderador.Visible = false;
         M_Usuario.Visible = false;
