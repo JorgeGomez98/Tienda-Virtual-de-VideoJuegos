@@ -93,8 +93,7 @@
         </tr>
         <tr>
             <td class="auto-style4">
-                <asp:Button ID="B_ImagenPerfil" runat="server" Text="Cargar imagen" CssClass="fuenteNegra"/>
-            </td>
+                &nbsp;</td>
             <td class="auto-style13">
                 <asp:Button ID="B_Editar" runat="server" OnClick="B_Editar_Click" Text="Editar" CssClass="fuenteNegra" />
             </td>
