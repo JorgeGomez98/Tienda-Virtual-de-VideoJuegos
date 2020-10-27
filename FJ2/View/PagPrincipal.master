@@ -16,6 +16,7 @@
             height: 23px;
         }
         </style>
+    <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,7 +24,7 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">
-                    <asp:Menu ID="M_Admin" runat="server">
+                    <asp:Menu ID="M_Admin" runat="server" CssClass="fuenteNegra">
                         <Items>
                             <asp:MenuItem Text="Menu admin" Value="Menu admin">
                                 <asp:MenuItem Text="Administrar usuarios" Value="Administrar usuarios"></asp:MenuItem>
@@ -31,7 +32,7 @@
                             </asp:MenuItem>
                         </Items>
                     </asp:Menu>
-                    <asp:Menu ID="M_Moderador" runat="server">
+                    <asp:Menu ID="M_Moderador" runat="server" CssClass="fuenteNegra">
                         <Items>
                             <asp:MenuItem Text="Menu moderador" Value="Menu moderador">
                                 <asp:MenuItem Text="Administrar usuarios" Value="Administrar usuarios"></asp:MenuItem>
@@ -39,7 +40,7 @@
                             </asp:MenuItem>
                         </Items>
                     </asp:Menu>
-                    <asp:Menu ID="M_Usuario" runat="server">
+                    <asp:Menu ID="M_Usuario" runat="server" CssClass="fuenteNegra">
                         <Items>
                             <asp:MenuItem Text="Menu usuario" Value="Menu usuario">
                                 <asp:MenuItem Text="Administrar usuarios" Value="Administrar usuarios"></asp:MenuItem>
@@ -47,7 +48,7 @@
                             </asp:MenuItem>
                         </Items>
                     </asp:Menu>
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Catalogo" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Catalogo" CssClass="fondoElemento" />
                     </td>
             </tr>
             <tr>
