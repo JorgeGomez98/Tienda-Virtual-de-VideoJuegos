@@ -51,6 +51,7 @@
         <tr>
             <td class="auto-style4" rowspan="6">
                 <asp:Image ID="I_Perfil" runat="server" Width="60%" />
+                <asp:Label ID="L_Imagen" runat="server"></asp:Label>
             </td>
             <td class="auto-style6">
                 <asp:Label ID="L_Nickname" runat="server" Text="Nickname:" CssClass="fuenteNegra"></asp:Label>
@@ -89,7 +90,7 @@
         </tr>
         <tr>
             <td class="auto-style7" colspan="4">
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style4">

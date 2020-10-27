@@ -32,13 +32,13 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
             switch (((Usuario)Session["user"]).Id_rol)
             {
                 case 1:
-                    rolAdmin();
+                    rolUsuario();
                     break;
                 case 2:
                     rolModerador();
                     break;
                 case 3:
-                    rolUsuario();
+                    rolAdmin();
                     break;
                 default:
                     sinRol();

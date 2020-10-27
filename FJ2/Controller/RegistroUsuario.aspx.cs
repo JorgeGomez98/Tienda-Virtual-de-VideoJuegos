@@ -17,6 +17,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
+        
         String Ccontraseña;
         Usuario usuario = new Usuario();
         usuario.Nickname = TB_Nick.Text;
@@ -25,9 +26,15 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
         Ccontraseña = TB_Ccontraseña.Text;
         usuario.Id_rol = 1;
         Usuario validacion = new DAOUsuario().ValidacionUsuario(usuario);
+        LB_mensaje.ForeColor = Color.Red;
+        if (TB_Nick==null || TB_Correo==null || TB_Contraseña==null || TB_Ccontraseña ==null)
+        {
+            LB_mensaje.Text = "Por favor llene todos los campos";
+            return;
+        }
         if (usuario.Contraseña != Ccontraseña)
         {
-            LB_mensaje.ForeColor = Color.Red;
+           
             LB_mensaje.Text = "La Contraseña no coincide";
             TB_Contraseña.Text = string.Empty;
             TB_Ccontraseña.Text = string.Empty;
@@ -41,7 +48,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
         {
             if (validacion.Nickname == usuario.Nickname)
             {
-                LB_mensaje.ForeColor = Color.Red;
+                
                 LB_mensaje.Text = "ya existe un Nickname registrado";
                 TB_Nick.Text = string.Empty;
                 TB_Contraseña.Text = string.Empty;
@@ -49,7 +56,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
             }
             else if (validacion.Correo == usuario.Correo)
             {
-                LB_mensaje.ForeColor = Color.Red;
+                
                 LB_mensaje.Text = "ya existe un Correo registrado";
                 TB_Nick.Text = string.Empty;
                 TB_Contraseña.Text = string.Empty;

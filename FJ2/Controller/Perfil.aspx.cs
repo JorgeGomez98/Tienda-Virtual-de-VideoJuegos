@@ -9,6 +9,15 @@ public partial class View_Perfil : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (((Usuario)Session["user"]).Imagen == null)
+        {
+            L_Imagen.Text = "No tiene imagen guardada";
+        }
+        else
+        {
+            I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
+        }
+        
         TB_Nombre.Text = ((Usuario)Session["user"]).Nombre;
         TB_Nickname.Text = ((Usuario)Session["user"]).Nickname;
         TB_Correo.Text = ((Usuario)Session["user"]).Correo;
