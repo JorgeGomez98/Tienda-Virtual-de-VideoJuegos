@@ -30,7 +30,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
         if (TB_Nick==null || TB_Correo==null || TB_Contraseña==null || TB_Ccontraseña ==null)
         {
             LB_mensaje.Text = "Por favor llene todos los campos";
-            return;
+            
         }
         if (usuario.Contraseña != Ccontraseña)
         {

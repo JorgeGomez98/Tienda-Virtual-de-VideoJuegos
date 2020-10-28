@@ -21,7 +21,20 @@
     <table class="auto-style1">
         <tr>
             <td>
-                <asp:DataList ID="DataList1" runat="server" Width="80%" CellPadding="4" ForeColor="#333333">
+                <table class="auto-style1">
+                    <tr>
+                        <td class="auto-style6">
+                            <asp:Label ID="L_Filtro" runat="server" Text="Filtro:"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria">
+                            </asp:DropDownList>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                <asp:DataList ID="DataList1" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo">
                     <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -72,6 +85,12 @@
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
                 </asp:DataList>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+                <asp:ObjectDataSource ID="ODS_Catalogo" runat="server"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODS_Categoria" runat="server" SelectMethod="obtenerCatalogo" TypeName="DAOVideojuego"></asp:ObjectDataSource>
             </td>
         </tr>
     </table>
