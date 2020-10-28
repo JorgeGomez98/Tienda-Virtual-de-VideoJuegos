@@ -35,35 +35,41 @@ public class DAOVideojuego
         }
          
     }
-    /*
+    
     public List<Videojuego> obtenerCatalogo(int id_categoria)
     {
 
         using (var db = new Mapeo())
         {
             return (from v in db.videojuego
+                    join c in db.cat on v.Id_categoría equals c.Id_categoria
                     join e in db.estado on v.Id_estadoV equals e.Id_estadoV
-                    where ((v.Id_estadoV == id_estadov) || (id_estadov == 0))
+                    where ((v.Id_categoría == id_categoria) || (id_categoria == 0))
                     select new
                     {
                         v,
-                        e.Descripcion
+                        e.Descripcion,
+                        c.Categoria
                     }).ToList().Select(m => new Videojuego
                     {
                         Id_estadoV = m.v.Id_estadoV,
                         Id_videojuego = m.v.Id_videojuego,
+                        Id_categoría = m.v.Id_categoría,
                         Imagen = m.v.Imagen,
                         Nom_juego = m.v.Nom_juego,
                         DescripcionV = m.Descripcion,
-                        Categoría = m.v.Categoría,
+                        Descripcion = m.v.Descripcion,
+                        Categoria = m.Categoria,
                         Precio = m.v.Precio,
                         Cantidad = m.v.Cantidad
                     }).OrderBy(x => x.Nom_juego).ToList();
         }
 
-    }*/
+    }
 
-    public List<Categorias> obtenerCatalogo()
+    
+
+    public List<Categorias> obtenerCategorias()
     {
         List<Categorias> lista = new Mapeo().cat.ToList();
         Categorias categorias = new Categorias();

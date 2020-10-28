@@ -10,12 +10,11 @@ using System.Web;
 public class Videojuego
 {
     private int id_videojuego;
-    private string nom_juego;
-    private int id_categoría;
-    private decimal precio;
     private int id_estadoV;
-    private string descripcionV;
-    
+    private int id_categoría;
+    private string nom_juego;    
+    private decimal precio;    
+    private string descripcionV;    
     private string descripcion;
     private string categoria;
     private int cantidad;

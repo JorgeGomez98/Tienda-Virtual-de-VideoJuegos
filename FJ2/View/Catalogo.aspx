@@ -24,17 +24,17 @@
                 <table class="auto-style1">
                     <tr>
                         <td class="auto-style6">
-                            <asp:Label ID="L_Filtro" runat="server" Text="Filtro:"></asp:Label>
+                            <asp:Label ID="L_Filtro" runat="server" Text="Filtro:" CssClass="fuenteNegra"></asp:Label>
                         </td>
                         <td>
-                            <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria">
+                            <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento">
                             </asp:DropDownList>
                         </td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                <asp:DataList ID="DataList1" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo">
+                <asp:DataList ID="DataList1" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="id">
                     <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -43,10 +43,10 @@
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style4" rowspan="5">
-                                    <asp:Image ID="Image1" runat="server" Width="70%" />
+                                    <asp:Image ID="Image1" runat="server" Width="70%" ImageUrl='<%# Eval("Imagen") %>'/>
                                 </td>
                                 <td class="auto-style5" colspan="2">
-                                    <asp:Label ID="L_Nombre" runat="server"></asp:Label>
+                                    <asp:Label ID="L_Nombre" runat="server" Text='<%# Eval("Nom_juego") %>'></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -54,7 +54,7 @@
                                     <asp:Label ID="L_GeneroVideojuego" runat="server" CssClass="fuenteGris" Text="Género:"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:Label ID="L_Genero" runat="server" CssClass="fuenteGris"></asp:Label>
+                                    <asp:Label ID="L_Genero" runat="server" CssClass="fuenteGris" Text='<%# Eval("Categoria") %>'></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -62,7 +62,7 @@
                                     <asp:Label ID="L_PrecioVideojuego" runat="server" CssClass="fuenteGris" Text="Precio:"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:Label ID="L_Precio" runat="server" CssClass="fuenteGris"></asp:Label>
+                                    <asp:Label ID="L_Precio" runat="server" CssClass="fuenteGris" Text='<%# Eval("Precio") %>'></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -70,7 +70,7 @@
                                     <asp:Label ID="L_CantidadVideojuego" runat="server" CssClass="fuenteGris" Text="Cantidad:"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:Label ID="L_Cantidad" runat="server" CssClass="fuenteGris"></asp:Label>
+                                    <asp:Label ID="L_Cantidad" runat="server" CssClass="fuenteGris" Text='<%# Eval("Cantidad") %>'></asp:Label>
                                 </td>
                             </tr>
                             <tr>
@@ -89,8 +89,12 @@
                         <td>&nbsp;</td>
                     </tr>
                 </table>
-                <asp:ObjectDataSource ID="ODS_Catalogo" runat="server"></asp:ObjectDataSource>
-                <asp:ObjectDataSource ID="ODS_Categoria" runat="server" SelectMethod="obtenerCatalogo" TypeName="DAOVideojuego"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODS_Catalogo" runat="server" SelectMethod="obtenerCatalogo" TypeName="DAOVideojuego">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="DDL_Filtro" DefaultValue="0" Name="id_categoria" PropertyName="SelectedValue" Type="Int32" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODS_Categoria" runat="server" SelectMethod="obtenerCategorias" TypeName="DAOVideojuego"></asp:ObjectDataSource>
             </td>
         </tr>
     </table>
