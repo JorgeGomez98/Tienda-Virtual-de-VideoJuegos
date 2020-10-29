@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/PagPrincipal.master" AutoEventWireup="true" CodeFile="~/Controller/VideoJuego.aspx.cs" Inherits="View_VideoJuego" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/PagPrincipal.master" AutoEventWireup="true" CodeFile="~/Controller/AgregaJuego.aspx.cs" Inherits="View_AgregaJuego" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <style type="text/css">
+        <style type="text/css">
         .auto-style4 {
             text-align: center;
             width: 50%;
@@ -71,7 +71,7 @@
             <td class="auto-style14">
                 Nombre</td>
             <td>
-                <asp:TextBox ID="TB_nombreJ" runat="server" CssClass="auto-style16" Height="43px" ReadOnly="True" TextMode="MultiLine" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="TB_nombreJ" runat="server" CssClass="auto-style16" Height="43px" Width="400px"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -92,10 +92,9 @@
         </tr>
         <tr>
             <td class="auto-style15">
-                Añadir a lista de deseos</td>
+                &nbsp;</td>
             <td colspan="2">
-                <asp:Button ID="Button1" runat="server" CssClass="fuenteNegra" OnClick="Button1_Click" Text="Aquí ;v" />
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style9" colspan="3">&nbsp;</td>
@@ -131,5 +130,4 @@
         </tr>
     </table>
 </asp:Content>
-
 

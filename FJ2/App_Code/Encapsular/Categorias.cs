@@ -18,6 +18,6 @@ public class Categorias
     [Key]
     [Column("id_categoria")]
     public int Id_categoria { get => id_categoria; set => id_categoria = value; }
-    [Column("id_categoria")]
+    [Column("categoria")]
     public string Categoria { get => categoria; set => categoria = value; }
 }
