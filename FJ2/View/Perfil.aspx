@@ -39,7 +39,7 @@
     <table class="auto-style1">
         <tr>
             <td class="auto-style5">
-                <asp:FileUpload ID="FU_ImagenPerfil" runat="server" CssClass="fuenteNegra" />
+                <asp:FileUpload ID="FU_ImagenPerfil" runat="server" CssClass="fuenteNegra" Visible="False" />
             </td>
             <td class="auto-style11" colspan="3">
                 &nbsp;</td>

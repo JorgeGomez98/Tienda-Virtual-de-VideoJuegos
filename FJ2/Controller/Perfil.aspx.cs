@@ -30,6 +30,7 @@ public partial class View_Perfil : System.Web.UI.Page
         TB_Correo.ReadOnly = false;
         B_Guardar.Visible = true;
         B_Editar.Visible = false;
+        FU_ImagenPerfil.Visible = true;
     }
 
     protected void B_Guardar_Click(object sender, EventArgs e)
