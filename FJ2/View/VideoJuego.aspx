@@ -101,7 +101,10 @@
             <td class="auto-style9" colspan="3">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style2"></td>
+            <td class="auto-style2">
+                <asp:ImageButton ID="IB_ADcarrito" runat="server" Height="50px" ImageUrl="~/Icono/ircarrito.png" OnClick="IB_ADcarrito_Click" Width="6%" />
+                <asp:Label ID="LB_Carrito" runat="server" CssClass="fuenteNegra" Text="0"></asp:Label>
+            </td>
             <td class="auto-style17">Categoria</td>
             <td class="auto-style7" colspan="2">
                 <asp:TextBox ID="TB_categoria" runat="server" CssClass="auto-style16" Height="172px" ReadOnly="True" TextMode="MultiLine" Width="427px"></asp:TextBox>

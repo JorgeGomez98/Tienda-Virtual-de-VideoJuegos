@@ -18,4 +18,9 @@ public partial class View_VideoJuego : System.Web.UI.Page
         Videojuego videojuego = new Videojuego();
         usuario.Id_usuario = ((Usuario)Session["user"]).Id_usuario;
     }
+
+    protected void IB_ADcarrito_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("Carrito.aspx");
+    }
 }

@@ -69,6 +69,7 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
 
     private void rolModerador()
     {
+        
         M_Usuario.Visible = true;
         M_Admin.Visible = false;
         M_Moderador.Visible = true;
@@ -81,8 +82,5 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
         M_Usuario.Visible = true;
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("Catalogo.aspx");
-    }
+    
 }
