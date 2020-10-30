@@ -100,6 +100,7 @@
                                 <asp:MenuItem Text="Usuarios" Value="Usuarios"></asp:MenuItem>
                                 <asp:MenuItem Text="Moderadores" Value="Moderadores"></asp:MenuItem>
                                 <asp:MenuItem Text="VideoJuegos" Value="VideoJuegos"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/View/AdminCategorias.aspx" Text="Categorias" Value="Categorias"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
