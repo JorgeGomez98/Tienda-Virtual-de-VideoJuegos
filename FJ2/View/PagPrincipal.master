@@ -28,18 +28,31 @@
         }
     </style>
     <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/estilos.css" />
 </head>
 
 <body>
-    <nav id="nav">
-        <ul class="auto-style8">
-            <li><a href="../View/Catalogo.aspx">Catalogo</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="../View/Login.aspx">Iniciar Sesion</a></li>
-            <li><a href="../View/RegistroUsuario.aspx">Registrate</a></li>
-        </ul>
-    </nav>
+
+    <header>
+        <div class="container">
+
+            <article class="col-md-12">
+                <asp:Image ID="I_Logo" runat="server" Height="40%" ImageUrl="~/Imagenes/ImagenesSistema/logo.png" Width="15%" />
+            </article>
+
+            <nav id="nav">
+                <ul class="auto-style8">
+                    <li><a href="../View/Catalogo.aspx">Catalogo</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="../View/Login.aspx">Iniciar Sesion</a></li>
+                    <li><a href="../View/RegistroUsuario.aspx">Registrate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
     <form id="form1" runat="server">
 
         <table class="auto-style1">
@@ -153,120 +166,13 @@
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
+
         </table>
 
     </form>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>

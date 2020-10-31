@@ -1,13 +1,63 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 public partial class View_RegistroUsuario : System.Web.UI.Page
 {
+    /*public bool IsValidEmail(string correo)
+    {
+        if (string.IsNullOrWhiteSpace(correo))
+            return false;
+
+        try
+        {
+            // Normalize the domain
+            correo = Regex.Replace(correo, @"(@)(.+)$", DomainMapper,
+                                  RegexOptions.None, TimeSpan.FromMilliseconds(200));
+
+            // Examines the domain part of the email and normalizes it.
+            string DomainMapper(Match match)
+            {
+                // Use IdnMapping class to convert Unicode domain names.
+                var idn = new IdnMapping();
+
+                // Pull out and process domain name (throws ArgumentException on invalid)
+                string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                return match.Groups[1].Value + domainName;
+            }
+        }
+        catch (RegexMatchTimeoutException e)
+        {
+            return false;
+        }
+        catch (ArgumentException e)
+        {
+            return false;
+        }
+
+        try
+        {
+            return Regex.IsMatch(correo,
+                @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+        }
+        catch (RegexMatchTimeoutException)
+        {
+            return false;
+        }
+    }*/
+
+
+
+
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -26,6 +76,8 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
         Ccontraseña = TB_Ccontraseña.Text;
         usuario.Id_rol = 1;
         Usuario validacion = new DAOUsuario().ValidacionUsuario(usuario);
+        
+
         LB_mensaje.ForeColor = Color.Red;
         if (TB_Nick==null || TB_Correo==null || TB_Contraseña==null || TB_Ccontraseña ==null)
         {
@@ -64,7 +116,8 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
 
             }
         }
-         
+        
+
     }
     protected void BT_inicioSesion_Click(object sender, EventArgs e)
     {
