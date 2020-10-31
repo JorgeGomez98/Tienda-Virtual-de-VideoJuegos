@@ -37,8 +37,7 @@ public partial class View_AgregaJuego : System.Web.UI.Page
             FU_Imagen.PostedFile.SaveAs(saveLocation);
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo ha sido cargado');</script>");
 
-            Categorias categorias = new Categorias();
-            categorias.Categoria = TB_Categoria.Text;
+            
 
             Videojuego videojuego = new Videojuego();
             videojuego.Imagen = "~\\Imagenes\\ImagenesJuegos" + "\\" + nombreArchivo;

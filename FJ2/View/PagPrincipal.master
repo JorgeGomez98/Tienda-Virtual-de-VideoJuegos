@@ -99,7 +99,7 @@
                             <asp:MenuItem Text="Menu admin" Value="Menu admin">
                                 <asp:MenuItem Text="Usuarios" Value="Usuarios"></asp:MenuItem>
                                 <asp:MenuItem Text="Moderadores" Value="Moderadores"></asp:MenuItem>
-                                <asp:MenuItem Text="VideoJuegos" Value="VideoJuegos"></asp:MenuItem>
+                                <asp:MenuItem Text="VideoJuegos" Value="VideoJuegos" NavigateUrl="~/View/AgregaJuego.aspx"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/View/AdminCategorias.aspx" Text="Categorias" Value="Categorias"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>

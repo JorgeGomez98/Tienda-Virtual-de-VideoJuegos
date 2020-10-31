@@ -21,7 +21,7 @@
                 <asp:Label ID="L_NuevaCat" runat="server" CssClass="fuenteNegra" Text="Nueva categoría:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="fondoElemento"></asp:TextBox>
+                <asp:TextBox ID="TB_Categoria" runat="server" CssClass="fondoElemento"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td colspan="2" class="auto-style10">
-                <asp:Button ID="Button1" runat="server" CssClass="fondoElemento" Text="Button" />
+                <asp:Button ID="B_Agregar" runat="server" CssClass="fondoElemento" Text="Agregar" OnClick="Button1_Click" />
             </td>
         </tr>
         <tr>

@@ -11,4 +11,12 @@ public partial class View_AdminCategorias : System.Web.UI.Page
     {
 
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Categorias categorias = new Categorias();
+        categorias.Categoria = TB_Categoria.Text;
+
+        new DAOCategoria().insertarCategoria(categorias);
+    }
 }
