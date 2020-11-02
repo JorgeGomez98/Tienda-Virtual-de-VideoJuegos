@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/PagPrincipal.master" AutoEventWireup="true" CodeFile="~/Controller/AgregaJuego.aspx.cs" Inherits="View_AgregaJuego" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/PagPrincipal.master" AutoEventWireup="true" CodeFile="~/Controller/AdminVideojuegos.cs" Inherits="View_AgregaJuego" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
         <style type="text/css">
@@ -23,11 +23,6 @@
             font-family: Prototype;
             font-size: 20px;
         }
-        .auto-style16 {
-            font-size: 20px;
-            font-family: Prototype;
-            color: black;
-        }
         .auto-style17 {
             font-family: Prototype;
             font-size: 20px;
@@ -46,6 +41,9 @@
     .auto-style21 {
         text-align: center;
     }
+            .auto-style22 {
+                margin-top: 0px;
+            }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -93,7 +91,8 @@
                 <asp:Label ID="Label1" runat="server" Text="Categoría:"></asp:Label>
             </td>
             <td colspan="2">
-                <asp:TextBox ID="TB_Categoria" runat="server" CssClass="auto-style19" Width="370px"></asp:TextBox>
+                <asp:DropDownList ID="DDL_Categorias" runat="server" CssClass="fondoElemento" DataSourceID="ODS_Categorias" DataTextField="Categoria" DataValueField="Id_categoria">
+                </asp:DropDownList>
             </td>
         </tr>
         <tr>
@@ -117,10 +116,10 @@
         </tr>
         <tr>
             <td class="auto-style7" colspan="4">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ODS_Videojuego">
+                <asp:GridView ID="GV_Juegos" runat="server" AutoGenerateColumns="False" DataSourceID="ODS_Videojuego" CssClass="auto-style22">
                     <Columns>
                         <asp:BoundField DataField="Id_videojuego" HeaderText="Id_videojuego" SortExpression="Id_videojuego" Visible="False" />
-                        <asp:BoundField DataField="Nom_juego" HeaderText="Nom_juego" SortExpression="Nom_juego" />
+                        <asp:BoundField DataField="Nom_juego" HeaderText="Nombre" SortExpression="Nom_juego" />
                         <asp:BoundField DataField="Id_categoría" HeaderText="Id_categoría" SortExpression="Id_categoría" Visible="False" />
                         <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
                         <asp:BoundField DataField="Id_estadoV" HeaderText="Id_estadoV" SortExpression="Id_estadoV" Visible="False" />
@@ -133,12 +132,13 @@
                         <asp:CommandField EditText="Actualizar" HeaderText="Editar" ShowEditButton="True" />
                     </Columns>
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODS_Videojuego" runat="server" DataObjectTypeName="Videojuego" DeleteMethod="deleteJuego" SelectMethod="obtenerVideojuego" TypeName="DAOVideojuego" UpdateMethod="updateVideojuego"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODS_Videojuego" runat="server" DataObjectTypeName="Videojuego" DeleteMethod="deleteJuego" SelectMethod="obtenerVideojuego" TypeName="DAOVideojuego" UpdateMethod="updateVideojuego" InsertMethod="insertJuego"></asp:ObjectDataSource>
             </td>
         </tr>
         <tr>
             <td class="auto-style21" colspan="4">
-                &nbsp;</td>
+                <asp:ObjectDataSource ID="ODS_Categorias" runat="server" SelectMethod="obtenerCategorias" TypeName="DAOCategoria"></asp:ObjectDataSource>
+            </td>
         </tr>
     </table>
 </asp:Content>

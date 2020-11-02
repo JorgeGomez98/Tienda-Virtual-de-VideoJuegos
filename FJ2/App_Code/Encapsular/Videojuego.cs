@@ -13,7 +13,7 @@ public class Videojuego
     private int id_estadoV;
     private int id_categoría;
     private string nom_juego;    
-    private decimal precio;    
+    private int precio;    
     private string descripcionV;    
     private string descripcion;
     private string categoria;
@@ -30,7 +30,7 @@ public class Videojuego
     [Column("id_categoria")]
     public int Id_categoría { get => id_categoría; set => id_categoría = value; }
     [Column("precio")]
-    public decimal Precio { get => precio; set => precio = value; }
+    public int Precio { get => precio; set => precio = value; }
     [Column("id_estadoV")]
     public int Id_estadoV { get => id_estadoV; set => id_estadoV = value; }
     [Column("cantidad")]
@@ -43,4 +43,5 @@ public class Videojuego
     public string DescripcionV { get => descripcionV; set => descripcionV = value; }
     [NotMapped]
     public string Categoria { get => categoria; set => categoria = value; }
+    
 }

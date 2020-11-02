@@ -18,6 +18,7 @@ public partial class View_AdminCategorias : System.Web.UI.Page
         categorias.Categoria = TB_Categoria.Text;
 
         new DAOCategoria().insertarCategoria(categorias);
+        Response.Redirect("AdminCategorias.aspx");
     }
 
     protected void GV_Categorias_RowUpdating(object sender, GridViewUpdateEventArgs e)

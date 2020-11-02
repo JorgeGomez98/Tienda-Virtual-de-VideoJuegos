@@ -48,6 +48,7 @@ public class DAOUsuario
             db.SaveChanges();
         }
     }
+
     public bool IsValidEmail(string email)
     {
         if (string.IsNullOrWhiteSpace(email))
@@ -89,6 +90,21 @@ public class DAOUsuario
         catch (RegexMatchTimeoutException)
         {
             return false;
+        }
+    }
+
+    public List<Usuario> obtenerUsuarioTabla()
+    {
+        return new Mapeo().user.OrderBy(x => x.Nickname).ToList<Usuario>();
+    }
+
+    public void deleteUsuario(Usuario usuarios)
+    {
+        using (var db = new Mapeo())
+        {
+            Usuario usuario = db.user.Where(x => x.Id_usuario == usuarios.Id_usuario).First();
+            db.user.Remove(usuario);
+            db.SaveChanges();
         }
     }
 }
