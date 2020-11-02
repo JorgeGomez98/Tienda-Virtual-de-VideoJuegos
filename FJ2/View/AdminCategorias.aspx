@@ -39,7 +39,7 @@
         </tr>
         <tr>
             <td class="auto-style10" colspan="2">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ODS_Categoria">
+                <asp:GridView ID="GV_Categorias" runat="server" AutoGenerateColumns="False" DataSourceID="ODS_Categoria" AllowPaging="True" DataKeyNames="Id_categoria" >
                     <Columns>
                         <asp:BoundField DataField="Id_categoria" HeaderText="Id_categoria" SortExpression="Id_categoria" Visible="False" />
                         <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
@@ -47,7 +47,7 @@
                         <asp:CommandField EditText="Actualizar" HeaderText="Editar" ShowEditButton="True" />
                     </Columns>
                 </asp:GridView>
-                <asp:ObjectDataSource ID="ODS_Categoria" runat="server" DataObjectTypeName="Categorias" DeleteMethod="deleteCategoria" SelectMethod="obtenerCategoriasTabla" TypeName="DAOCategoria" UpdateMethod="updateCategoria"></asp:ObjectDataSource>
+                <asp:ObjectDataSource ID="ODS_Categoria" runat="server" DataObjectTypeName="Categorias" DeleteMethod="deleteCategoria" SelectMethod="obtenerCategoriasTabla" TypeName="DAOCategoria" UpdateMethod="updateCategoria" InsertMethod="insertarCategoria"></asp:ObjectDataSource>
             </td>
         </tr>
     </table>

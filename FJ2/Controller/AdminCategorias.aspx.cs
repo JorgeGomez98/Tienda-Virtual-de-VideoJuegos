@@ -19,4 +19,12 @@ public partial class View_AdminCategorias : System.Web.UI.Page
 
         new DAOCategoria().insertarCategoria(categorias);
     }
+
+    protected void GV_Categorias_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        GridViewRow ddl = GV_Categorias.Rows[e.RowIndex];
+        e.NewValues[4] = double.Parse(e.NewValues[4].ToString());
+        //e.NewValues.Insert(5, "Id", e.OldValues);
+
+    }
 }

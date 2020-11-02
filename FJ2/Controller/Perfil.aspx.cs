@@ -68,7 +68,7 @@ public partial class View_Perfil : System.Web.UI.Page
 
             new DAOUsuario().updateUsuario(usuario);
         }
-        catch (Exception exc)
+        catch (Exception)
         {
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Error: ');</script>");
             return;
