@@ -35,11 +35,10 @@ public partial class View_AgregaJuego : System.Web.UI.Page
         try
         {
             FU_Imagen.PostedFile.SaveAs(saveLocation);
-            cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo ha sido cargado');</script>");
-
-            
+            cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo ha sido cargado');</script>");            
 
             Videojuego videojuego = new Videojuego();
+            videojuego.Id_categoría = int.Parse(DDL_Categorias.SelectedValue);
             videojuego.Imagen = "~\\Imagenes\\ImagenesJuegos" + "\\" + nombreArchivo;
             videojuego.Nom_juego = TB_Nombre.Text;
             videojuego.Descripcion = TB_descripcion.Text;
