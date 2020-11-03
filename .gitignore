@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 FJ2/Web.config
 FJ2/Web.config
+*.config
