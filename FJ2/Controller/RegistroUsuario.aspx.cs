@@ -84,7 +84,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
             LB_mensaje.Text = "Por favor llene todos los campos";
             
         }
-        if (usuario.Contraseña != Ccontraseña)
+        else if (usuario.Contraseña != Ccontraseña)
         {
            
             LB_mensaje.Text = "La Contraseña no coincide";
