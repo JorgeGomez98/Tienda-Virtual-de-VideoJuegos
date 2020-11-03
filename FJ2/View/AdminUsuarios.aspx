@@ -22,7 +22,7 @@
         <td class="auto-style10">
             <asp:TextBox ID="TB_Usuario" runat="server" CssClass="fondoElemento"></asp:TextBox>
         </td>
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        
     </tr>
     <tr>
         <td colspan="2">&nbsp;</td>
