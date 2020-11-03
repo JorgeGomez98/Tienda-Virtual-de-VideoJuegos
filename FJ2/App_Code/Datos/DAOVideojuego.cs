@@ -107,4 +107,9 @@ public class DAOVideojuego
             db.SaveChanges();
         }
     }
+
+    public Videojuego ValidacionVideojuego(Videojuego videoJuego)
+    {
+        return new Mapeo().videojuego.Where(x => x.Nom_juego.Trim().ToUpper().Contains(videoJuego.Nom_juego.Trim().ToUpper()) || x.Descripcion.Trim().ToUpper().Contains(videoJuego.Descripcion.Trim().ToUpper())).FirstOrDefault();
+    }
 }

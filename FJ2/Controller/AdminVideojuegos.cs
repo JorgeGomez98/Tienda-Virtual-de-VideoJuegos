@@ -42,10 +42,27 @@ public partial class View_AgregaJuego : System.Web.UI.Page
             videojuego.Imagen = "~\\Imagenes\\ImagenesJuegos" + "\\" + nombreArchivo;
             videojuego.Nom_juego = TB_Nombre.Text;
             videojuego.Descripcion = TB_descripcion.Text;
-            videojuego.Id_estadoV = 1;
+            videojuego.Id_estadoV = 2;
             //usuario.Precio = Double.Parse(TB_Precio.Text);
+            Videojuego validacion = new DAOVideojuego().ValidacionVideojuego(videojuego);
 
-            new DAOVideojuego().insertJuego(videojuego);
+            if (validacion==null)
+            {
+                new DAOVideojuego().insertJuego(videojuego);
+            } else
+            {
+                if (validacion.Nom_juego==videojuego.Nom_juego)
+                {
+                    L_Mensaje.Text = "Nombre ya registrado";
+                    TB_Nombre.Text = string.Empty;
+                }
+                if (validacion.Descripcion == videojuego.Descripcion)
+                {
+                    L_Mensaje.Text = "Descripción ya ingresada";
+                    TB_descripcion.Text = string.Empty;
+                }
+            }
+            
         }
         catch (Exception)
         {

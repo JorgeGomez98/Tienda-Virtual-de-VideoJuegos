@@ -27,14 +27,14 @@
                             <asp:Label ID="L_Filtro" runat="server" Text="Filtro:" CssClass="fuenteNegra"></asp:Label>
                         </td>
                         <td>
-                            <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento">
+                            <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                <asp:DataList ID="DataList1" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="id">
+                <asp:DataList ID="DataList1" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego">
                     <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
