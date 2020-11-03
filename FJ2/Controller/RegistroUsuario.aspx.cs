@@ -79,7 +79,7 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
         
 
         LB_mensaje.ForeColor = Color.Red;
-        if (TB_Nick==null || TB_Correo==null || TB_Contraseña==null || TB_Ccontraseña ==null)
+        if (TB_Nick.Text == string.Empty | TB_Correo.Text == string.Empty | TB_Contraseña.Text == string.Empty | TB_Ccontraseña.Text == string.Empty)
         {
             LB_mensaje.Text = "Por favor llene todos los campos";
             
