@@ -130,6 +130,8 @@
                         <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
                         <asp:CommandField HeaderText="Eliminar" ShowDeleteButton="True" />
                         <asp:CommandField EditText="Actualizar" HeaderText="Editar" ShowEditButton="True" />
+                        <asp:ImageField DataImageUrlField="Imagen" DataImageUrlFormatString="~/Imagenes/ImagenesJuegos/{0}" HeaderText="Image">
+                        </asp:ImageField>
                     </Columns>
                 </asp:GridView>
                 <asp:ObjectDataSource ID="ODS_Videojuego" runat="server" DataObjectTypeName="Videojuego" DeleteMethod="deleteJuego" SelectMethod="obtenerVideojuegoTabla" TypeName="DAOVideojuego" UpdateMethod="updateVideojuego" InsertMethod="insertJuego"></asp:ObjectDataSource>
