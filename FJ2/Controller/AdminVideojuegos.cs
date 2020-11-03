@@ -42,6 +42,7 @@ public partial class View_AgregaJuego : System.Web.UI.Page
             videojuego.Imagen = "~\\Imagenes\\ImagenesJuegos" + "\\" + nombreArchivo;
             videojuego.Nom_juego = TB_Nombre.Text;
             videojuego.Descripcion = TB_descripcion.Text;
+            videojuego.Id_estadoV = 1;
             //usuario.Precio = Double.Parse(TB_Precio.Text);
 
             new DAOVideojuego().insertJuego(videojuego);

@@ -29,7 +29,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_Usuarios" ForeColor="#333333" GridLines="None">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_Usuarios" ForeColor="#333333" GridLines="None" DataKeyNames="Id_usuario">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="Id_usuario" HeaderText="Id_usuario" SortExpression="Id_usuario" Visible="False" />
@@ -53,7 +53,7 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
-            <asp:ObjectDataSource ID="ODS_Usuarios" runat="server" DataObjectTypeName="Usuario" DeleteMethod="deleteUsuario" InsertMethod="insertUsuario" SelectMethod="obtenerUsuarioTabla" TypeName="DAOUsuario" UpdateMethod="updateUsuario"></asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="ODS_Usuarios" runat="server" DataObjectTypeName="Usuario" DeleteMethod="deleteUsuario" InsertMethod="insertUsuario" SelectMethod="obtenerUsuario" TypeName="DAOUsuario" UpdateMethod="updateUsuario"></asp:ObjectDataSource>
         </td>
     </tr>
 </table>

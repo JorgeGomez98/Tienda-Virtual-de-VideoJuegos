@@ -9,6 +9,11 @@ using System.Web;
 /// </summary>
 public class DAOVideojuego
 {
+    public List<Videojuego> obtenerVideojuegoTabla()
+    {
+        return new Mapeo().videojuego.OrderBy(x => x.Nom_juego).ToList<Videojuego>();
+    }
+
     public List <Videojuego> obtenerVideojuego()
     {
         
@@ -35,7 +40,7 @@ public class DAOVideojuego
                             Precio = m.v.Precio,
                             Cantidad = m.v.Cantidad
                         }).OrderBy(x => x.Nom_juego).ToList();
-            }        
+            }
          
     }
     

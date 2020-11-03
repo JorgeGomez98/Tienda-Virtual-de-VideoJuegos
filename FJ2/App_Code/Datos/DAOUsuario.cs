@@ -98,6 +98,29 @@ public class DAOUsuario
         return new Mapeo().user.OrderBy(x => x.Nickname).ToList<Usuario>();
     }
 
+    public List<Usuario> obtenerUsuario()
+    {
+        using (var db = new Mapeo())
+        {
+            return (from u in db.user
+                    join r in db.rol on u.Id_rol equals r.Id_rol
+                    select new
+                    {
+                        u,
+                        r.Descripcion
+                    }).ToList().Select(m => new Usuario
+                    {
+                        Id_usuario = m.u.Id_usuario,
+                        Id_rol = m.u.Id_rol,
+                        Imagen = m.u.Imagen,
+                        Nickname = m.u.Nickname,
+                        NombreRol = m.Descripcion,
+                        Nombre = m.u.Nombre,
+                        Correo = m.u.Correo,
+                    }).OrderBy(x => x.Nickname).ToList();
+        }
+    }
+
     public void deleteUsuario(Usuario usuarios)
     {
         using (var db = new Mapeo())
