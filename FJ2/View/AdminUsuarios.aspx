@@ -6,9 +6,13 @@
     .auto-style9 {
         text-align: right;
         height: 42px;
+        width: 350px;
     }
     .auto-style10 {
         height: 42px;
+    }
+    .auto-style11 {
+        width: 350px;
     }
 </style>
 </asp:Content>
@@ -28,8 +32,10 @@
         <td colspan="2">&nbsp;</td>
     </tr>
     <tr>
-        <td colspan="2">
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_Usuarios" ForeColor="#333333" GridLines="None" DataKeyNames="Id_usuario">
+        <td class="auto-style11">
+            &nbsp;</td>
+        <td>
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_Usuarios" ForeColor="#333333" GridLines="None" DataKeyNames="Id_usuario" CssClass="fondoElemento" Width="50%">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="Id_usuario" HeaderText="Id_usuario" SortExpression="Id_usuario" Visible="False" />

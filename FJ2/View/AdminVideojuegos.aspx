@@ -43,7 +43,8 @@
     }
             .auto-style22 {
                 margin-top: 0px;
-            }
+        margin-left: 0px;
+    }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -55,7 +56,7 @@
         </tr>
         <tr>
             <td colspan="4">
-                <asp:FileUpload ID="FU_Imagen" runat="server" />
+                <asp:FileUpload ID="FU_Imagen" runat="server" CssClass="fondoElemento" />
             </td>
         </tr>
         <tr>
@@ -116,7 +117,8 @@
         </tr>
         <tr>
             <td class="auto-style7" colspan="4">
-                <asp:GridView ID="GV_Juegos" runat="server" AutoGenerateColumns="False" DataSourceID="ODS_Videojuego" CssClass="auto-style22" DataKeyNames="Id_videojuego">
+                <asp:GridView ID="GV_Juegos" runat="server" AutoGenerateColumns="False" DataSourceID="ODS_Videojuego" CssClass="fondoElemento" DataKeyNames="Id_videojuego" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None">
+                    <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="Id_videojuego" HeaderText="Id_videojuego" SortExpression="Id_videojuego" Visible="False" />
                         <asp:BoundField DataField="Nom_juego" HeaderText="Nombre" SortExpression="Nom_juego" />
@@ -133,9 +135,19 @@
                         <asp:ImageField DataImageUrlField="Imagen" DataImageUrlFormatString="~/Imagenes/ImagenesJuegos/{0}" HeaderText="Image">
                         </asp:ImageField>
                     </Columns>
+                    <EditRowStyle BackColor="#2461BF" />
+                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="#EFF3FB" />
+                    <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SortedAscendingCellStyle BackColor="#F5F7FB" />
+                    <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+                    <SortedDescendingCellStyle BackColor="#E9EBEF" />
+                    <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
                 <asp:ObjectDataSource ID="ODS_Videojuego" runat="server" DataObjectTypeName="Videojuego" DeleteMethod="deleteJuego" SelectMethod="obtenerVideojuegoTabla" TypeName="DAOVideojuego" UpdateMethod="updateVideojuego" InsertMethod="insertJuego"></asp:ObjectDataSource>
-            </td>
+                </td>
         </tr>
         <tr>
             <td class="auto-style21" colspan="4">
