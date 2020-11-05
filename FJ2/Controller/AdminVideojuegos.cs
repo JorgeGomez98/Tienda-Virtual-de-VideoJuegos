@@ -31,7 +31,6 @@ public partial class View_AgregaJuego : System.Web.UI.Page
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Ya existe un archivo en el servidor con ese nombre');</script>");
             return;
         }
-
         try
         {
             FU_Imagen.PostedFile.SaveAs(saveLocation);
@@ -42,8 +41,16 @@ public partial class View_AgregaJuego : System.Web.UI.Page
             videojuego.Imagen = "~\\Imagenes\\ImagenesJuegos" + "\\" + nombreArchivo;
             videojuego.Nom_juego = TB_Nombre.Text;
             videojuego.Descripcion = TB_descripcion.Text;
-            videojuego.Id_estadoV = 2;
+            
             videojuego.Cantidad = int.Parse(TB_Cantidad.Text);
+            if(videojuego.Cantidad == 0)
+            {
+                videojuego.Id_estadoV = 2;
+            }
+            else
+            {
+                videojuego.Id_estadoV = 1;
+            }
             videojuego.Precio = int.Parse(TB_Precio.Text);
             //usuario.Precio = Double.Parse(TB_Precio.Text);
             Videojuego validacion = new DAOVideojuego().ValidacionVideojuego(videojuego);

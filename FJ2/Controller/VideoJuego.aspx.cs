@@ -9,10 +9,7 @@ public partial class View_VideoJuego : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["Carrito"] != null)
-        {
-            L_Carrito.Text = 
-        }
+        
     }
 
     protected void Button1_Click(object sender, EventArgs e)

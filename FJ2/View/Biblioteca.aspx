@@ -44,10 +44,10 @@
                             </tr>
                             <tr>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Favoritos" runat="server" CssClass="fondoElemento" Text="Favoritos" OnClick="B_Deseados_Click" />
+                                    <asp:Button ID="B_Favoritos" runat="server" CssClass="fondoElemento" Text="Favoritos"  />
                                 </td>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Vender" runat="server" CssClass="fondoElemento" Text="Vender" OnClick="B_Comprar_Click" />
+                                    <asp:Button ID="B_Vender" runat="server" CssClass="fondoElemento" Text="Vender" />
                                 </td>
                                 <td class="auto-style6">
                                     <asp:Button ID="B_Cambiar" runat="server" CssClass="fondoElemento" Text="Cambiar" />

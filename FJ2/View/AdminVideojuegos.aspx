@@ -129,7 +129,7 @@
         <tr>
             <td class="auto-style2"></td>
             <td class="auto-style17" colspan="3">
-                <asp:Button ID="B_Agregar" runat="server" OnClick="B_Agregar_Click" Text="Agregar" CssClass="fondoElemento" />
+                <asp:Button ID="B_Agregar" runat="server" OnClick="B_Agregar_Click" Text="Agregar" CssClass="fondoElemento" PostBackUrl="~/View/AdminVideojuegos.aspx" />
             </td>
         </tr>
         <tr>

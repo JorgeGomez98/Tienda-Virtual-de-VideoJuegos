@@ -9,6 +9,21 @@ public partial class View_Catalogo : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+            List<Videojuego> lista = new List<Videojuego>();
+            if (!IsPostBack)
+            {
+                lista = new List<Videojuego>();
+                Session["Carrito"] = lista;
+            }
+            else
+            {
+                lista = (List<Videojuego>)Session["Carrito"];
+
+            }
+
+            L_Carrito.Text = lista.Count().ToString();
+        
         
     }
 
@@ -16,17 +31,6 @@ public partial class View_Catalogo : System.Web.UI.Page
     {
 
     }
-
-    protected void B_Comprar_Click(object sender, EventArgs e)
-    {
-        if (Session["Carrito"] != null)
-        {
-            L_Carrito.Text = ((List<Videojuego>)Session["Carrito"]).Count.ToString();
-        }
-        
-    }
-
-
 
     protected void B_Info_Click(object sender, EventArgs e)
     {
@@ -49,5 +53,10 @@ public partial class View_Catalogo : System.Web.UI.Page
         lista.Add(game);
         L_Carrito.Text = lista.Count().ToString();
         Session["Carrito"] = lista.OrderBy(x => x.Nom_juego).ToList();
+    }
+
+    protected void IB_IrCarrito_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("Carrito.aspx");
     }
 }

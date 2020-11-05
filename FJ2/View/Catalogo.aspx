@@ -31,13 +31,13 @@
                             </asp:DropDownList>
                         </td>
                         <td>
-                            <asp:Label ID="Label1" runat="server" CssClass="fuenteGris" Text="Carrito:"></asp:Label>
+                            <asp:ImageButton ID="IB_IrCarrito" runat="server" ImageUrl="~/Imagenes/IconosSistema/CarritoGeneral.png" OnClick="IB_IrCarrito_Click" Width="10%" />
                             <asp:Label ID="L_Carrito" runat="server" CssClass="fuenteGris" ForeColor="Red" Text="0"></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" OnItemDataBound="DL_Catalogo_ItemDataBound">
+                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" >
                     <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -48,7 +48,7 @@
                                 <td class="auto-style4" rowspan="5">
                                     <asp:Image ID="I_Juego" runat="server" Width="70%" ImageUrl='<%# Eval("Imagen") %>'/>
                                 </td>
-                                <td class="auto-style5" colspan="3">
+                                <td class="auto-style5" colspan="4">
                                     <asp:Label ID="L_Nombre" runat="server" Text='<%# Eval("Nom_juego") %>'></asp:Label>
                                 </td>
                             </tr>
@@ -56,7 +56,7 @@
                                 <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_GeneroVideojuego" runat="server" CssClass="fuenteGris" Text="Género:"></asp:Label>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     <asp:Label ID="L_Genero" runat="server" CssClass="fuenteGris" Text='<%# Eval("Categoria") %>'></asp:Label>
                                 </td>
                             </tr>
@@ -64,7 +64,7 @@
                                 <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_PrecioVideojuego" runat="server" CssClass="fuenteGris" Text="Precio:"></asp:Label>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     <asp:Label ID="L_Precio" runat="server" CssClass="fuenteGris" Text='<%# Eval("Precio") %>'></asp:Label>
                                 </td>
                             </tr>
@@ -72,7 +72,7 @@
                                 <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_CantidadVideojuego" runat="server" CssClass="fuenteGris" Text="Cantidad:"></asp:Label>
                                 </td>
-                                <td>
+                                <td colspan="2">
                                     <asp:Label ID="L_Cantidad" runat="server" CssClass="fuenteGris" Text='<%# Eval("Cantidad") %>'></asp:Label>
                                 </td>
                             </tr>
@@ -82,7 +82,10 @@
                                 </td>
                                 <td class="auto-style6">&nbsp;</td>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Info" runat="server" CssClass="fondoElemento" Text="Información" OnClick="B_Comprar_Click" />
+                                    <asp:Button ID="B_Info" runat="server" CssClass="fondoElemento" Text="Información" OnClick="B_Info_Click"/>
+                                </td>
+                                <td class="auto-style6">
+                                    <asp:ImageButton ID="IB_Comprar" runat="server" CommandArgument='<%# Eval("Id_videojuego") %>' ImageUrl="~/Imagenes/IconosSistema/icono-anadir-al-carrito.jpg" Width="10%" />
                                 </td>
                             </tr>
                         </table>
