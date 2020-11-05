@@ -41,10 +41,11 @@
     .auto-style21 {
         text-align: center;
     }
-            .auto-style22 {
-                margin-top: 0px;
-        margin-left: 0px;
-    }
+            .auto-style23 {
+                text-align: right;
+                font-family: Prototype;
+                font-size: 20px;
+            }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -60,7 +61,7 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style4" rowspan="6">
+            <td class="auto-style4" rowspan="10">
                 <asp:Image ID="I_Videojuego" runat="server" Width="60%" />
             </td>
             <td class="auto-style14">
@@ -94,6 +95,30 @@
             <td colspan="2">
                 <asp:DropDownList ID="DDL_Categorias" runat="server" CssClass="fondoElemento" DataSourceID="ODS_Categorias" DataTextField="Categoria" DataValueField="Id_categoria">
                 </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style23" colspan="3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style14">
+                <asp:Label ID="Label4" runat="server" Text="Precio:"></asp:Label>
+            </td>
+            <td colspan="2">
+                <asp:TextBox ID="TB_Precio" runat="server" CssClass="fondoElemento" TextMode="Number"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style23" colspan="3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style14">
+                <asp:Label ID="Label5" runat="server" Text="Cantidad:"></asp:Label>
+            </td>
+            <td colspan="2">
+                <asp:TextBox ID="TB_Cantidad" runat="server" CssClass="fondoElemento" TextMode="Number"></asp:TextBox>
             </td>
         </tr>
         <tr>

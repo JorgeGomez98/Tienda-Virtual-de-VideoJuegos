@@ -5,11 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class View_Carrito : System.Web.UI.Page
+public partial class View_Biblioteca : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        GV_Carrito.DataSource = (List<Videojuego>)Session["Carrito"];
-        GV_Carrito.DataBind();
+
     }
 }

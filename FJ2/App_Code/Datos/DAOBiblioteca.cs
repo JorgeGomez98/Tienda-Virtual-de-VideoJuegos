@@ -8,6 +8,18 @@ using System.Web;
 /// </summary>
 public class DAOBiblioteca
 {
+    public void insertBiblioteca(Videojuego videojuego,Usuario usuario)
+    {
+        Biblioteca nuevo = new Biblioteca();
+        nuevo.Id_videojuego = videojuego.Id_videojuego;
+        nuevo.Id_usuario = usuario.Id_usuario;
+        using (var db = new Mapeo())
+        {
+            db.videojuego.Add(videojuego);
+            db.SaveChanges();
+        }
+    }
+
 
 
 }

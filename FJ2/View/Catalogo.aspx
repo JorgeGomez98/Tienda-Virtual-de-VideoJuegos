@@ -30,11 +30,14 @@
                             <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
-                        <td>&nbsp;</td>
+                        <td>
+                            <asp:Label ID="Label1" runat="server" CssClass="fuenteGris" Text="Carrito:"></asp:Label>
+                            <asp:Label ID="L_Carrito" runat="server" CssClass="fuenteGris" ForeColor="Red" Text="0"></asp:Label>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                <asp:DataList ID="DataList1" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego">
+                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" OnItemDataBound="DL_Catalogo_ItemDataBound">
                     <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -43,14 +46,14 @@
                         <table class="auto-style1">
                             <tr>
                                 <td class="auto-style4" rowspan="5">
-                                    <asp:Image ID="Image1" runat="server" Width="70%" ImageUrl='<%# Eval("Imagen") %>'/>
+                                    <asp:Image ID="I_Juego" runat="server" Width="70%" ImageUrl='<%# Eval("Imagen") %>'/>
                                 </td>
-                                <td class="auto-style5" colspan="2">
+                                <td class="auto-style5" colspan="3">
                                     <asp:Label ID="L_Nombre" runat="server" Text='<%# Eval("Nom_juego") %>'></asp:Label>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style6">
+                                <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_GeneroVideojuego" runat="server" CssClass="fuenteGris" Text="Género:"></asp:Label>
                                 </td>
                                 <td>
@@ -58,7 +61,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style6">
+                                <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_PrecioVideojuego" runat="server" CssClass="fuenteGris" Text="Precio:"></asp:Label>
                                 </td>
                                 <td>
@@ -66,7 +69,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style6">
+                                <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_CantidadVideojuego" runat="server" CssClass="fuenteGris" Text="Cantidad:"></asp:Label>
                                 </td>
                                 <td>
@@ -77,8 +80,9 @@
                                 <td class="auto-style6">
                                     <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" OnClick="B_Deseados_Click" />
                                 </td>
+                                <td class="auto-style6">&nbsp;</td>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" OnClick="B_Comprar_Click" />
+                                    <asp:Button ID="B_Info" runat="server" CssClass="fondoElemento" Text="Información" OnClick="B_Comprar_Click" />
                                 </td>
                             </tr>
                         </table>

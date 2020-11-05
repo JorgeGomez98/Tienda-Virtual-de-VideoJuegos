@@ -43,6 +43,8 @@ public partial class View_AgregaJuego : System.Web.UI.Page
             videojuego.Nom_juego = TB_Nombre.Text;
             videojuego.Descripcion = TB_descripcion.Text;
             videojuego.Id_estadoV = 2;
+            videojuego.Cantidad = int.Parse(TB_Cantidad.Text);
+            videojuego.Precio = int.Parse(TB_Precio.Text);
             //usuario.Precio = Double.Parse(TB_Precio.Text);
             Videojuego validacion = new DAOVideojuego().ValidacionVideojuego(videojuego);
 
