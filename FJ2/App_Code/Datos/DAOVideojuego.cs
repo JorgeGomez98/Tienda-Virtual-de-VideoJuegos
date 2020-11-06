@@ -43,7 +43,7 @@ public class DAOVideojuego
             }
          
     }
-    public List<Videojuego> obtenerVideojuegoInformacion(int idjuego)
+    public List<Videojuego> obtenerVideojuegoInformacion(int id_juego)
     {
 
         using (var db = new Mapeo())
@@ -51,7 +51,7 @@ public class DAOVideojuego
             return (from v in db.videojuego
                     join c in db.cat on v.Id_categoría equals c.Id_categoria
                     join e in db.estado on v.Id_estadoV equals e.Id_estadoV
-                    where v.Id_videojuego== idjuego
+                    where v.Id_videojuego== id_juego
                     select new
                     
                     {

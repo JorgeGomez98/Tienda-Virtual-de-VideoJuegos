@@ -42,7 +42,7 @@ public partial class View_Catalogo : System.Web.UI.Page
         }
         else
         {
-
+           
 
             Videojuego game = new Videojuego();
             DL_Catalogo.SelectedIndex = e.Item.ItemIndex;

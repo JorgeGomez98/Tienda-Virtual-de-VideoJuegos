@@ -100,6 +100,9 @@
             <td class="auto-style14">
                 <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" />
             </td>
+               <td class="auto-style14">
+                <asp:Button ID="btn_volver" runat="server" CssClass="fondoElemento" Text="Volver" OnClick="btn_volver_Click" />
+            </td>
             <td colspan="2" class="text-right">
                 <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" />
             </td>
