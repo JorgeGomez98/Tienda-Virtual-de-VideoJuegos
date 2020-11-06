@@ -70,7 +70,7 @@
             <td class="auto-style14">
                 Nombre:</td>
             <td>
-                <asp:TextBox ID="TB_nombreJ" runat="server" CssClass="auto-style16" Height="43px" ReadOnly="True" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="TB_nombreJ" runat="server" CssClass="auto-style16" Height="43px" ReadOnly="True" Width="400px" Enabled="False"></asp:TextBox>
             </td>
             <td>
                 &nbsp;</td>
@@ -83,14 +83,14 @@
             <td class="auto-style14">
                 Descripción:</td>
             <td colspan="2">
-                <asp:TextBox ID="TB_descripcion" runat="server" CssClass="auto-style16" Height="115px" ReadOnly="True" TextMode="MultiLine" Width="424px"></asp:TextBox>
+                <asp:TextBox ID="TB_descripcion" runat="server" CssClass="auto-style16" Height="115px" ReadOnly="True" TextMode="MultiLine" Width="424px" Enabled="False"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style14">
                 Categoría:</td>
             <td colspan="2">
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="fondoElemento" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="TB_Categoria" runat="server" CssClass="fondoElemento" Width="400px" Enabled="False"></asp:TextBox>
             </td>
         </tr>
         <tr>
