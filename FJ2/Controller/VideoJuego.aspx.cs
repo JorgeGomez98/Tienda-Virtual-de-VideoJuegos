@@ -32,6 +32,7 @@ public partial class View_VideoJuego : System.Web.UI.Page
     protected void btn_volver_Click(object sender, EventArgs e)
     {
         Response.Redirect("Catalogo.aspx");
+
         //Session["IdVideoJuego"] = null;
     }
 }
