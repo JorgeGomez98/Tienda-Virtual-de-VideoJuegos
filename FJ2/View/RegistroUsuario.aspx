@@ -66,7 +66,7 @@
             <td class="auto-style2">&nbsp;</td>
             <td class="auto-style7">Correo:</td>
             <td class="auto-style8">
-                <asp:TextBox ID="TB_Correo" runat="server" CssClass="fondoElemento"></asp:TextBox>
+                <asp:TextBox ID="TB_Correo" runat="server" CssClass="fondoElemento" TextMode="Email"></asp:TextBox>
             </td>
         </tr>
         <tr>

@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand">
+                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" >
                     <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
