@@ -38,13 +38,19 @@
             color: #FFFFFF;
             text-align: left;
         }
+        .auto-style9 {
+            height: 23px;
+            text-align: center;
+        }
         </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <table class="auto-style1">
         <tr>
-            <td class="auto-style2" colspan="3"></td>
+            <td class="auto-style9" colspan="3">
+                <asp:ImageButton ID="IB_Fj2" runat="server" ImageUrl="~/Imagenes/ImagenesSistema/logo.png" OnClick="IB_Fj2_Click" Width="35%" />
+            </td>
         </tr>
         <tr>
             <td class="auto-style2"></td>

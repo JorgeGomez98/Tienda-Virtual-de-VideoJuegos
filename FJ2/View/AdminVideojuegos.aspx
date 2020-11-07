@@ -157,8 +157,14 @@
                         <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
                         <asp:CommandField HeaderText="Eliminar" ShowDeleteButton="True" />
                         <asp:CommandField EditText="Actualizar" HeaderText="Editar" ShowEditButton="True" />
-                        <asp:ImageField DataImageUrlField="Imagen" DataImageUrlFormatString="~/Imagenes/ImagenesJuegos/{0}" HeaderText="Image">
-                        </asp:ImageField>
+                        <asp:TemplateField HeaderText="Image">
+                            <EditItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("Imagen") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                            <ItemTemplate>
+                                <asp:Image ID="Image1" runat="server" Width="30%" ImageUrl='<%# Eval("Imagen") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

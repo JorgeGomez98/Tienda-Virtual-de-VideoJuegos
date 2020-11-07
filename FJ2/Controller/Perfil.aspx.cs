@@ -9,18 +9,24 @@ public partial class View_Perfil : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (((Usuario)Session["user"]).Imagen == null)
+        //I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
+
+        /*if (((Usuario)Session["user"]).Imagen == null)
         {
             L_Imagen.Text = "No tiene imagen guardada";
         }
         else
         {
             I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
+        }*/
+
+        if (!IsPostBack)
+        {
+            I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
+            TB_Nombre.Text = ((Usuario)Session["user"]).Nombre;
+            TB_Nickname.Text = ((Usuario)Session["user"]).Nickname;
+            TB_Correo.Text = ((Usuario)Session["user"]).Correo;
         }
-        
-        TB_Nombre.Text = ((Usuario)Session["user"]).Nombre;
-        TB_Nickname.Text = ((Usuario)Session["user"]).Nickname;
-        TB_Correo.Text = ((Usuario)Session["user"]).Correo;
     }
 
     protected void B_Editar_Click(object sender, EventArgs e)
@@ -41,11 +47,12 @@ public partial class View_Perfil : System.Web.UI.Page
 
         string saveLocation = Server.MapPath("~\\Imagenes\\ImagenesPerfil") + "\\" + nombreArchivo;
 
+ 
         if (!(extension.Equals(".jpg") || extension.Equals(".gif") || extension.Equals(".jpeg") || extension.Equals(".png")))
         {
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Tipo de archivo no valido');</script>");
             return;
-        }
+        }   
 
         if (System.IO.File.Exists(saveLocation))
         {
@@ -64,11 +71,13 @@ public partial class View_Perfil : System.Web.UI.Page
             usuario.Correo = TB_Correo.Text;
             usuario.Nickname = TB_Nickname.Text;
             usuario.Nombre = TB_Nombre.Text;
+            
             //usuario.Precio = Double.Parse(TB_Precio.Text);
 
             new DAOUsuario().updateUsuario(usuario);
+            I_Perfil.ImageUrl = usuario.Imagen;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
             cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Error: ');</script>");
             return;

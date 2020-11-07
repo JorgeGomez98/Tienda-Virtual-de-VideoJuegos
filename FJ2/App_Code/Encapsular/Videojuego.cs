@@ -43,5 +43,9 @@ public class Videojuego
     public string DescripcionV { get => descripcionV; set => descripcionV = value; }
     [NotMapped]
     public string Categoria { get => categoria; set => categoria = value; }
-    
+
+    public static implicit operator Videojuego(string v)
+    {
+        throw new NotImplementedException();
+    }
 }
