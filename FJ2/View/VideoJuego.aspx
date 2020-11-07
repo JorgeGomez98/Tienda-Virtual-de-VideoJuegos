@@ -9,6 +9,10 @@
         .auto-style5 {
             width: 50%;
         }
+        .auto-style7 {
+            text-align: center;
+            height: 23px;
+        }
         .auto-style8 {
             text-align: center;
             width: 25%;
@@ -20,27 +24,27 @@
         .auto-style11 {
             text-align: right;
         }
+    .auto-style13 {
+        text-align: center;
+        width: 146px;
+    }
         .auto-style14 {
             text-align: right;
             width: 146px;
             font-family: Prototype;
             font-size: 20px;
         }
+        .auto-style16 {
+            font-size: 20px;
+            font-family: Prototype;
+            color: black;
+        }
+        .auto-style18 {
+            text-align: right;
+            height: 52px;
+        }
         .auto-style20 {
             height: 10%;
-        }
-        .auto-style21 {
-            text-align: right;
-            font-family: Prototype;
-            font-size: 20px;
-        }
-        .auto-style22 {
-            text-align: left;
-            font-family: Prototype;
-            font-size: 20px;
-        }
-        .auto-style23 {
-            height: 20px;
         }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
@@ -52,87 +56,87 @@
                 <asp:Image ID="I_Carrito" runat="server" ImageUrl="~/Imagenes/IconosSistema/ircarrito.png" Width="5%" />
                 <asp:Label ID="L_Carrito" runat="server" CssClass="fuenteNegra" Text="0" ForeColor="Red"></asp:Label>
             </td>
-            <td class="auto-style11" colspan="2">
+            <td class="auto-style11" colspan="3">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="4">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style4" rowspan="11">
-                <asp:Image ID="I_Juego" runat="server" Width="60%" />
+            <td class="auto-style4" rowspan="7">
+                <asp:Image ID="I_Perfil" runat="server" Width="60%" />
             </td>
-            <td class="auto-style22" colspan="2">
-                <asp:Label ID="L_Nombre" runat="server" CssClass="fuenteNegra"></asp:Label>
+            <td class="auto-style14">
+                Nombre:</td>
+            <td>
+                <asp:TextBox ID="TB_nombreJ" runat="server" CssClass="auto-style16" Height="43px" ReadOnly="True" Width="400px" Enabled="False"></asp:TextBox>
             </td>
-        </tr>
-        <tr>
-            <td class="auto-style11" colspan="2">
+            <td>
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style21">
-                <asp:Label ID="Label2" runat="server" Text="Descripción:"></asp:Label>
-            </td>
-            <td class="auto-style22">
-                <asp:Label ID="L_Descripcion" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style22" colspan="2">
+            <td class="auto-style11" colspan="3">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style21">
-                <asp:Label ID="Label3" runat="server" Text="Categoría:"></asp:Label>
-            </td>
-            <td class="auto-style22">
-                <asp:Label ID="L_Categoria" runat="server"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style21" colspan="2">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style21">
-                <asp:Label ID="Label4" runat="server" Text="Cantidad:"></asp:Label>
-            </td>
-            <td class="auto-style22">
-                <asp:Label ID="L_Cantidad" runat="server" BorderStyle="None"></asp:Label>
+            <td class="auto-style14">
+                Descripción:</td>
+            <td colspan="2">
+                <asp:TextBox ID="TB_descripcion" runat="server" CssClass="auto-style16" Height="115px" ReadOnly="True" TextMode="MultiLine" Width="424px" Enabled="False"></asp:TextBox>
             </td>
         </tr>
         <tr>
-            <td class="auto-style21" colspan="2">
-                &nbsp;</td>
+            <td class="auto-style14">
+                Categoría:</td>
+            <td colspan="2">
+                <asp:TextBox ID="TB_Categoria" runat="server" CssClass="fondoElemento" Width="400px" Enabled="False"></asp:TextBox>
+            </td>
         </tr>
         <tr>
-            <td class="auto-style21">
-                Precio:</td>
-            <td class="auto-style22">
-                <asp:Label ID="L_Precio" runat="server"></asp:Label>
-            </td>
+            <td class="auto-style18" colspan="3"></td>
         </tr>
         <tr>
             <td class="auto-style14">
                 <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" />
             </td>
-            <td class="text-right">
-                <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" OnClick="B_Comprar_Click" Text="Comprar" />
+               <td class="auto-style14">
+                <asp:Button ID="btn_volver" runat="server" CssClass="fondoElemento" Text="Volver" OnClick="btn_volver_Click" />
+            </td>
+            <td colspan="2" class="text-right">
+                <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" />
             </td>
         </tr>
         <tr>
-            <td class="auto-style9" colspan="2">&nbsp;</td>
+            <td class="auto-style9" colspan="3">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style20" colspan="3">
+            <td class="auto-style20" colspan="4">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style23" colspan="3"></td>
+            <td>&nbsp;</td>
+            <td class="auto-style7" colspan="3">
+                &nbsp;</td>
         </tr>
-        </table>
+        <tr>
+            <td class="auto-style2"></td>
+            <td class="auto-style7" colspan="3">
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style7" colspan="4">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style4">
+                &nbsp;</td>
+            <td class="auto-style13">
+                &nbsp;</td>
+            <td class="auto-style8" colspan="2">
+                &nbsp;</td>
+        </tr>
+    </table>
 </asp:Content>
 
 

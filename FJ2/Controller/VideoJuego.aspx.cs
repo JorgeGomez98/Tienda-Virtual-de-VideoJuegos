@@ -9,15 +9,19 @@ public partial class View_VideoJuego : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
-            I_Juego.ImageUrl = ((Videojuego)Session["game"]).Imagen;
-            L_Nombre.Text = ((Videojuego)Session["game"]).Nom_juego;
-            L_Descripcion.Text = ((Videojuego)Session["game"]).Descripcion;
-            L_Categoria.Text = ((Videojuego)Session["game"]).Categoria;
-            L_Cantidad.Text = ((Videojuego)Session["game"]).Cantidad.ToString();
-            L_Precio.Text = ((Videojuego)Session["game"]).Precio.ToString();
-        }
+        int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
+        List<Videojuego> informacion = new DAOVideojuego().obtenerVideojuegoInformacion(id_juego);
+        TB_nombreJ.Text= informacion[0].Nom_juego.ToString();
+        TB_descripcion.Text= informacion[0].Descripcion.ToString();
+        TB_Categoria.Text= informacion[0].Categoria.ToString();
+        I_Perfil.ImageUrl= informacion[0].Imagen.ToString();
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Usuario usuario = new Usuario();
+        Videojuego videojuego = new Videojuego();
+        usuario.Id_usuario = ((Usuario)Session["user"]).Id_usuario;
     }
 
     protected void IB_ADcarrito_Click(object sender, ImageClickEventArgs e)
@@ -25,10 +29,9 @@ public partial class View_VideoJuego : System.Web.UI.Page
         Response.Redirect("Carrito.aspx");
     }
 
-    protected void B_Comprar_Click(object sender, EventArgs e)
+    protected void btn_volver_Click(object sender, EventArgs e)
     {
-        Usuario usuario = new Usuario();
-        Videojuego videojuego = new Videojuego();
-        usuario.Id_usuario = ((Usuario)Session["user"]).Id_usuario;
+        Response.Redirect("Catalogo.aspx");
+        //Session["IdVideoJuego"] = null;
     }
 }

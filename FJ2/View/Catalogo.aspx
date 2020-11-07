@@ -90,7 +90,7 @@
                                 </td>
                                 <td class="auto-style6">&nbsp;</td>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Info" runat="server" CssClass="fondoElemento" Text="Información" OnClick="B_Info_Click"/>
+                                    <asp:Button ID="B_Info" runat="server" CommandArgument='<%# Eval("Id_videojuego") %>' CssClass="fondoElemento" Text="Información" CommandName="Información" />
                                 </td>
                                 <td class="auto-style6">
                                     <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" CommandArgument='<%# Eval("Id_videojuego") %>'/>
