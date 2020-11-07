@@ -20,7 +20,7 @@ public partial class View_Login : System.Web.UI.Page
         else
         {
             Session["user"] = usuario;
-            Session["id_usuario"] = usuario.Id_usuario;
+            //Session["id_usuario"] = usuario.Id_usuario;
             Response.Redirect("Perfil.aspx");
         }
     }
@@ -28,11 +28,6 @@ public partial class View_Login : System.Web.UI.Page
     protected void B_Registrar_Click(object sender, EventArgs e)
     {
         Response.Redirect("RegistroUsuario.aspx");
-    }
-
-    protected void LoginButton_Click(object sender, EventArgs e)
-    {
-
     }
 
     protected void IB_Fj2_Click(object sender, System.Web.UI.ImageClickEventArgs e)

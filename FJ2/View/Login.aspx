@@ -83,7 +83,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="fondoElemento" colspan="2">
-                                                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" CssClass="fondoElemento" Text="Inicio de sesión" ValidationGroup="Login1" OnClick="LoginButton_Click" />
+                                                    <asp:Button ID="LoginButton" runat="server" CommandName="Login" CssClass="fondoElemento" Text="Inicio de sesión" ValidationGroup="Login1" />
                                                 </td>
                                             </tr>
                                             <tr>

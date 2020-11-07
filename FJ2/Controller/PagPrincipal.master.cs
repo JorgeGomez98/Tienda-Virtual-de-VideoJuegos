@@ -14,15 +14,19 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
             if (Session["user"] == null)
             {
                 sinRol();
+                iniciar.Visible = true;
+                registrar.Visible = true;
+                btn_cerrarusuario.Visible = false;
                 // Response.Redirect("Login.aspx");
             }
             else
             {
                 iniciar.Visible = false;
                 registrar.Visible = false;
-                menu();
+                btn_cerrarusuario.Visible = true;
+                //menu();
             }
-            //menu();
+            menu();
         }
         else
         {
@@ -87,13 +91,10 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
         M_Moderador.Visible = true;
         M_Usuario.Visible = true;
     }
-
-
-
-
-
+    
     protected void btn_cerrarusuario_Click1(object sender, EventArgs e)
     {
         Session["user"] = null;
+        Response.Redirect("Catalogo.aspx");
     }
 }

@@ -42,10 +42,10 @@
 
             <nav id="nav">
                 <ul class="auto-style8">
-                    <li><a href="../View/Catalogo.aspx" class="fuenteBlanca" style="color:white">Catalogo</a></li>
+                    <li><a href="../View/Catalogo.aspx"  class="fuenteBlanca" style="color:white">Catalogo</a></li>
                     <li><a href="../View/Login.aspx" class="fuenteBlanca" runat="server" id="iniciar" style="color:white">Iniciar Sesion</a></li>
-                     <asp:Button ID="btn_cerrarusuario" class="fuenteBlanca" Text="Cerrar Sesion" runat="server" CausesValidation="false" OnClick="btn_cerrarusuario_Click1" />
-                    <li><a href="../View/RegistroUsuario.aspx" class="fuenteBlanca" runat="server" id="registrar" style="color:white">Registrate</a></li>
+                     <asp:Button ID="btn_cerrarusuario" class="fuenteBlanca" Text="Cerrar Sesion" runat="server" CausesValidation="false" OnClick="btn_cerrarusuario_Click1" CssClass="fondoElemento" ForeColor="White" />
+                    <li><a href="../View/RegistroUsuario.aspx"  class="fuenteBlanca" runat="server" id="registrar" style="color:white">Registrate</a></li>
                 </ul>
             </nav>
         </div>
@@ -69,7 +69,7 @@
                             <asp:MenuItem Text="Menu usuario" Value="Menu usuario">
                                 <asp:MenuItem Text="Perfil" Value="Perfil" NavigateUrl="~/View/Perfil.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Carrito" Value="Carrito" NavigateUrl="~/View/Carrito.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Biblioteca" Value="Biblioteca"></asp:MenuItem>
+                                <asp:MenuItem Text="Biblioteca" Value="Biblioteca" NavigateUrl="~/View/Biblioteca.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Vender VideoJuego" Value="Vender VideoJuego"></asp:MenuItem>
                                 <asp:MenuItem Text="Cambiar VideoJuego" Value="Cambiar VideoJuego"></asp:MenuItem>
                             </asp:MenuItem>
