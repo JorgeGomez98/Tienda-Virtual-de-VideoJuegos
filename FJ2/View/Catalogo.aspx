@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" >
+                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand">
                     <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -45,7 +45,7 @@
                     <ItemTemplate>
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style4" rowspan="5">
+                                <td class="auto-style4" rowspan="6">
                                     <asp:Image ID="I_Juego" runat="server" Width="70%" ImageUrl='<%# Eval("Imagen") %>'/>
                                 </td>
                                 <td class="auto-style5" colspan="4">
@@ -77,6 +77,14 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td class="auto-style6" colspan="2">
+                                    <asp:Label ID="L_DescripcionVideojuego" runat="server" CssClass="fuenteGris" Text="Descripción:" Visible="False"></asp:Label>
+                                </td>
+                                <td colspan="2">
+                                    <asp:Label ID="L_Descripcion" runat="server" CssClass="fuenteGris" Text='<%# Eval("Descripcion") %>' Visible="False"></asp:Label>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="auto-style6">
                                     <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" OnClick="B_Deseados_Click" />
                                 </td>
@@ -85,7 +93,8 @@
                                     <asp:Button ID="B_Info" runat="server" CssClass="fondoElemento" Text="Información" OnClick="B_Info_Click"/>
                                 </td>
                                 <td class="auto-style6">
-                                    <asp:ImageButton ID="IB_Comprar" runat="server" CommandArgument='<%# Eval("Id_videojuego") %>' ImageUrl="~/Imagenes/IconosSistema/icono-anadir-al-carrito.jpg" Width="10%" />
+                                    <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" CommandArgument='<%# Eval("Id_videojuego") %>'/>
+                                   <!-- <asp:ImageButton ID="IB_Comprar" runat="server" CommandArgument='<% Eval("Id_videojuego") %>' ImageUrl="~/Imagenes/IconosSistema/icono-anadir-al-carrito.jpg" Width="10%" /> -->
                                 </td>
                             </tr>
                         </table>

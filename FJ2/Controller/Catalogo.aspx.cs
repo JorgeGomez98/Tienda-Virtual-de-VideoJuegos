@@ -34,7 +34,9 @@ public partial class View_Catalogo : System.Web.UI.Page
 
     protected void B_Info_Click(object sender, EventArgs e)
     {
-        Response.Redirect("VideoJuego.aspx");
+        DL_Catalogo.SelectedIndex = e.Item.ItemIndex;
+        ((Label)DL_Catalogo.SelectedItem.FindControl("L_Descripcion")).Visible = true;
+        ((Label)DL_Catalogo.SelectedItem.FindControl("L_DescripcionVideojuego")).Visible = true;
     }
 
     protected void DL_Catalogo_ItemCommand(object source, DataListCommandEventArgs e)
@@ -45,7 +47,7 @@ public partial class View_Catalogo : System.Web.UI.Page
         game.Nom_juego = ((Label)DL_Catalogo.SelectedItem.FindControl("L_Nombre")).Text;
         game.Id_videojuego = int.Parse(e.CommandArgument.ToString());
         game.Imagen = ((Image)DL_Catalogo.SelectedItem.FindControl("I_Juego")).ImageUrl;
-
+        game.Cantidad = int.Parse(((Label)DL_Catalogo.SelectedItem.FindControl("L_Cantidad")).Text);
         List<Videojuego> lista = new List<Videojuego>();
         if (Session["Carrito"] != null)
             lista = (List<Videojuego>)Session["Carrito"];

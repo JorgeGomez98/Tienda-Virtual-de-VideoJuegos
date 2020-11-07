@@ -40,7 +40,7 @@ public class DAOUsuario
             usuarioAnterior.Nombre = usuario.Nombre;
             usuarioAnterior.Nickname = usuario.Nickname;
             usuarioAnterior.Imagen = usuario.Imagen;
-            usuarioAnterior.Id_rol = usuario.Id_rol;
+            usuarioAnterior.Id_rol = usuario.Id_rol == 0 ? usuarioAnterior.Id_rol : usuario.Id_rol;
        
             db.user.Attach(usuarioAnterior);
 
