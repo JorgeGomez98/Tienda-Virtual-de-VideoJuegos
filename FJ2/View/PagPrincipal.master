@@ -32,7 +32,7 @@
 </head>
 
 <body>
-
+    <form id="form1" runat="server">
     <header>
         <div class="container">
 
@@ -42,8 +42,9 @@
 
             <nav id="nav">
                 <ul class="auto-style8">
-                    <li><a href="../View/Catalogo.aspx" class="fuenteBlanca"  style="color:white">Catalogo</a></li>
+                    <li><a href="../View/Catalogo.aspx" class="fuenteBlanca" style="color:white">Catalogo</a></li>
                     <li><a href="../View/Login.aspx" class="fuenteBlanca" runat="server" id="iniciar" style="color:white">Iniciar Sesion</a></li>
+                     <asp:Button ID="btn_cerrarusuario" class="fuenteBlanca" Text="Cerrar Sesion" runat="server" CausesValidation="false" OnClick="btn_cerrarusuario_Click1" />
                     <li><a href="../View/RegistroUsuario.aspx" class="fuenteBlanca" runat="server" id="registrar" style="color:white">Registrate</a></li>
                 </ul>
             </nav>
@@ -51,7 +52,10 @@
     </header>
 
 
-    <form id="form1" runat="server">
+  
+
+
+  
 
         <table class="auto-style1">
             <tr>

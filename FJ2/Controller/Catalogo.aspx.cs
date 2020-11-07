@@ -9,7 +9,8 @@ public partial class View_Catalogo : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["user"] != null &&  ((Usuario)Session["user"]).Id_rol==1)
+        {
             List<Videojuego> lista = new List<Videojuego>();
             if (!IsPostBack)
             {
@@ -23,7 +24,11 @@ public partial class View_Catalogo : System.Web.UI.Page
             }
 
             L_Carrito.Text = lista.Count().ToString();
-        
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }   
         
     }
 
