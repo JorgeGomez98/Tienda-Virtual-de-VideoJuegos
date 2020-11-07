@@ -30,7 +30,9 @@
         </tr>
         <tr>
             <td class="auto-style10">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Label ID="L_Mensaje" runat="server" CssClass="fuenteGris"></asp:Label>
+            </td>
             <td>&nbsp;</td>
         </tr>
     </table>

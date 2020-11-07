@@ -64,7 +64,7 @@
                         <Items>
                             <asp:MenuItem Text="Menu usuario" Value="Menu usuario">
                                 <asp:MenuItem Text="Perfil" Value="Perfil" NavigateUrl="~/View/Perfil.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Carrito" Value="Carrito"></asp:MenuItem>
+                                <asp:MenuItem Text="Carrito" Value="Carrito" NavigateUrl="~/View/Carrito.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Biblioteca" Value="Biblioteca"></asp:MenuItem>
                                 <asp:MenuItem Text="Vender VideoJuego" Value="Vender VideoJuego"></asp:MenuItem>
                                 <asp:MenuItem Text="Cambiar VideoJuego" Value="Cambiar VideoJuego"></asp:MenuItem>
@@ -83,8 +83,8 @@
                         <DynamicSelectedStyle BackColor="#5D7B9D" />
                         <Items>
                             <asp:MenuItem Text="Menu moderador" Value="Menu moderador">
-                                <asp:MenuItem Text="Denuncias" Value="Administrar usuarios"></asp:MenuItem>
-                                <asp:MenuItem Text="VideoJuegos" Value="Administrar moderadores"></asp:MenuItem>
+                                <asp:MenuItem Text="Denuncias" Value="Denuncias"></asp:MenuItem>
+                                <asp:MenuItem Text="VideoJuegos" Value="Videojuegos" NavigateUrl="~/View/AdminVideojuegos.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Usuarios" Value="Usuarios"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>

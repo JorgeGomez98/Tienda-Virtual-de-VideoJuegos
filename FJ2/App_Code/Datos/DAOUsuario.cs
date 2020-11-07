@@ -99,6 +99,11 @@ public class DAOUsuario
         return new Mapeo().user.OrderBy(x => x.Nickname).ToList<Usuario>();
     }
 
+    public List<Usuario> buscaUsuario(String usuario)
+    {
+        return new Mapeo().user.Where(x => x.Nickname.ToUpper().Equals(usuario)).ToList<Usuario>();
+    }
+
     public List<Usuario> obtenerUsuario()
     {
         using (var db = new Mapeo())

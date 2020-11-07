@@ -11,4 +11,9 @@ public partial class View_AdminUsuarios : System.Web.UI.Page
     {
 
     }
+
+    protected void B_Buscar_Click(object sender, EventArgs e)
+    {
+
+    }
 }

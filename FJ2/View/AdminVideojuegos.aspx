@@ -151,7 +151,7 @@
                         <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
                         <asp:BoundField DataField="Id_estadoV" HeaderText="Id_estadoV" SortExpression="Id_estadoV" Visible="False" />
                         <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
-                        <asp:BoundField DataField="Imagen" HeaderText="Imagen" SortExpression="Imagen" />
+                        <asp:BoundField DataField="Imagen" HeaderText="Imagen" SortExpression="Imagen" Visible="False" />
                         <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
                         <asp:BoundField DataField="DescripcionV" HeaderText="Estado" SortExpression="DescripcionV" />
                         <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
