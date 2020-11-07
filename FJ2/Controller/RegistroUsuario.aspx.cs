@@ -124,4 +124,9 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
         Response.Redirect("Login.aspx");
     }
 
+
+    protected void IB_Fj2_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("Catalogo.aspx");
+    }
 }

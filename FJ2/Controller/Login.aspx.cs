@@ -34,4 +34,9 @@ public partial class View_Login : System.Web.UI.Page
     {
 
     }
+
+    protected void IB_Fj2_Click(object sender, System.Web.UI.ImageClickEventArgs e)
+    {
+        Response.Redirect("Catalogo.aspx");
+    }
 }

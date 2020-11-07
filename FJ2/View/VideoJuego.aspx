@@ -69,11 +69,9 @@
             </td>
             <td class="auto-style14">
                 Nombre:</td>
-            <td>
+            <td colspan="2">
                 <asp:TextBox ID="TB_nombreJ" runat="server" CssClass="auto-style16" Height="43px" ReadOnly="True" Width="400px" Enabled="False"></asp:TextBox>
             </td>
-            <td>
-                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style11" colspan="3">
@@ -103,7 +101,7 @@
                <td class="auto-style14">
                 <asp:Button ID="btn_volver" runat="server" CssClass="fondoElemento" Text="Volver" OnClick="btn_volver_Click" />
             </td>
-            <td colspan="2" class="text-right">
+            <td class="text-right">
                 <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" />
             </td>
         </tr>

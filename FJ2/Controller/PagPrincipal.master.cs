@@ -16,7 +16,13 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
                 sinRol();
                 // Response.Redirect("Login.aspx");
             }
-            menu();
+            else
+            {
+                iniciar.Visible = false;
+                registrar.Visible = false;
+                menu();
+            }
+            //menu();
         }
         else
         {
