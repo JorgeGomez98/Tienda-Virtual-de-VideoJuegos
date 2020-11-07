@@ -91,6 +91,13 @@
                 <asp:TextBox ID="TB_Categoria" runat="server" CssClass="fondoElemento" Width="400px" Enabled="False"></asp:TextBox>
             </td>
         </tr>
+           <tr>
+            <td class="auto-style14">
+               Cantidades:</td>
+            <td colspan="2">
+                <asp:TextBox ID="TB_Cantidad" runat="server" CssClass="fondoElemento" Width="400px" TextMode="Number"></asp:TextBox>
+            </td>
+        </tr>
         <tr>
             <td class="auto-style18" colspan="3"></td>
         </tr>
@@ -102,7 +109,7 @@
                 <asp:Button ID="btn_volver" runat="server" CssClass="fondoElemento" Text="Volver" OnClick="btn_volver_Click" />
             </td>
             <td class="text-right">
-                <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" />
+                <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" OnClick="B_Comprar_Click" />
             </td>
         </tr>
         <tr>
