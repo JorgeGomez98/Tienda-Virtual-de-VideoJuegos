@@ -15,6 +15,8 @@ public partial class View_VideoJuego : System.Web.UI.Page
         TB_descripcion.Text = informacion[0].Descripcion.ToString();
         TB_Categoria.Text = informacion[0].Categoria.ToString();
         I_Perfil.ImageUrl = informacion[0].Imagen.ToString();
+        int id_usuario = int.Parse(Session["id_usuario"].ToString());
+        L_Carrito.Text=(new DAOBiblioteca().cantidadbilioteca(id_usuario).ToString());
     }
 
     protected void Button1_Click(object sender, EventArgs e)
@@ -34,5 +36,16 @@ public partial class View_VideoJuego : System.Web.UI.Page
         Response.Redirect("Catalogo.aspx");
 
         //Session["IdVideoJuego"] = null;
+    }
+
+    protected void B_Comprar_Click(object sender, EventArgs e)
+    {
+        int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
+        int id_usuario = int.Parse(Session["id_usuario"].ToString());
+        Videojuego añadir= new DAOVideojuego().agragarjuego(id_juego);
+        añadir.Cantidad = int.Parse(TB_Cantidad.Text);
+        new DAOBiblioteca().agregarBiblioteca(añadir, id_usuario);
+        Response.Redirect("Catalogo.aspx");
+
     }
 }

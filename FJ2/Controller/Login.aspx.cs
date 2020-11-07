@@ -20,7 +20,7 @@ public partial class View_Login : System.Web.UI.Page
         else
         {
             Session["user"] = usuario;
-            
+            Session["id_usuario"] = usuario.Id_usuario;
             Response.Redirect("Perfil.aspx");
         }
     }

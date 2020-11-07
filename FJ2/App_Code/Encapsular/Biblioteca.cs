@@ -16,9 +16,8 @@ public class Biblioteca
     private bool deseado;
     private bool poseido;
     private int id_usuario;
-    private int id_videojuego;   
+    private int id_videojuego,id,cantidad;   
 
-    [Key]
     [Column("favorito")]
     public bool Favorito { get => favorito; set => favorito = value; }
     [Column("deseado")]
@@ -29,4 +28,9 @@ public class Biblioteca
     public int Id_videojuego { get => id_videojuego; set => id_videojuego = value; }
     [Column("poseido")]
     public bool Poseido { get => poseido; set => poseido = value; }
+    [Key]
+    [Column("id")]
+    public int Id { get => id; set => id = value; }
+    [Column("cantidad")]
+    public int Cantidad { get => cantidad; set => cantidad = value; }
 }
