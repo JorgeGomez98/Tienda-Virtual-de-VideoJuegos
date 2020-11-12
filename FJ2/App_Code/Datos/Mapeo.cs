@@ -22,6 +22,8 @@ public class Mapeo : DbContext
     public DbSet<EstadoVideojuego> estado { get; set; }
     public DbSet<Biblioteca> lib { get; set; }
     public DbSet<Categorias> cat { get; set; }
+    public DbSet<Pedido> ped { get; set; }
+    public DbSet<DetallePedido> detPed { get; set; }
 
     protected override void OnModelCreating(DbModelBuilder builder)
     {
