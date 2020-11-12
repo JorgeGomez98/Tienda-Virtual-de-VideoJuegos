@@ -17,6 +17,10 @@ public class Pedido
     private DateTime fecha;    
     private double valor_total;
 
+    private string nickname;
+    private string nom_videojuego;
+    private List<DetallePedido> compras;
+
     [Key]
     [Column("id_pedido")]
     public int Id_pedido { get => id_pedido; set => id_pedido = value; }
@@ -26,4 +30,10 @@ public class Pedido
     public DateTime Fecha { get => fecha; set => fecha = value; }
     [Column("valor_total")]
     public double Valor_total { get => valor_total; set => valor_total = value; }
+    [NotMapped]
+    public string Nickname { get => nickname; set => nickname = value; }
+    [NotMapped]
+    public string Nom_videojuego { get => nom_videojuego; set => nom_videojuego = value; }
+    [NotMapped]
+    public List<DetallePedido> Compras { get => compras; set => compras = value; }
 }

@@ -19,6 +19,8 @@ public class DetallePedido
     private double valorUnitario;
     private double valorTotal;
 
+    private string nombreJuego;
+
     [Key]
     [Column("id")]
     public int Id { get => id; set => id = value; }
@@ -32,4 +34,6 @@ public class DetallePedido
     public double ValorUnitario { get => valorUnitario; set => valorUnitario = value; }
     [Column("precio_total")]
     public double ValorTotal { get => valorTotal; set => valorTotal = value; }
+    [NotMapped]
+    public string NombreJuego { get => nombreJuego; set => nombreJuego = value; }
 }

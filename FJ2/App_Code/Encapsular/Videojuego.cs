@@ -13,7 +13,7 @@ public class Videojuego
     private int id_estadoV;
     private int id_categoría;
     private string nom_juego;    
-    private int precio;    
+    private double precio;    
     private string descripcionV;    
     private string descripcion;
     private string categoria;
@@ -30,7 +30,7 @@ public class Videojuego
     [Column("id_categoria")]
     public int Id_categoría { get => id_categoría; set => id_categoría = value; }
     [Column("precio")]
-    public int Precio { get => precio; set => precio = value; }
+    public double Precio { get => precio; set => precio = value; }
     [Column("id_estadoV")]
     public int Id_estadoV { get => id_estadoV; set => id_estadoV = value; }
     [Column("cantidad")]
