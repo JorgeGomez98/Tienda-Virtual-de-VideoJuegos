@@ -9,14 +9,14 @@ public partial class View_Carrito : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if ((List<Videojuego>)Session["Carrito"]==null)
+        if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
         {
-            L_Mensaje.Text = "No hay juegos agregados a compra";
+
+           
         }
         else
         {
-            GV_Carrito.DataSource = (List<Videojuego>)Session["Carrito"];
-            GV_Carrito.DataBind();
+            Response.Redirect("Login.aspx");
         }
         
     }

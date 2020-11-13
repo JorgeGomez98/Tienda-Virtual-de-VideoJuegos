@@ -12,8 +12,21 @@
         <tr>
             <td class="auto-style10">&nbsp;</td>
             <td>
-                <asp:GridView ID="GV_Carrito" runat="server" CssClass="fondoElemento" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="GV_Carrito" runat="server" CssClass="fondoElemento" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataSourceID="ODSCarrito">
                     <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                        <asp:BoundField DataField="Nombre_estado" HeaderText="Estado" SortExpression="Nombre_estado" />
+                        <asp:BoundField DataField="Nom_juego" HeaderText="Nombre" SortExpression="Nom_juego" />
+                        <asp:BoundField DataField="Precio" HeaderText="Precio" SortExpression="Precio" />
+                        <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
+                        <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
+                        <asp:TemplateField HeaderText="Imagen" SortExpression="Imagen">
+
+                            <ItemTemplate>
+                                <asp:Image ID="Label1" runat="server" ImageUrl='<%# Bind("Imagen") %>'></asp:Image>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -25,6 +38,11 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
+                <asp:ObjectDataSource ID="ODSCarrito" runat="server" SelectMethod="obtenerProductosCarrito" TypeName="DAOCarrito">
+                    <SelectParameters>
+                        <asp:SessionParameter DefaultValue="0" Name="userId" SessionField="id_usuario" Type="Int32" />
+                    </SelectParameters>
+                </asp:ObjectDataSource>
             </td>
             <td>&nbsp;</td>
         </tr>

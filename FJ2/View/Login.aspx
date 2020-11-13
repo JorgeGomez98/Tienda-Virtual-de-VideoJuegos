@@ -92,6 +92,7 @@
                                             <tr>
                                                 <td class="fondoElemento" colspan="2">
                                                     <asp:Button ID="B_Registrar" runat="server" CssClass="fondoElemento" OnClick="B_Registrar_Click" Text="Registrar" />
+                                                    <asp:Button ID="BT_Vcatalogo" runat="server" CssClass="fondoElemento" OnClick="Button1_Click" Text="Atrás" />
                                                 </td>
                                             </tr>
                                         </table>

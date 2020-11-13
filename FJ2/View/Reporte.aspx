@@ -28,7 +28,7 @@
         <td colspan="2">
             <CR:CrystalReportViewer ID="CRV_Factura" runat="server" AutoDataBind="True" EnableDatabaseLogonPrompt="False" EnableParameterPrompt="False" GroupTreeImagesFolderUrl="" Height="50px" ReportSourceID="CRS_Factura" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" Width="350px" HasRefreshButton="True" />
             <CR:CrystalReportSource ID="CRS_Factura" runat="server">
-                <Report FileName="C:\Users\josep\Desktop\Personal\Universidad\Ingeniería de software I\Proyecto\Repositorio\FJ2\FJ2\Reportes\Factura.rpt">
+                <Report FileName="~\Reportes\Factura.rpt">
                 </Report>
             </CR:CrystalReportSource>
         </td>
