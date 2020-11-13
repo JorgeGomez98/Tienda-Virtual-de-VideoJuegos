@@ -69,9 +69,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="auto-style6" colspan="2">
-                                    <asp:Label ID="L_CantidadVideojuego" runat="server" CssClass="fuenteGris" Text="Cantidad:"></asp:Label>
-                                </td>
+                                
                             </tr>
                             <tr>
                                 <td class="auto-style6" colspan="2">
