@@ -9,26 +9,36 @@ public partial class View_Catalogo : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["user"] != null &&  ((Usuario)Session["user"]).Id_rol==1)
+        /* if (Session["user"] != null &&  ((Usuario)Session["user"]).Id_rol==1)
+         {
+             List<Videojuego> lista = new List<Videojuego>();
+             if (!IsPostBack)
+             {
+                 lista = new List<Videojuego>();
+                 Session["Carrito"] = lista;
+             }
+             else
+             {
+                 lista = (List<Videojuego>)Session["Carrito"];
+
+             }
+
+             L_Carrito.Text = lista.Count().ToString();
+         }
+         else
+         {
+             Response.Redirect("Login.aspx");
+         } 
+         */
+        if (Session["user"] != null)
         {
-            List<Videojuego> lista = new List<Videojuego>();
-            if (!IsPostBack)
-            {
-                lista = new List<Videojuego>();
-                Session["Carrito"] = lista;
-            }
-            else
-            {
-                lista = (List<Videojuego>)Session["Carrito"];
-
-            }
-
-            L_Carrito.Text = lista.Count().ToString();
+            int id_usuario = int.Parse(Session["id_usuario"].ToString());
+            L_Carrito.Text = (new DAOBiblioteca().cantidadbilioteca(id_usuario).ToString());
         }
         else
         {
-            Response.Redirect("Login.aspx");
-        } 
+            L_Carrito.Text = "0";
+        }
         
     }
 

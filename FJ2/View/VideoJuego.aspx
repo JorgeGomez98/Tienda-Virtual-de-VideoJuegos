@@ -82,6 +82,7 @@
                 Descripción:</td>
             <td colspan="2">
                 <asp:TextBox ID="TB_descripcion" runat="server" CssClass="auto-style16" Height="115px" ReadOnly="True" TextMode="MultiLine" Width="424px" Enabled="False"></asp:TextBox>
+               
             </td>
         </tr>
         <tr>
@@ -96,6 +97,7 @@
                Cantidades:</td>
             <td colspan="2">
                 <asp:TextBox ID="TB_Cantidad" runat="server" CssClass="fondoElemento" Width="400px" TextMode="Number"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="validador" runat="server" ControlToValidate="TB_Cantidad" ErrorMessage="Ingresar un valor"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -106,7 +108,7 @@
                 <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" />
             </td>
                <td class="auto-style14">
-                <asp:Button ID="btn_volver" runat="server" CssClass="fondoElemento" Text="Volver" OnClick="btn_volver_Click" />
+                <asp:Button ID="btn_volver" runat="server" CssClass="fondoElemento" Text="Volver" OnClick="btn_volver_Click" CausesValidation="false" />
             </td>
             <td class="text-right">
                 <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" OnClick="B_Comprar_Click" />

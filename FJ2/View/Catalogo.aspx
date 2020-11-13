@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" >
+                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand"  >
                     <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
                     <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -72,9 +72,6 @@
                                 <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_CantidadVideojuego" runat="server" CssClass="fuenteGris" Text="Cantidad:"></asp:Label>
                                 </td>
-                                <td colspan="2">
-                                    <asp:Label ID="L_Cantidad" runat="server" CssClass="fuenteGris" Text='<%# Eval("Cantidad") %>'></asp:Label>
-                                </td>
                             </tr>
                             <tr>
                                 <td class="auto-style6" colspan="2">
@@ -86,16 +83,13 @@
                             </tr>
                             <tr>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" OnClick="B_Deseados_Click" />
+                                    <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" OnClick="B_Deseados_Click" CommandArgument='<%# Eval("Id_videojuego") %>'/>
                                 </td>
                                 <td class="auto-style6">&nbsp;</td>
                                 <td class="auto-style6">
                                     <asp:Button ID="B_Info" runat="server" CommandArgument='<%# Eval("Id_videojuego") %>' CssClass="fondoElemento" Text="Información" CommandName="Información" />
                                 </td>
-                                <td class="auto-style6">
-                                    <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" CommandArgument='<%# Eval("Id_videojuego") %>'/>
-                                   <!-- <asp:ImageButton ID="IB_Comprar" runat="server" CommandArgument='<% Eval("Id_videojuego") %>' ImageUrl="~/Imagenes/IconosSistema/icono-anadir-al-carrito.jpg" Width="10%" /> -->
-                                </td>
+                          
                             </tr>
                         </table>
                     </ItemTemplate>

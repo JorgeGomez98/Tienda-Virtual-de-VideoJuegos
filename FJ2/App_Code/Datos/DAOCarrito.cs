@@ -63,4 +63,33 @@ public class DAOCarrito
                     }).ToList();
         }
     }
+
+    public List<Videojuego> obtenerProductosCarrito(int userId)
+    {
+        using (var db = new Mapeo())
+        {
+            return (from uu in db.lib
+                    join video in db.videojuego on uu.Id_videojuego equals video.Id_videojuego
+                    join estado in db.estado on video.Id_estadoV equals estado.Id_estadoV
+                    where uu.Id_usuario == userId
+
+                    select new
+                    {
+                        uu,
+                        video,
+                        estado
+                    }).ToList().Select(m => new Videojuego
+
+                    {
+                        Id_videojuego = m.uu.Id,
+                        Nom_juego=m.video.Nom_juego,
+                        Nombre_estado=m.estado.Descripcion,
+                        Descripcion=m.video.Descripcion,
+                        Cantidad=m.uu.Cantidad,
+                        Imagen=m.video.Imagen,
+                        Precio=m.video.Precio
+                    }).ToList();
+        }
+
+    }
 }
