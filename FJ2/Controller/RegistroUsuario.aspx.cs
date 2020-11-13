@@ -87,4 +87,9 @@ public partial class View_RegistroUsuario : System.Web.UI.Page
     {
         Response.Redirect("Catalogo.aspx");
     }
+
+    protected void BT_Vcatalogo_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Catalogo.aspx");
+    }
 }
