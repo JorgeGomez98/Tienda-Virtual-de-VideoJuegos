@@ -104,6 +104,8 @@
                 ¿Ya estás registrado?:
                 <asp:Button ID="BT_inicioSesion" runat="server" CssClass="fondoElemento" OnClick="BT_inicioSesion_Click" Text="Inicia sesion" />
                 
+                <asp:Button ID="BT_Vcatalogo" runat="server" CssClass="fondoElemento" OnClick="BT_Vcatalogo_Click" Text="Atrás" />
+                
             </td>
             <td class="auto-style2">&nbsp;</td>
         </tr>
