@@ -11,6 +11,8 @@ public partial class View_Reporte : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+       CRV_Factura.Visible = false;
+
     }
 
     protected void B_Generar_Click(object sender, EventArgs e)
@@ -38,7 +40,6 @@ public partial class View_Reporte : System.Web.UI.Page
             fila["Videojuego"] = item.NombreJuego;
             fila["Cantidad"] = item.Cantidad;
             fila["ValorUnitario"] = item.ValorUnitario;
-
             datosFinal.Rows.Add(fila);
         }
         return informe;
