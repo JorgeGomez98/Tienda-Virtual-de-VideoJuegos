@@ -34,6 +34,15 @@
         </td>
         
     </tr>
+    <tr>
+        <td class="auto-style10" colspan="2">
+
+            &nbsp;</td>
+        <td colspan="2">
+            <asp:Label ID="L_Mensaje" runat="server" CssClass="fondoElemento" ForeColor="Red"></asp:Label>
+        </td>
+        
+    </tr>
 </table>
 </asp:Content>
 

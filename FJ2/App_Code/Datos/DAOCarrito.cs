@@ -92,4 +92,27 @@ public class DAOCarrito
         }
 
     }
+
+    public List<DetallePedido> productosVendidosPorFecha(DateTime fechaInicio, DateTime fechaFin)
+    {
+        using (var db = new Mapeo())
+        {
+            return (from p in db.ped
+                    join dp in db.detPed on p.Id_pedido equals dp.Id_pedido
+                    join v in db.videojuego on dp.Id_videojuego equals v.Id_videojuego
+                    where p.Fecha >= fechaInicio && p.Fecha <= fechaFin
+
+                    select new
+                    {
+                        v,
+                        dp
+                    }).ToList().Select(m => new DetallePedido
+                    {
+                        NombreJuego = m.v.Nom_juego,
+                        Cantidad = m.dp.Cantidad,
+                        Id_videojuego = m.dp.Id_videojuego
+
+                    }).ToList();
+        }
+    }
 }

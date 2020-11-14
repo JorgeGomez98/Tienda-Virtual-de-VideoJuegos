@@ -12,7 +12,7 @@
   <xs:element name="SuministroInformacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="SuministroInformacion" msprop:Generator_UserDSName="SuministroInformacion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Factura" msprop:Generator_TableClassName="FacturaDataTable" msprop:Generator_TableVarName="tableFactura" msprop:Generator_RowChangedName="FacturaRowChanged" msprop:Generator_TablePropName="Factura" msprop:Generator_RowDeletingName="FacturaRowDeleting" msprop:Generator_RowChangingName="FacturaRowChanging" msprop:Generator_RowEvHandlerName="FacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaRowDeleted" msprop:Generator_RowClassName="FacturaRow" msprop:Generator_UserTableName="Factura" msprop:Generator_RowEvArgName="FacturaRowChangeEvent">
+        <xs:element name="Factura" msprop:Generator_TableClassName="FacturaDataTable" msprop:Generator_TableVarName="tableFactura" msprop:Generator_TablePropName="Factura" msprop:Generator_RowDeletingName="FacturaRowDeleting" msprop:Generator_RowChangingName="FacturaRowChanging" msprop:Generator_RowEvHandlerName="FacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaRowDeleted" msprop:Generator_UserTableName="Factura" msprop:Generator_RowChangedName="FacturaRowChanged" msprop:Generator_RowEvArgName="FacturaRowChangeEvent" msprop:Generator_RowClassName="FacturaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="No" msprop:Generator_ColumnVarNameInTable="columnNo" msprop:Generator_ColumnPropNameInRow="No" msprop:Generator_ColumnPropNameInTable="NoColumn" msprop:Generator_UserColumnName="No" type="xs:int" minOccurs="0" />
@@ -21,6 +21,15 @@
               <xs:element name="Videojuego" msprop:Generator_ColumnVarNameInTable="columnVideojuego" msprop:Generator_ColumnPropNameInRow="Videojuego" msprop:Generator_ColumnPropNameInTable="VideojuegoColumn" msprop:Generator_UserColumnName="Videojuego" type="xs:string" minOccurs="0" />
               <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
               <xs:element name="ValorUnitario" msprop:Generator_ColumnVarNameInTable="columnValorUnitario" msprop:Generator_ColumnPropNameInRow="ValorUnitario" msprop:Generator_ColumnPropNameInTable="ValorUnitarioColumn" msprop:Generator_UserColumnName="ValorUnitario" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MensualProductos" msprop:Generator_TableClassName="MensualProductosDataTable" msprop:Generator_TableVarName="tableMensualProductos" msprop:Generator_TablePropName="MensualProductos" msprop:Generator_RowDeletingName="MensualProductosRowDeleting" msprop:Generator_RowChangingName="MensualProductosRowChanging" msprop:Generator_RowEvHandlerName="MensualProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="MensualProductosRowDeleted" msprop:Generator_UserTableName="MensualProductos" msprop:Generator_RowChangedName="MensualProductosRowChanged" msprop:Generator_RowEvArgName="MensualProductosRowChangeEvent" msprop:Generator_RowClassName="MensualProductosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_videojuego" msprop:Generator_ColumnVarNameInTable="columnId_videojuego" msprop:Generator_ColumnPropNameInRow="Id_videojuego" msprop:Generator_ColumnPropNameInTable="Id_videojuegoColumn" msprop:Generator_UserColumnName="Id_videojuego" type="xs:int" minOccurs="0" />
+              <xs:element name="Videojuego" msprop:Generator_ColumnVarNameInTable="columnVideojuego" msprop:Generator_ColumnPropNameInRow="Videojuego" msprop:Generator_ColumnPropNameInTable="VideojuegoColumn" msprop:Generator_UserColumnName="Videojuego" type="xs:string" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
