@@ -20,4 +20,9 @@ public partial class View_Carrito : System.Web.UI.Page
         }
         
     }
+
+    protected void B_Comprar_Click(object sender, EventArgs e)
+    {
+
+    }
 }

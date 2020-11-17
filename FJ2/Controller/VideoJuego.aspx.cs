@@ -19,6 +19,8 @@ public partial class View_VideoJuego : System.Web.UI.Page
             I_Perfil.ImageUrl = informacion[0].Imagen.ToString();
             int id_usuario = int.Parse(Session["id_usuario"].ToString());
             L_Carrito.Text = (new DAOBiblioteca().cantidadbilioteca(id_usuario).ToString());
+            B_Comprar.Visible = true;
+            B_Deseados.Visible = true;
         }
         else
         {
@@ -29,16 +31,11 @@ public partial class View_VideoJuego : System.Web.UI.Page
             TB_Categoria.Text = informacion[0].Categoria.ToString();
             I_Perfil.ImageUrl = informacion[0].Imagen.ToString();
             L_Carrito.Text = "0";
+            B_Comprar.Visible = false;
+            B_Deseados.Visible = false;
         }
         
 
-    }
-
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        Usuario usuario = new Usuario();
-        Videojuego videojuego = new Videojuego();
-        usuario.Id_usuario = ((Usuario)Session["user"]).Id_usuario;
     }
 
     protected void IB_ADcarrito_Click(object sender, ImageClickEventArgs e)
@@ -55,12 +52,12 @@ public partial class View_VideoJuego : System.Web.UI.Page
 
     protected void B_Comprar_Click(object sender, EventArgs e)
     {
-        if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
+        if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1 || ((Usuario)Session["user"]).Id_rol == 2)
         {
             int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
             int id_usuario = int.Parse(Session["id_usuario"].ToString());
             Videojuego añadir = new DAOVideojuego().agragarjuego(id_juego);
-            añadir.Cantidad = int.Parse(TB_Cantidad.Text);
+            //añadir.Cantidad = int.Parse(TB_Cantidad.Text);
             new DAOBiblioteca().agregarBiblioteca(añadir, id_usuario);
             Response.Redirect("Catalogo.aspx");
         }

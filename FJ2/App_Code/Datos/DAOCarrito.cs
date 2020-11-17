@@ -64,13 +64,15 @@ public class DAOCarrito
         }
     }
 
-    public List<Videojuego> obtenerProductosCarrito(int userId)
+    public List<Biblioteca> obtenerProductosCarrito(int userId)
     {
+        List<Biblioteca> lista = new List<Biblioteca>();
         using (var db = new Mapeo())
         {
-            return (from uu in db.lib
+            lista = (from uu in db.lib
                     join video in db.videojuego on uu.Id_videojuego equals video.Id_videojuego
                     join estado in db.estado on video.Id_estadoV equals estado.Id_estadoV
+                    
                     where uu.Id_usuario == userId
 
                     select new
@@ -78,18 +80,21 @@ public class DAOCarrito
                         uu,
                         video,
                         estado
-                    }).ToList().Select(m => new Videojuego
+                    }).ToList().Select(m => new Biblioteca
 
                     {
+                        Id=m.uu.Id,
                         Id_videojuego = m.uu.Id,
                         Nom_juego=m.video.Nom_juego,
                         Nombre_estado=m.estado.Descripcion,
                         Descripcion=m.video.Descripcion,
-                        Cantidad=m.uu.Cantidad,
+                        //Cantidad=m.uu.Cantidad,
                         Imagen=m.video.Imagen,
                         Precio=m.video.Precio
                     }).ToList();
         }
+
+        return lista;
 
     }
 
@@ -115,4 +120,18 @@ public class DAOCarrito
                     }).ToList();
         }
     }
+
+    public void deleteJuego(Biblioteca videojuegos)
+    {
+        using (var db = new Mapeo())
+        {
+            //Biblioteca biblioteca = new Biblioteca();
+            //biblioteca.Id_videojuego = videojuegos.Id_videojuego;
+            Biblioteca biblioteca = db.lib.Where(x => x.Id == videojuegos.Id).First();
+            //Videojuego juego = db.videojuego.Where(x => x.Id_videojuego == videojuegos.Id_videojuego).First();
+            db.lib.Remove(biblioteca);
+            db.SaveChanges();
+        }
+    }
+
 }

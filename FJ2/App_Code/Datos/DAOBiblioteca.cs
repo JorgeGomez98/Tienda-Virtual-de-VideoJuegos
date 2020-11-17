@@ -28,7 +28,9 @@ public class DAOBiblioteca
             Biblioteca agregar = new Biblioteca();
             agregar.Id_usuario = UsuarioId;
             agregar.Id_videojuego = juego.Id_videojuego;
-            agregar.Cantidad = juego.Cantidad;
+            //agregar.Cantidad = juego.Cantidad;
+            agregar.Poseido = false;
+            agregar.Deseado = false;
             db.lib.Add(agregar);
             db.SaveChanges();
         }

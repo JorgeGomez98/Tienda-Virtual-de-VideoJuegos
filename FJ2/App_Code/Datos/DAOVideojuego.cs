@@ -68,7 +68,7 @@ public class DAOVideojuego
                         Descripcion = m.v.Descripcion,
                         Categoria = m.Categoria,
                         Precio = m.v.Precio,
-                        Cantidad = m.v.Cantidad
+                        //Cantidad = m.v.Cantidad
                     }).FirstOrDefault();
         }
     }

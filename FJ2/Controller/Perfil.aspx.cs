@@ -9,6 +9,12 @@ public partial class View_Perfil : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        TB_Nickname.ReadOnly = true;
+        TB_Nombre.ReadOnly = true;
+        TB_Correo.ReadOnly = true;
+        B_Guardar.Visible = false;
+        B_Editar.Visible = true;
+        FU_ImagenPerfil.Visible = false;
         //I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
 
         /*if (((Usuario)Session["user"]).Imagen == null)
