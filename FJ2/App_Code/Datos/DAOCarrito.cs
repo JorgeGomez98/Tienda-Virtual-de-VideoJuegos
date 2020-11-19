@@ -16,6 +16,36 @@ public class DAOCarrito
 * Movimientos de factura
 * 
 */
+    public Pedido obtenerPedido(int id_usuario)
+    {
+
+        Pedido pedido = new Pedido();
+        using (var db = new Mapeo())
+        {
+            pedido = (from p in db.ped
+                      join u in db.user on p.Id_usuario equals u.Id_usuario
+                      where p.Id_usuario == id_usuario
+
+                      select new
+                      {
+                          p,
+                          u,
+
+                      }).ToList().Select(m => new Pedido
+                      {
+                          Fecha = m.p.Fecha,
+                          Id_pedido = m.p.Id_pedido,
+                          Nickname = m.u.Nickname,
+                          Id_usuario = m.p.Id_usuario,
+                          Valor_total = m.p.Valor_total,
+
+                      }).FirstOrDefault();
+        }
+        pedido.Compras = obtenerDetalleFactura(pedido.Id_pedido);
+        return pedido;
+
+
+    }
     public Pedido obtenerFactura(int noFactura)
     {
         
@@ -72,6 +102,24 @@ public class DAOCarrito
         }
     }
 
+    /*public void agregarDetalles(List<DetallePedido> detalles)
+    {
+        foreach (var item in detalles)
+        {
+            
+            insertDetalles(item);
+        };
+    }
+
+    private void insertDetalles(DetallePedido item)
+    {
+        using(var db = new Mapeo())
+        {
+            db.detPed.Add(item);
+            db.SaveChanges();
+        }
+    }*/
+
     public List<DetallePedido> productosVendidosPorFecha(DateTime fechaInicio, DateTime fechaFin)
     {
         using (var db = new Mapeo())
@@ -95,7 +143,7 @@ public class DAOCarrito
         }
     }
 
-    public void agregarPedido(int id_usuario,double total , List<DetallePedido> detalles)
+    public void agregarPedido(int id_usuario,double total )
     {
         DateTime hoy = DateTime.Now;
         hoy = Convert.ToDateTime(hoy.ToString("yyyy/MM/dd"));
@@ -113,7 +161,15 @@ public class DAOCarrito
         
     }
 
+    public void agregarDetalle(DetallePedido detalle)
+    {
+        using (var db = new Mapeo())
+        {
+            db.detPed.Add(detalle);
+            db.SaveChanges();
+        }
 
+    }
 
     /*
      * Movimientos de visualización

@@ -48,4 +48,32 @@ public class DAOBiblioteca
         }
 
     }
+
+    public List<Videojuego> obtenerBiblioteca(int id_categoria,int id_usuario)
+    {
+
+        using (var db = new Mapeo())
+        {
+            return (from v in db.videojuego
+                    join c in db.cat on v.Id_categoría equals c.Id_categoria
+                    join l in db.lib on v.Id_videojuego equals l.Id_videojuego
+                    where ((v.Id_categoría == id_categoria) || (id_categoria == 0) && l.Poseido == true && l.Id_usuario == id_usuario )
+                    select new
+                    {
+                        v,
+                        l,
+                        c.Categoria
+                    }).ToList().Select(m => new Videojuego
+                    {
+                        Id_videojuego = m.v.Id_videojuego,
+                        Id_categoría = m.v.Id_categoría,
+                        Imagen = m.v.Imagen,
+                        Nom_juego = m.v.Nom_juego,
+                        Descripcion = m.v.Descripcion,
+                        Categoria = m.Categoria,
+                        
+                    }).OrderBy(x => x.Nom_juego).ToList();
+        }
+
+    }
 }

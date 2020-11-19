@@ -40,14 +40,23 @@ public partial class View_Carrito : System.Web.UI.Page
             valorTotal = valorTotal + juego.Precio;
             det.Id_videojuego = juego.Id_videojuego;
             det.ValorUnitario = juego.Precio;
-            det.ValorTotal = valorTotal;
+            
             det.Cantidad = 1;
+            det.ValorTotal = det.Cantidad * det.ValorUnitario;
             det.NombreJuego = juego.Nom_juego;
             detalles.Add(det);
             new DAOCarrito().updateCompra(juego , id_usuario);
             
         }
+        //new DAOCarrito().agregarDetalles(detalles);
         new DAOCarrito().agregarPedido(((Usuario)Session["user"]).Id_usuario , valorTotal);
+        Pedido info = new DAOCarrito().obtenerPedido(((Usuario)Session["user"]).Id_usuario);
+
+        foreach (var item in detalles)
+        {
+            item.Id_pedido = info.Id_pedido;
+            new DAOCarrito().agregarDetalle(item);
+        }
     }
 
     /*protected void GV_CarritoRowDataBound(object sender, GridViewRowEventArgs e)

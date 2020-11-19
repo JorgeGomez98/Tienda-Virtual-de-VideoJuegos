@@ -14,6 +14,13 @@
         .auto-style6 {
             text-align: right;
         }
+        .auto-style10 {
+            text-align: right;
+            width: 181px;
+        }
+        .auto-style11 {
+            width: 20%;
+        }
     </style>
     <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -23,7 +30,9 @@
             <td>
                 <table class="auto-style1">
                     <tr>
-                        <td class="auto-style6">
+                        <td class="auto-style10">
+                            &nbsp;</td>
+                        <td class="text-right">
                             <asp:Label ID="L_Filtro" runat="server" Text="Filtro:" CssClass="fuenteNegra"></asp:Label>
                         </td>
                         <td>
@@ -36,12 +45,12 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="auto-style11">
+                            &nbsp;</td>
                         <td colspan="2">
-                <asp:DataList ID="DL_Catalogo" runat="server" Width="80%" CellPadding="4" ForeColor="#333333" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand"  >
-                    <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
-                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <ItemStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <asp:DataList ID="DL_Catalogo" runat="server" Width="100%" CellPadding="4" ForeColor="Black" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" GridLines="Horizontal"  >
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                     <ItemTemplate>
                         <table class="auto-style1">
                             <tr>
@@ -91,7 +100,7 @@
                             </tr>
                         </table>
                     </ItemTemplate>
-                    <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SelectedItemStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
                 </asp:DataList>
                         </td>
                         <td>&nbsp;</td>
