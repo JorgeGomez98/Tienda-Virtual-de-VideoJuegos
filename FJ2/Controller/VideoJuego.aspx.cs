@@ -58,6 +58,7 @@ public partial class View_VideoJuego : System.Web.UI.Page
             int id_usuario = int.Parse(Session["id_usuario"].ToString());
             Videojuego añadir = new DAOVideojuego().agragarjuego(id_juego);
             //añadir.Cantidad = int.Parse(TB_Cantidad.Text);
+            añadir.Cantidad = 1;
             new DAOBiblioteca().agregarBiblioteca(añadir, id_usuario);
             Response.Redirect("Catalogo.aspx");
         }

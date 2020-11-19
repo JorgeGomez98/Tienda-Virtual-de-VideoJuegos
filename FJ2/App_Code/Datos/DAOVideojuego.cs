@@ -68,7 +68,7 @@ public class DAOVideojuego
                         Descripcion = m.v.Descripcion,
                         Categoria = m.Categoria,
                         Precio = m.v.Precio,
-                        //Cantidad = m.v.Cantidad
+                        Cantidad = 1
                     }).FirstOrDefault();
         }
     }
@@ -151,6 +151,10 @@ public class DAOVideojuego
         {
             Videojuego juegoAnterior = db.videojuego.Where(x => x.Id_videojuego == juego.Id_videojuego).First();
             juegoAnterior.Descripcion = juego.Descripcion;
+            juegoAnterior.Cantidad = juego.Cantidad;
+            juegoAnterior.Categoria = juego.Categoria;
+            juegoAnterior.Nom_juego = juego.Nom_juego;
+            juegoAnterior.Precio = juego.Precio;
             db.videojuego.Attach(juegoAnterior);
 
             var entry = db.Entry(juegoAnterior);

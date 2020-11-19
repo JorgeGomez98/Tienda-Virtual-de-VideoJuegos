@@ -44,7 +44,7 @@ public class DAOBiblioteca
         {
 
 
-            return db.lib.Where(x => x.Id_usuario == UsuarioId).Count();
+            return db.lib.Where(x => x.Id_usuario == UsuarioId && x.Poseido == false).Count();
         }
 
     }
