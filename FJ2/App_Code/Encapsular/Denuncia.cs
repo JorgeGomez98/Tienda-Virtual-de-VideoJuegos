@@ -26,4 +26,5 @@ public class Denuncias
     public string Mensaje { get => mensaje; set => mensaje = value; }
     [Column("id_usuario")]
     public int Id_usuario { get => id_usuario; set => id_usuario = value; }
+
 }
