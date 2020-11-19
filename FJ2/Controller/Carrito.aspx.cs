@@ -23,6 +23,47 @@ public partial class View_Carrito : System.Web.UI.Page
 
     protected void B_Comprar_Click(object sender, EventArgs e)
     {
+        double valorTotal = 0;
+        int id_usuario = int.Parse(Session["id_usuario"].ToString());
+        //List<Biblioteca> juegos = new DAOCarrito().obtenerProductosCarrito(((Usuario)Session["user"]).Id_usuario);
+        List<Biblioteca> juegos = new DAOCarrito().obtenerProductosCarrito(id_usuario);
+        List<DetallePedido> detalles = new List<DetallePedido>();
+        foreach (var item in juegos)
+        {
 
+            Biblioteca juego = new Biblioteca();
+            DetallePedido det = new DetallePedido();
+            juego = item;
+            juego.Id_usuario = item.Id_usuario;
+            juego.Id_videojuego = item.Id_videojuego;
+            //pedido = valorTotal + juego.Precio;
+            valorTotal = valorTotal + juego.Precio;
+            det.Id_videojuego = juego.Id_videojuego;
+            det.ValorUnitario = juego.Precio;
+            det.ValorTotal = valorTotal;
+            det.Cantidad = 1;
+            det.NombreJuego = juego.Nom_juego;
+            detalles.Add(det);
+            new DAOCarrito().updateCompra(juego , id_usuario);
+            
+        }
+        new DAOCarrito().agregarPedido(((Usuario)Session["user"]).Id_usuario , valorTotal);
     }
+
+    /*protected void GV_CarritoRowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        if (e.Row.RowType == DataControlRowType.DataRow)
+        {
+            double precio;
+            precio = (double)DataBinder.Eval(e.Row.DataItem, "precio");
+            if (precio > 8)
+            {
+                e.Row.ForeColor = System.Drawing.Color.Red;
+                e.Row.BackColor = System.Drawing.Color.Yellow;
+                e.Row.Font.Bold = true;
+            }
+
+        }
+    }*/
+
 }
