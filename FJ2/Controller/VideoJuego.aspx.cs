@@ -69,4 +69,9 @@ public partial class View_VideoJuego : System.Web.UI.Page
       
 
     }
+
+    protected void BTdenuncia_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Denuncias.aspx");
+    }
 }
