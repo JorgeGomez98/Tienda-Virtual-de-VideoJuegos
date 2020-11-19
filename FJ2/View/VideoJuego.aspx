@@ -72,7 +72,7 @@
         </tr>
         <tr>
             <td class="auto-style4" rowspan="7" colspan="3">
-                <asp:Image ID="I_Perfil" runat="server" Width="60%" />
+                <asp:Image ID="I_Perfil" runat="server" Width="350px" />
             </td>
             <td class="auto-style14" colspan="2">
                 Nombre:</td>
@@ -122,7 +122,7 @@
                 <asp:Button ID="btn_volver" runat="server" CssClass="fondoElemento" Text="Volver" OnClick="btn_volver_Click" CausesValidation="false" />
             </td>
             <td class="auto-style8" colspan="2">
-                <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Comprar" OnClick="B_Comprar_Click" />
+                <asp:Button ID="B_Comprar" runat="server" CssClass="fondoElemento" Text="Agregar al Carrito" OnClick="B_Comprar_Click" Width="165px" />
             </td>
             <td class="auto-style8">&nbsp;</td>
         </tr>
@@ -136,7 +136,8 @@
         <tr>
             <td colspan="3">&nbsp;</td>
             <td class="auto-style7" colspan="6">
-                &nbsp;</td>
+                <asp:Button ID="BTdenuncia" runat="server" CssClass="fondoElemento" OnClick="BTdenuncia_Click" Text="Denunciar" />
+            </td>
         </tr>
         <tr>
             <td class="auto-style2" colspan="3"></td>
