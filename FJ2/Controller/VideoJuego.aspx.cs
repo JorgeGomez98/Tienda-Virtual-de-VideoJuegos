@@ -42,20 +42,16 @@ public partial class View_VideoJuego : System.Web.UI.Page
             int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
             int id_usuario = int.Parse(Session["id_usuario"].ToString());
 
-            Videojuego informacion = new DAOVideojuego().obtenerVideojuegoInformacion(id_juego);
-            TB_nombreJ.Text = informacion.Nom_juego.ToString();
-            TB_descripcion.Text = informacion.Descripcion.ToString();
-            TB_Categoria.Text = informacion.Categoria.ToString();
-            I_Perfil.ImageUrl = informacion.Imagen.ToString();
+
 
             Biblioteca validar = new DAOBiblioteca().obtenerVideojuego( id_juego , id_usuario);
-            if (validar.Poseido == true || validar.Poseido == false)
+            if(validar != null)
             {
-                /*Videojuego informacion = new DAOVideojuego().obtenerVideojuegoInformacion(id_juego);
+                Videojuego informacion = new DAOVideojuego().obtenerVideojuegoInformacion(id_juego);
                 TB_nombreJ.Text = informacion.Nom_juego.ToString();
                 TB_descripcion.Text = informacion.Descripcion.ToString();
                 TB_Categoria.Text = informacion.Categoria.ToString();
-                I_Perfil.ImageUrl = informacion.Imagen.ToString();*/
+                I_Perfil.ImageUrl = informacion.Imagen.ToString();
 
                 L_Carrito.Text = (new DAOBiblioteca().cantidadbilioteca(id_usuario).ToString());
                 B_Comprar.Visible = false;
@@ -63,11 +59,11 @@ public partial class View_VideoJuego : System.Web.UI.Page
             }
             else
             {
-                /*Videojuego informacion = new DAOVideojuego().obtenerVideojuegoInformacion(id_juego);
+                Videojuego informacion = new DAOVideojuego().obtenerVideojuegoInformacion(id_juego);
                 TB_nombreJ.Text = informacion.Nom_juego.ToString();
                 TB_descripcion.Text = informacion.Descripcion.ToString();
                 TB_Categoria.Text = informacion.Categoria.ToString();
-                I_Perfil.ImageUrl = informacion.Imagen.ToString();*/
+                I_Perfil.ImageUrl = informacion.Imagen.ToString();
 
                 L_Carrito.Text = (new DAOBiblioteca().cantidadbilioteca(id_usuario).ToString());
                 B_Comprar.Visible = true;

@@ -45,8 +45,19 @@ public partial class View_Carrito : System.Web.UI.Page
             det.ValorTotal = det.Cantidad * det.ValorUnitario;
             det.NombreJuego = juego.Nom_juego;
             detalles.Add(det);
-            new DAOCarrito().updateCompra(juego , id_usuario);
-            
+            bool existe = new DAOCarrito().existe(id_videojuego: juego.Id_videojuego);
+            if(existe == true)
+            {
+                new DAOCarrito().updateCompra(juego, id_usuario);
+            }
+            else
+            {
+                ClientScriptManager cm = this.ClientScript;
+                cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Uno de los artículos ya no se encuentra disponible');</script>");
+                return;
+            }
+
+
         }
         //new DAOCarrito().agregarDetalles(detalles);
         new DAOCarrito().agregarPedido(((Usuario)Session["user"]).Id_usuario , valorTotal);

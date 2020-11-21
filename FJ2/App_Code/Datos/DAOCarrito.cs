@@ -10,7 +10,7 @@ using System.Web.UI;
 /// </summary>
 public class DAOCarrito
 {
-    public ClientScriptManager ClientScript { get; private set; }
+    //public ClientScriptManager ClientScript { get; private set; }
 
     /*
 * Movimientos de factura
@@ -78,6 +78,34 @@ public class DAOCarrito
         
     }
 
+    public bool existe(int id_videojuego)
+    {
+        bool existe = false;
+        Videojuego juego;
+        using (var db = new Mapeo())
+        {
+             juego=(from v in db.videojuego
+                    where v.Id_videojuego == id_videojuego
+
+                    select new
+                    {
+                        v.Cantidad
+                    }).ToList().Select(m => new Videojuego
+                    {
+
+                        Cantidad = m.Cantidad
+
+
+                    }).First();
+            
+        }
+        if(juego.Cantidad > 0)
+        {
+            existe = true;
+        }
+        return existe;
+    }
+
     public List<DetallePedido> obtenerDetalleFactura(int pedidoId)
     {
         using (var db = new Mapeo())
@@ -101,24 +129,6 @@ public class DAOCarrito
                     }).ToList();
         }
     }
-
-    /*public void agregarDetalles(List<DetallePedido> detalles)
-    {
-        foreach (var item in detalles)
-        {
-            
-            insertDetalles(item);
-        };
-    }
-
-    private void insertDetalles(DetallePedido item)
-    {
-        using(var db = new Mapeo())
-        {
-            db.detPed.Add(item);
-            db.SaveChanges();
-        }
-    }*/
 
     public List<DetallePedido> productosVendidosPorFecha(DateTime fechaInicio, DateTime fechaFin)
     {
@@ -196,6 +206,7 @@ public class DAOCarrito
                     {
                         Id=m.uu.Id,
                         Id_videojuego = m.uu.Id_videojuego,
+                        Id_usuario = m.uu.Id_usuario,
                         Nom_juego=m.video.Nom_juego,
                         Nombre_estado=m.estado.Descripcion,
                         Descripcion=m.video.Descripcion,
@@ -261,7 +272,7 @@ public class DAOCarrito
 
     public void updateCompra(Biblioteca juego , int id_usuario)
     {
-        ClientScriptManager cm = this.ClientScript;
+        //ClientScriptManager cm = this.ClientScript;
         using (var db = new Mapeo())
         {
             Biblioteca juegoAnterior = db.lib.Where(x => x.Id == juego.Id).First();
@@ -269,7 +280,8 @@ public class DAOCarrito
             Videojuego disponible = consultaDisponible(juegoAnterior.Id_videojuego);
             if (disponible.Cantidad == 0)
             {
-                cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Uno de los artículos ya no se encuentra disponible');</script>");
+                //Help.ShowPopup;
+                //cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Uno de los artículos ya no se encuentra disponible');</script>");
                 return;
             }
             else

@@ -39,7 +39,7 @@
         <td class="auto-style11">
             &nbsp;</td>
         <td colspan="2">
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_Usuarios" ForeColor="#333333" GridLines="None" DataKeyNames="Id_usuario" CssClass="fondoElemento" Width="50%">
+            <asp:GridView ID="GV_Usuarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_Usuarios" ForeColor="#333333" GridLines="None" DataKeyNames="Id_usuario" CssClass="fondoElemento" Width="50%">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="Id_usuario" HeaderText="Id_usuario" SortExpression="Id_usuario" Visible="False" />

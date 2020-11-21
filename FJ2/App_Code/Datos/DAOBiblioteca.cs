@@ -84,6 +84,7 @@ public class DAOBiblioteca
             return (from b in db.lib
                     join v in db.videojuego on b.Id_videojuego equals v.Id_videojuego
                     join u in db.user on b.Id_usuario equals u.Id_usuario
+                    where (b.Id_usuario == id_usuario && b.Id_videojuego == id_juego)
                     select new
                     {
                         b,
@@ -95,7 +96,8 @@ public class DAOBiblioteca
                     {
                         Id_videojuego = m.Id_videojuego,
                         Id_usuario = m.Id_usuario,
-                        Poseido = m.b.Poseido
+                        Poseido = m.b.Poseido,
+                        Nom_juego = m.b.Nom_juego
                     }).FirstOrDefault();
         }
     }
