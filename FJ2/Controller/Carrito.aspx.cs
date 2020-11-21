@@ -57,6 +57,8 @@ public partial class View_Carrito : System.Web.UI.Page
             item.Id_pedido = info.Id_pedido;
             new DAOCarrito().agregarDetalle(item);
         }
+
+        GV_Carrito.DataBind();
     }
 
     /*protected void GV_CarritoRowDataBound(object sender, GridViewRowEventArgs e)

@@ -5,31 +5,36 @@
         .auto-style10 {
             width: 10%;
         }
+        .auto-style11 {
+            width: 5%;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table class="nav-justified">
         <tr>
             <td class="auto-style10" rowspan="4">&nbsp;</td>
-            <td colspan="2">
+            <td colspan="3">
                 &nbsp;</td>
             <td rowspan="4">&nbsp;</td>
         </tr>
         <tr>
             <td class="text-right">
-                            <asp:Label ID="L_Filtro" runat="server" Text="Filtro:" CssClass="fuenteNegra"></asp:Label>
+                            <asp:Label ID="L_Filtro" runat="server" Text="Categoría:" CssClass="fuenteNegra"></asp:Label>
                         </td>
+            <td class="auto-style11">
+                            &nbsp;</td>
             <td>
                             <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento" AutoPostBack="True">
                             </asp:DropDownList>
                 </td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 <asp:ObjectDataSource ID="ODS_Catalogo" runat="server" SelectMethod="obtenerCatalogo" TypeName="DAOVideojuego">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="DDL_Filtro" DefaultValue="0" Name="id_categoria" PropertyName="SelectedValue" Type="Int32" />

@@ -20,6 +20,17 @@
             height: 42%;
             text-align: center;
         }
+        .auto-style5 {
+            background-color: transparent;
+            text-align: right;
+            font-size: 38px;
+            font-family: Prototype;
+            color: white;
+            position: center;
+        }
+        .auto-style6 {
+            width: 3%;
+        }
     </style>
 </head>
 <body>
@@ -42,55 +53,57 @@
                                     <td>
                                         <table cellpadding="0">
                                             <tr>
-                                                <td align="center" class="fondoElemento" colspan="2">Iniciar sesión</td>
+                                                <td align="center" class="fondoElemento" colspan="3">Iniciar sesión</td>
                                             </tr>
                                             <tr>
-                                                <td align="center" class="fondoElemento" colspan="2">&nbsp;</td>
+                                                <td align="center" class="fondoElemento" colspan="3">&nbsp;</td>
                                             </tr>
                                             <tr>
-                                                <td align="right" class="fondoElemento">
+                                                <td align="right" class="auto-style5">
                                                     <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">Nombre de usuario:</asp:Label>
                                                 </td>
+                                                <td align="right" class="auto-style6">&nbsp;</td>
                                                 <td>
                                                     <asp:TextBox ID="UserName" runat="server" CssClass="fondoElemento"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="El nombre de usuario es obligatorio." ToolTip="El nombre de usuario es obligatorio." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="right" class="fondoElemento" colspan="2">&nbsp;</td>
+                                                <td align="right" class="fondoElemento" colspan="3">&nbsp;</td>
                                             </tr>
                                             <tr>
-                                                <td align="right" class="fondoElemento">
+                                                <td align="right" class="auto-style5">
                                                     <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Contraseña:</asp:Label>
                                                 </td>
+                                                <td align="right" class="auto-style6">&nbsp;</td>
                                                 <td>
                                                     <asp:TextBox ID="Password" runat="server" CssClass="fondoElemento" TextMode="Password"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="La contraseña es obligatoria." ToolTip="La contraseña es obligatoria." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="right" class="fondoElemento" colspan="2">&nbsp;</td>
+                                                <td align="right" class="fondoElemento" colspan="3">&nbsp;</td>
                                             </tr>
                                             <tr>
-                                                <td class="fondoElemento" colspan="2">
+                                                <td class="fondoElemento" colspan="3">
                                                     <asp:CheckBox ID="RememberMe" runat="server" Text="Recordármelo la próxima vez." />
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="center" class="fondoElemento" colspan="2" style="color:Red;">
+                                                <td align="center" class="fondoElemento" colspan="3" style="color:Red;">
                                                     <asp:Label ID="L_Mensaje" runat="server"></asp:Label>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="fondoElemento" colspan="2">
+                                                <td class="fondoElemento" colspan="3">
                                                     <asp:Button ID="LoginButton" runat="server" CommandName="Login" CssClass="fondoElemento" Text="Inicio de sesión" ValidationGroup="Login1" />
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="fondoElemento" colspan="2">&nbsp;</td>
+                                                <td class="fondoElemento" colspan="3">&nbsp;</td>
                                             </tr>
                                             <tr>
-                                                <td class="fondoElemento" colspan="2">
+                                                <td class="fondoElemento" colspan="3">
                                                     <asp:Button ID="B_Registrar" runat="server" CssClass="fondoElemento" OnClick="B_Registrar_Click" Text="Registrar" />
                                                     <asp:Button ID="BT_Vcatalogo" runat="server" CssClass="fondoElemento" OnClick="Button1_Click" Text="Atrás" />
                                                 </td>

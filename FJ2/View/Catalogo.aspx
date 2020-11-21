@@ -19,7 +19,10 @@
             width: 181px;
         }
         .auto-style11 {
-            width: 20%;
+            width: 12%;
+        }
+        .auto-style12 {
+            width: 5%;
         }
     </style>
     <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
@@ -33,8 +36,10 @@
                         <td class="auto-style10">
                             &nbsp;</td>
                         <td class="text-right">
-                            <asp:Label ID="L_Filtro" runat="server" Text="Filtro:" CssClass="fuenteNegra"></asp:Label>
+                            <asp:Label ID="L_Filtro" runat="server" Text="Categoría: " CssClass="fuenteNegra"></asp:Label>
                         </td>
+                        <td class="auto-style12">
+                            &nbsp;</td>
                         <td>
                             <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento" AutoPostBack="True">
                             </asp:DropDownList>
@@ -47,7 +52,7 @@
                     <tr>
                         <td class="auto-style11">
                             &nbsp;</td>
-                        <td colspan="2">
+                        <td colspan="3">
                 <asp:DataList ID="DL_Catalogo" runat="server" Width="100%" CellPadding="4" ForeColor="Black" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" GridLines="Horizontal"  >
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />

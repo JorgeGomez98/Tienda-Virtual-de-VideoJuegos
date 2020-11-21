@@ -9,7 +9,21 @@ public partial class View_AgregaJuego : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        FU_Imagen.Visible = false;
+        I_Videojuego.Visible = false;
+        Label1.Visible = false;
+        Label2.Visible = false;
+        Label3.Visible = false;
+        Label4.Visible = false;
+        Label5.Visible = false;
+        TB_Cantidad.Visible = false;
+        TB_Nombre.Visible = false;
+        TB_descripcion.Visible = false;
+        TB_Precio.Visible = false;
+        B_Agregar.Visible = false;
+        B_AgregarVisible.Visible = true;
+        DDL_Categorias.Visible = false;
+        B_Cancelar.Visible = false;
     }
 
     protected void B_Agregar_Click(object sender, EventArgs e)
@@ -86,5 +100,63 @@ public partial class View_AgregaJuego : System.Web.UI.Page
         e.NewValues[4] = double.Parse(e.NewValues[4].ToString());
         //e.NewValues.Insert(5, "Id", e.OldValues);
 
+    }
+
+    protected void B_AgregarVisible_Click(object sender, EventArgs e)
+    {
+        FU_Imagen.Visible = true;
+        I_Videojuego.Visible = true;
+        Label1.Visible = true;
+        Label2.Visible = true;
+        Label3.Visible = true;
+        Label4.Visible = true;
+        Label5.Visible = true;
+        TB_Cantidad.Visible = true;
+        TB_Nombre.Visible = true;
+        TB_descripcion.Visible = true;
+        TB_Precio.Visible = true;
+        B_Agregar.Visible = true;
+        B_AgregarVisible.Visible = false;
+        DDL_Categorias.Visible = true;
+        B_Cancelar.Visible = true;
+    }
+
+    protected void B_Cancelar_Click(object sender, EventArgs e)
+    {
+        FU_Imagen.Visible = false;
+        I_Videojuego.Visible = false;
+        I_Videojuego.Visible = false;
+        Label1.Visible = false;
+        Label2.Visible = false;
+        Label3.Visible = false;
+        Label4.Visible = false;
+        Label5.Visible = false;
+        TB_Cantidad.Visible = false;
+        TB_Cantidad.Text = null;
+        TB_Nombre.Visible = false;
+        TB_Nombre.Text = null;
+        TB_descripcion.Visible = false;
+        TB_descripcion.Text = null;
+        TB_Precio.Visible = false;
+        TB_Precio.Text = null;
+        B_Agregar.Visible = false;
+        B_AgregarVisible.Visible = true;
+        DDL_Categorias.Visible = false;
+    }
+
+    protected void DDL_Categorias_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        DropDownList opcion = (DropDownList)sender;
+        GridViewRow fila = (GridViewRow)opcion.Parent.Parent;
+        int juego = int.Parse(((Label)fila.FindControl("L_Videojuego")).Text);
+        int id_categoría = int.Parse(opcion.SelectedValue);
+        if (id_categoría != 0)
+        {
+            Videojuego videojuego = new DAOVideojuego().obtenerVideojuegoInformacion(juego);
+            new DAOVideojuego().updateVideojuego(videojuego, id_categoría);
+
+            GV_Juegos.DataBind();
+        }
+        
     }
 }
