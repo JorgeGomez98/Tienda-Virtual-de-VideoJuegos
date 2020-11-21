@@ -49,7 +49,7 @@ public class DAOBiblioteca
 
     }
 
-    public List<Videojuego> obtenerBiblioteca(int id_categoria,int id_usuario)
+    public List<Videojuego> obtenerBiblioteca(int id_usuario)
     {
 
         using (var db = new Mapeo())
@@ -57,7 +57,7 @@ public class DAOBiblioteca
             return (from v in db.videojuego
                     join c in db.cat on v.Id_categoría equals c.Id_categoria
                     join l in db.lib on v.Id_videojuego equals l.Id_videojuego
-                    where ((v.Id_categoría == id_categoria) || (id_categoria == 0) && l.Poseido == true && l.Id_usuario == id_usuario )
+                    where ( l.Id_usuario == id_usuario && l.Poseido == true)
                     select new
                     {
                         v,
@@ -84,6 +84,7 @@ public class DAOBiblioteca
             return (from b in db.lib
                     join v in db.videojuego on b.Id_videojuego equals v.Id_videojuego
                     join u in db.user on b.Id_usuario equals u.Id_usuario
+                    where (b.Id_usuario == id_usuario && b.Id_videojuego == id_juego)
                     select new
                     {
                         b,
@@ -95,7 +96,8 @@ public class DAOBiblioteca
                     {
                         Id_videojuego = m.Id_videojuego,
                         Id_usuario = m.Id_usuario,
-                        Poseido = m.b.Poseido
+                        Poseido = m.b.Poseido,
+                        Nom_juego = m.b.Nom_juego
                     }).FirstOrDefault();
         }
     }

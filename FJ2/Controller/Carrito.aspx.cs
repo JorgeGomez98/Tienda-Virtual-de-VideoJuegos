@@ -11,8 +11,15 @@ public partial class View_Carrito : System.Web.UI.Page
     {
         if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
         {
+            if (GV_Carrito.Rows.Count == 0)
+            {
+                B_Comprar.Visible = false;
+            }
+            else
+            {
+                B_Comprar.Visible = true;
+            }
 
-           
         }
         else
         {
@@ -45,8 +52,22 @@ public partial class View_Carrito : System.Web.UI.Page
             det.ValorTotal = det.Cantidad * det.ValorUnitario;
             det.NombreJuego = juego.Nom_juego;
             detalles.Add(det);
-            new DAOCarrito().updateCompra(juego , id_usuario);
-            
+            bool existe = new DAOCarrito().existe(id_videojuego: juego.Id_videojuego);
+            if(existe == true)
+            {
+                new DAOCarrito().updateCompra(juego, id_usuario);
+                ClientScriptManager cm = this.ClientScript;
+                cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Compra realizada con éxito');</script>");
+
+            }
+            else
+            {
+                ClientScriptManager cm = this.ClientScript;
+                cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El artículo " + det.NombreJuego + " ya no se encuentra disponible');</script>");
+                return;
+            }
+
+
         }
         //new DAOCarrito().agregarDetalles(detalles);
         new DAOCarrito().agregarPedido(((Usuario)Session["user"]).Id_usuario , valorTotal);

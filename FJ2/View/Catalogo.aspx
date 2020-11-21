@@ -59,10 +59,10 @@
                     <ItemTemplate>
                         <table class="auto-style1">
                             <tr>
-                                <td class="auto-style4" rowspan="6">
+                                <td class="auto-style4" rowspan="5">
                                     <asp:Image ID="I_Juego" runat="server" Width="70%" ImageUrl='<%# Eval("Imagen") %>'/>
                                 </td>
-                                <td class="auto-style5" colspan="4">
+                                <td class="auto-style5" colspan="3">
                                     <asp:Label ID="L_Nombre" runat="server" Text='<%# Eval("Nom_juego") %>'></asp:Label>
                                 </td>
                             </tr>
@@ -70,7 +70,7 @@
                                 <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_GeneroVideojuego" runat="server" CssClass="fuenteGris" Text="Género:"></asp:Label>
                                 </td>
-                                <td colspan="2">
+                                <td>
                                     <asp:Label ID="L_Genero" runat="server" CssClass="fuenteGris" Text='<%# Eval("Categoria") %>'></asp:Label>
                                 </td>
                             </tr>
@@ -78,30 +78,28 @@
                                 <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_PrecioVideojuego" runat="server" CssClass="fuenteGris" Text="Precio:"></asp:Label>
                                 </td>
-                                <td colspan="2">
+                                <td>
                                     <asp:Label ID="L_Precio" runat="server" CssClass="fuenteGris" Text='<%# Eval("Precio") %>'></asp:Label>
                                 </td>
                             </tr>
                             <tr>
                                 
-                            </tr>
-                            <tr>
                                 <td class="auto-style6" colspan="2">
                                     <asp:Label ID="L_DescripcionVideojuego" runat="server" CssClass="fuenteGris" Text="Descripción:" Visible="False"></asp:Label>
                                 </td>
-                                <td colspan="2">
+                                <td>
                                     <asp:Label ID="L_Descripcion" runat="server" CssClass="fuenteGris" Text='<%# Eval("Descripcion") %>' Visible="False"></asp:Label>
                                 </td>
+                                
                             </tr>
                             <tr>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" OnClick="B_Deseados_Click" CommandArgument='<%# Eval("Id_videojuego") %>'/>
-                                </td>
-                                <td class="auto-style6">&nbsp;</td>
+                                    &nbsp;</td>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Info" runat="server" CommandArgument='<%# Eval("Id_videojuego") %>' CssClass="fondoElemento" Text="Información" CommandName="Información" />
+                                    &nbsp;</td>
+                                <td class="auto-style6">
+                                    <asp:Button ID="B_Info" runat="server" CommandArgument='<%# Eval("Id_videojuego") %>' CommandName="Información" CssClass="fondoElemento" Text="Información" />
                                 </td>
-                          
                             </tr>
                         </table>
                     </ItemTemplate>

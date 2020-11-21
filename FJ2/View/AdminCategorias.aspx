@@ -46,7 +46,7 @@
                     <Columns>
                         <asp:BoundField DataField="Id_categoria" HeaderText="Id_categoria" SortExpression="Id_categoria" Visible="False" />
                         <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
-                        <asp:CommandField HeaderText="Eliminar" ShowDeleteButton="True" />
+                        <asp:CommandField HeaderText="Eliminar" ShowDeleteButton="True" Visible="False" />
                         <asp:CommandField EditText="Actualizar" HeaderText="Editar" ShowEditButton="True" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />

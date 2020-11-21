@@ -12,7 +12,7 @@
         height: 42px;
     }
     .auto-style11 {
-        width: 350px;
+        width: 15%;
     }
 </style>
 </asp:Content>
@@ -21,14 +21,14 @@
     <table class="nav-justified">
     <tr>
         <td class="auto-style9">
-            <asp:Label ID="Label1" runat="server" CssClass="fuenteNegra" Text="Buscar nickname:"></asp:Label>
+            <asp:Label ID="Label1" runat="server" CssClass="fuenteNegra" Text="Buscar nickname:" Visible="False"></asp:Label>
         </td>
         <td class="auto-style10">
-            <asp:TextBox ID="TB_Usuario" runat="server" CssClass="fondoElemento"></asp:TextBox>
+            <asp:TextBox ID="TB_Usuario" runat="server" CssClass="fondoElemento" Visible="False"></asp:TextBox>
         </td>
         
         <td class="auto-style10">
-            <asp:Button ID="B_Buscar" runat="server" CssClass="fondoElemento" OnClick="B_Buscar_Click" Text="Buscar" />
+            <asp:Button ID="B_Buscar" runat="server" CssClass="fondoElemento" OnClick="B_Buscar_Click" Text="Buscar" Visible="False" />
         </td>
         
     </tr>
@@ -39,17 +39,25 @@
         <td class="auto-style11">
             &nbsp;</td>
         <td colspan="2">
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_Usuarios" ForeColor="#333333" GridLines="None" DataKeyNames="Id_usuario" CssClass="fondoElemento" Width="50%">
+            <asp:GridView ID="GV_Usuarios" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ODS_Usuarios" ForeColor="#333333" GridLines="None" CssClass="fondoElemento" Width="50%">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
+                    <asp:TemplateField HeaderText="Imagen">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("Imagen") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Imagen") %>' Width="50%" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:BoundField DataField="Id_usuario" HeaderText="Id_usuario" SortExpression="Id_usuario" Visible="False" />
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                     <asp:BoundField DataField="Nickname" HeaderText="Nickname" SortExpression="Nickname" />
                     <asp:BoundField DataField="Contraseña" HeaderText="Contraseña" SortExpression="Contraseña" Visible="False" />
-                    <asp:BoundField DataField="Id_rol" HeaderText="Id_rol" SortExpression="Id_rol" />
-                    <asp:BoundField DataField="Correo" HeaderText="Correo" SortExpression="Correo" />
+                    <asp:BoundField DataField="Id_rol" HeaderText="Id_rol" SortExpression="Id_rol" Visible="False" />
+                    <asp:BoundField DataField="Correo" HeaderText="Correo" SortExpression="Correo" Visible="False" />
                     <asp:BoundField DataField="Imagen" HeaderText="Imagen" SortExpression="Imagen" Visible="False" />
-                    <asp:BoundField DataField="NombreRol" HeaderText="Rol" SortExpression="NombreRol" />
+                    <asp:BoundField DataField="NombreRol" HeaderText="Rol" SortExpression="Rol" />
                     <asp:CommandField EditText="Actualizar" HeaderText="Editar" ShowEditButton="True" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />

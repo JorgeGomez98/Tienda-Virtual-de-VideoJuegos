@@ -20,12 +20,12 @@
         </tr>
         <tr>
             <td class="text-right">
-                            <asp:Label ID="L_Filtro" runat="server" Text="Categoría:" CssClass="fuenteNegra"></asp:Label>
+                            <asp:Label ID="L_Filtro" runat="server" Text="Categoría:" CssClass="fuenteNegra" Visible="False"></asp:Label>
                         </td>
             <td class="auto-style11">
                             &nbsp;</td>
             <td>
-                            <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento" AutoPostBack="True">
+                            <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento" AutoPostBack="True" Visible="False">
                             </asp:DropDownList>
                 </td>
         </tr>
@@ -41,7 +41,7 @@
                     </SelectParameters>
                 </asp:ObjectDataSource>
                 <asp:ObjectDataSource ID="ODS_Categoria" runat="server" SelectMethod="obtenerCategorias" TypeName="DAOCategoria"></asp:ObjectDataSource>
-                <asp:DataList ID="DataList1" runat="server" Width="75%" CellPadding="4" ForeColor="Black" DataSourceID="ODS_Biblioteca" DataKeyField="Id_videojuego" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" GridLines="Horizontal">
+                <asp:DataList ID="DL_Biblioteca" runat="server" Width="75%" CellPadding="4" ForeColor="Black" DataSourceID="ODS_Biblioteca" DataKeyField="Id_videojuego" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" GridLines="Horizontal" OnItemCommand="DL_Biblioteca_ItemCommand">
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                     <ItemTemplate>
@@ -74,7 +74,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style6">
-                                    <asp:Button ID="B_Favoritos" runat="server" CssClass="fondoElemento" Text="Favoritos"  />
+                                    <asp:Button ID="B_Informacion" runat="server" CssClass="fondoElemento" Text="Información" CommandArgument='<%# Eval("Id_videojuego") %>' CommandName="Información"  />
                                 </td>
                                 <td class="auto-style6">
                                     <asp:Button ID="B_Vender" runat="server" CssClass="fondoElemento" Text="Vender" Visible="False" />
@@ -89,7 +89,6 @@
                 </asp:DataList>
                 <asp:ObjectDataSource ID="ODS_Biblioteca" runat="server" SelectMethod="obtenerBiblioteca" TypeName="DAOBiblioteca">
                     <SelectParameters>
-                        <asp:ControlParameter ControlID="DDL_Filtro" DefaultValue="0" Name="id_categoria" PropertyName="SelectedValue" Type="Int32" />
                         <asp:SessionParameter Name="id_usuario" SessionField="id_usuario" Type="Int32" />
                     </SelectParameters>
                 </asp:ObjectDataSource>

@@ -21,6 +21,7 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
             }
             else
             {
+
                 iniciar.Visible = false;
                 registrar.Visible = false;
                 btn_cerrarusuario.Visible = true;
@@ -64,7 +65,7 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
 
     private void sinRol()
     {
-        
+        catalogo.Visible = true;
         M_Admin.Visible = false;
         M_Moderador.Visible = false;
         M_Usuario.Visible = false;
@@ -72,6 +73,7 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
 
     private void rolUsuario()
     {
+        catalogo.Visible = true;
         M_Admin.Visible = false;
         M_Moderador.Visible = false;
         M_Usuario.Visible = true;
@@ -79,7 +81,7 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
 
     private void rolModerador()
     {
-        
+        catalogo.Visible = false;
         M_Usuario.Visible = true;
         M_Admin.Visible = false;
         M_Moderador.Visible = true;
@@ -87,9 +89,10 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
 
     private void rolAdmin()
     {
+        catalogo.Visible = false;
         M_Admin.Visible = true;
         M_Moderador.Visible = true;
-        M_Usuario.Visible = true;
+        M_Usuario.Visible = false;
     }
     
     protected void btn_cerrarusuario_Click1(object sender, EventArgs e)
