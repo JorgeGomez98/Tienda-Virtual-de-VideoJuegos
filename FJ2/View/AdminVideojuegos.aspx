@@ -115,7 +115,7 @@
                                     <asp:BoundField DataField="Imagen" HeaderText="Imagen" SortExpression="Imagen" Visible="False" />
                                     <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
                                     <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
-                                    <asp:BoundField DataField="DescripcionV" HeaderText="Estado" SortExpression="DescripcionV" />
+                                    <asp:BoundField DataField="DescripcionV" HeaderText="Estado" SortExpression="DescripcionV" Visible="False" />
                                     <asp:TemplateField HeaderText="Image">
                                         <EditItemTemplate>
                                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Eval("Imagen") %>'></asp:TextBox>
@@ -136,7 +136,7 @@
                                             </table>
                                         </ItemTemplate>
                                     </asp:TemplateField>
-                                    <asp:CommandField HeaderText="Eliminar" ShowDeleteButton="True" />
+                                    <asp:CommandField HeaderText="Eliminar" ShowDeleteButton="True" Visible="False" />
                                     <asp:CommandField EditText="Actualizar" HeaderText="Editar" ShowEditButton="True" />
                                 </Columns>
                                 <EditRowStyle BackColor="#2461BF" />

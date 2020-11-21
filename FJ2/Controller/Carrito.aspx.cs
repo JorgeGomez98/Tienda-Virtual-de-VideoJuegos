@@ -11,8 +11,15 @@ public partial class View_Carrito : System.Web.UI.Page
     {
         if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
         {
+            if (GV_Carrito.Rows.Count == 0)
+            {
+                B_Comprar.Visible = false;
+            }
+            else
+            {
+                B_Comprar.Visible = true;
+            }
 
-           
         }
         else
         {
@@ -49,11 +56,14 @@ public partial class View_Carrito : System.Web.UI.Page
             if(existe == true)
             {
                 new DAOCarrito().updateCompra(juego, id_usuario);
+                ClientScriptManager cm = this.ClientScript;
+                cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Compra realizada con éxito');</script>");
+
             }
             else
             {
                 ClientScriptManager cm = this.ClientScript;
-                cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Uno de los artículos ya no se encuentra disponible');</script>");
+                cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El artículo " + det.NombreJuego + " ya no se encuentra disponible');</script>");
                 return;
             }
 

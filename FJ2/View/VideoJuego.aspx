@@ -55,10 +55,10 @@
         .auto-style21 {
             width: 20%;
         }
-        .auto-style22 {
-            width: 33%;
-            text-align: center;
-        }
+    .auto-style22 {
+        width: 33%;
+        text-align: center;
+    }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -148,7 +148,7 @@
                     </tr>
                     <tr>
                         <td class="auto-style22">
-                <asp:Button ID="B_Deseados" runat="server" CssClass="fondoElemento" Text="Deseados" Width="70%" />
+                <asp:Button ID="BTdenuncia" runat="server" CssClass="fondoElemento" OnClick="BTdenuncia_Click" Text="Denunciar" Width="70%" />
                         </td>
                         <td class="auto-style22">
                 <asp:Button ID="btn_volver" runat="server" CssClass="fondoElemento" Text="Volver" OnClick="btn_volver_Click" CausesValidation="false" Width="70%" />
@@ -165,8 +165,7 @@
                     <tr>
                         <td class="auto-style22">&nbsp;</td>
                         <td class="auto-style22">
-                <asp:Button ID="BTdenuncia" runat="server" CssClass="fondoElemento" OnClick="BTdenuncia_Click" Text="Denunciar" Width="70%" />
-                        </td>
+                            &nbsp;</td>
                         <td class="auto-style22">&nbsp;</td>
                     </tr>
                 </table>

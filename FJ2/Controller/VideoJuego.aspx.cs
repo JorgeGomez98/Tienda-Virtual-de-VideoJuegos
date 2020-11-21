@@ -55,7 +55,7 @@ public partial class View_VideoJuego : System.Web.UI.Page
 
                 L_Carrito.Text = (new DAOBiblioteca().cantidadbilioteca(id_usuario).ToString());
                 B_Comprar.Visible = false;
-                B_Deseados.Visible = false;
+                // B_Deseados.Visible = false;
             }
             else
             {
@@ -67,9 +67,9 @@ public partial class View_VideoJuego : System.Web.UI.Page
 
                 L_Carrito.Text = (new DAOBiblioteca().cantidadbilioteca(id_usuario).ToString());
                 B_Comprar.Visible = true;
-                B_Deseados.Visible = true;
+                //B_Deseados.Visible = true;
             }
-            
+
         }
         else
         {
@@ -81,7 +81,7 @@ public partial class View_VideoJuego : System.Web.UI.Page
             I_Perfil.ImageUrl = informacion.Imagen.ToString();
             L_Carrito.Text = "0";
             B_Comprar.Visible = false;
-            B_Deseados.Visible = false;
+            //B_Deseados.Visible = false;
         }
     }
 

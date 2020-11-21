@@ -22,10 +22,7 @@
             width: 97%;
             text-align: right;
         }
-        .auto-style9 {
-            height: 20px;
-        }
-    </style>
+        </style>
     <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/estilos.css" />
@@ -42,7 +39,7 @@
 
             <nav id="nav">
                 <ul class="auto-style8">
-                    <li><a href="../View/Catalogo.aspx"  class="fuenteBlanca" style="color:white">Catalogo</a></li>
+                    <li><a href="../View/Catalogo.aspx"  class="fuenteBlanca" style="color:white" runat="server" id="catalogo">Catalogo</a></li>
                     <li><a href="../View/Login.aspx" class="fuenteBlanca" runat="server" id="iniciar" style="color:white">Iniciar Sesion</a></li>
                      <asp:Button ID="btn_cerrarusuario" class="fuenteBlanca" Text="Cerrar Sesion" runat="server" CausesValidation="false" OnClick="btn_cerrarusuario_Click1" CssClass="fondoElemento" ForeColor="White" />
                     <li><a href="../View/RegistroUsuario.aspx"  class="fuenteBlanca" runat="server" id="registrar" style="color:white">Registrate</a></li>
@@ -70,8 +67,6 @@
                                 <asp:MenuItem Text="Perfil" Value="Perfil" NavigateUrl="~/View/Perfil.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Carrito" Value="Carrito" NavigateUrl="~/View/Carrito.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Biblioteca" Value="Biblioteca" NavigateUrl="~/View/Biblioteca.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Vender VideoJuego" Value="Vender VideoJuego"></asp:MenuItem>
-                                <asp:MenuItem Text="Cambiar VideoJuego" Value="Cambiar VideoJuego"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
@@ -90,6 +85,7 @@
                                 <asp:MenuItem Text="Denuncias" Value="Denuncias"></asp:MenuItem>
                                 <asp:MenuItem Text="VideoJuegos" Value="Videojuegos" NavigateUrl="~/View/AdminVideojuegos.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Usuarios" Value="Usuarios"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/View/AdminCategorias.aspx" Text="Categorías" Value="Categorías"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
@@ -105,15 +101,16 @@
                         <DynamicSelectedStyle BackColor="#5D7B9D" />
                         <Items>
                             <asp:MenuItem Text="Menu admin" Value="Menu admin">
-                                <asp:MenuItem Text="Usuarios" Value="Usuarios" NavigateUrl="~/View/AdminUsuarios.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Moderadores" Value="Moderadores"></asp:MenuItem>
-                                <asp:MenuItem Text="VideoJuegos" Value="VideoJuegos" NavigateUrl="~/View/AdminVideojuegos.aspx"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/View/AdminCategorias.aspx" Text="Categorias" Value="Categorias"></asp:MenuItem>
                                 <asp:MenuItem Text="Reportes" Value="Reportes">
                                     <asp:MenuItem NavigateUrl="~/View/Reporte.aspx" Text="Reporte individual" Value="Reporte individual"></asp:MenuItem>
                                     <asp:MenuItem NavigateUrl="~/View/Vendidos.aspx" Text="Reporte mensual" Value="Reporte mensual"></asp:MenuItem>
                                     <asp:MenuItem NavigateUrl="~/View/DenunciasAdministrador.aspx" Text="Reporte Denuncias Administrador" Value="Reporte mensual"></asp:MenuItem>
                                 </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/View/Perfil.aspx" Text="Perfil" Value="Perfil"></asp:MenuItem>
+                                <asp:MenuItem Text="Usuarios" Value="Usuarios" NavigateUrl="~/View/AdminUsuarios.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Moderadores" Value="Moderadores"></asp:MenuItem>
+                                <asp:MenuItem Text="VideoJuegos" Value="VideoJuegos" NavigateUrl="~/View/AdminVideojuegos.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/View/AdminCategorias.aspx" Text="Categorias" Value="Categorias"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
@@ -144,7 +141,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style9" colspan="10"></td>
+                <td colspan="10"></td>
             </tr>
 
         </table>

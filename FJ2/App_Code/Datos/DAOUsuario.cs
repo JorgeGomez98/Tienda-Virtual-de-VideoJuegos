@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using System.Web.UI.WebControls;
 
 /// <summary>
 /// Descripción breve de DAOUsuario
@@ -18,6 +19,7 @@ public class DAOUsuario
         return new Mapeo().user.Where(x => x.Nickname.ToUpper().Equals(usuario.Nickname.ToUpper()) && x.Contraseña.Equals(usuario.Contraseña)).FirstOrDefault();
         //return new Mapeo().user.FirstOrDefault();
     }
+
     public void insertUsuario(Usuario usuario)
     {
         using (var db = new Mapeo())
