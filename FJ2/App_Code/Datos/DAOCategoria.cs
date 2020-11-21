@@ -14,6 +14,18 @@ public class DAOCategoria
         return new Mapeo().cat.OrderBy(x => x.Categoria).ToList<Categorias>();
     }
 
+    /*public List<Categorias> obtenerCategoriasAdminVideojuego()
+    {
+        List<Categorias> lista = new Mapeo().cat.ToList();
+        Categorias categorias = new Categorias();
+        categorias.Id_categoria = 0;
+        categorias.Categoria = "--Seleccione--";
+        lista.Add(categorias);
+        //return new Mapeo().videojuego.OrderBy(x => x.Nom_juego).ToList<Videojuego>();
+        return new Mapeo().cat.OrderBy(x => x.Id_categoria).ToList<Categorias>();
+
+    } */
+
     public List<Categorias> obtenerCategorias()
     {
         List<Categorias> lista = new Mapeo().cat.ToList();

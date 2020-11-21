@@ -76,4 +76,27 @@ public class DAOBiblioteca
         }
 
     }
+
+    public Biblioteca obtenerVideojuego(int id_juego, int id_usuario)
+    {
+        using ( var db = new Mapeo())
+        {
+            return (from b in db.lib
+                    join v in db.videojuego on b.Id_videojuego equals v.Id_videojuego
+                    join u in db.user on b.Id_usuario equals u.Id_usuario
+                    select new
+                    {
+                        b,
+                        v.Id_videojuego,
+                        u.Id_usuario
+                    }
+
+                    ).ToList().Select(m => new Biblioteca
+                    {
+                        Id_videojuego = m.Id_videojuego,
+                        Id_usuario = m.Id_usuario,
+                        Poseido = m.b.Poseido
+                    }).FirstOrDefault();
+        }
+    }
 }
