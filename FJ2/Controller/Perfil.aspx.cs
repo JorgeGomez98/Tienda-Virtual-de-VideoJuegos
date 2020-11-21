@@ -9,12 +9,34 @@ public partial class View_Perfil : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        TB_Nickname.ReadOnly = true;
+        if (Session["user"] == null )
+        {
+            Response.Redirect("Login.aspx");
+
+        }
+        else
+        {
+            TB_Nickname.ReadOnly = true;
+            TB_Nombre.ReadOnly = true;
+            TB_Correo.ReadOnly = true;
+            B_Guardar.Visible = false;
+            B_Editar.Visible = true;
+            FU_ImagenPerfil.Visible = false;
+
+            if (!IsPostBack)
+            {
+                I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
+                TB_Nombre.Text = ((Usuario)Session["user"]).Nombre;
+                TB_Nickname.Text = ((Usuario)Session["user"]).Nickname;
+                TB_Correo.Text = ((Usuario)Session["user"]).Correo;
+            }
+        }
+        /*TB_Nickname.ReadOnly = true;
         TB_Nombre.ReadOnly = true;
         TB_Correo.ReadOnly = true;
         B_Guardar.Visible = false;
         B_Editar.Visible = true;
-        FU_ImagenPerfil.Visible = false;
+        FU_ImagenPerfil.Visible = false;*/
         //I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
 
         /*if (((Usuario)Session["user"]).Imagen == null)
@@ -26,13 +48,13 @@ public partial class View_Perfil : System.Web.UI.Page
             I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
         }*/
 
-        if (!IsPostBack)
+        /*if (!IsPostBack)
         {
             I_Perfil.ImageUrl = ((Usuario)Session["user"]).Imagen;
             TB_Nombre.Text = ((Usuario)Session["user"]).Nombre;
             TB_Nickname.Text = ((Usuario)Session["user"]).Nickname;
             TB_Correo.Text = ((Usuario)Session["user"]).Correo;
-        }
+        }*/
     }
 
     protected void B_Editar_Click(object sender, EventArgs e)
