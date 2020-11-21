@@ -20,10 +20,11 @@ public partial class View_Denuncias : System.Web.UI.Page
     protected void BTenviar_Click(object sender, EventArgs e)
     {
         int id_usuario = int.Parse(Session["id_usuario"].ToString());
-
+        int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
         Denuncias denuncias = new Denuncias();
         denuncias.Mensaje = TBmensaje.Text;
         denuncias.Id_usuario = id_usuario;
+        denuncias.Id_videojuego = id_juego;
         denuncias.Id_estadodenucnia = 2;
         new DAODenuncia().insertarDenuncia(denuncias);
         Response.Redirect("Videojuego.aspx");

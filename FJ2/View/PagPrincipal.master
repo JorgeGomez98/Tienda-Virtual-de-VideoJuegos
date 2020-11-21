@@ -112,6 +112,7 @@
                                 <asp:MenuItem Text="Reportes" Value="Reportes">
                                     <asp:MenuItem NavigateUrl="~/View/Reporte.aspx" Text="Reporte individual" Value="Reporte individual"></asp:MenuItem>
                                     <asp:MenuItem NavigateUrl="~/View/Vendidos.aspx" Text="Reporte mensual" Value="Reporte mensual"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/View/DenunciasAdministrador.aspx" Text="Reporte Denuncias Administrador" Value="Reporte mensual"></asp:MenuItem>
                                 </asp:MenuItem>
                             </asp:MenuItem>
                         </Items>

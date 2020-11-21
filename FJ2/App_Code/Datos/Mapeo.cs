@@ -25,6 +25,8 @@ public class Mapeo : DbContext
     public DbSet<Pedido> ped { get; set; }
     public DbSet<DetallePedido> detPed { get; set; }
     public DbSet<Denuncias> Denuncias { get; set; }
+    public DbSet<EstadoDenuncia> estadoDenuncias { get; set; }
+    
 
     protected override void OnModelCreating(DbModelBuilder builder)
     {
