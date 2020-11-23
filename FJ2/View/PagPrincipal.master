@@ -67,6 +67,7 @@
                                 <asp:MenuItem Text="Perfil" Value="Perfil" NavigateUrl="~/View/Perfil.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Carrito" Value="Carrito" NavigateUrl="~/View/Carrito.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Biblioteca" Value="Biblioteca" NavigateUrl="~/View/Biblioteca.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Denuncias" Value="Denuncias" NavigateUrl="~/View/DenunciaUsuario.aspx"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />

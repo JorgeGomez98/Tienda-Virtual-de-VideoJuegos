@@ -82,4 +82,34 @@ public class DAODenuncia
             db.SaveChanges();
         }
     }
+    public List<Denuncias> obtenerDenunciasUsuario(int id_usuario)
+    {
+
+        using (var db = new Mapeo())
+        {
+            return (from denuncia in db.Denuncias
+                    join estado in db.estadoDenuncias on denuncia.Id_estadodenucnia equals estado.Id_estadoD
+                    join persona in db.user on denuncia.Id_usuario equals persona.Id_usuario
+                    join juego in db.videojuego on denuncia.Id_videojuego equals juego.Id_videojuego where denuncia.Id_usuario == id_usuario
+                    select new
+                    {
+                        denuncia,
+                        estado,
+                        persona,
+                        juego
+                    }).ToList().Select(m => new Denuncias
+                    {
+                        Id_denuncia = m.denuncia.Id_denuncia,
+                        Id_videojuego = m.denuncia.Id_videojuego,
+                        Id_estadodenucnia = m.denuncia.Id_estadodenucnia,
+                        Mensaje = m.denuncia.Mensaje,
+                        Id_usuario = m.denuncia.Id_usuario,
+                        Nombre_usuario = m.persona.Nombre,
+                        Nombre_estado = m.estado.Descripcion,
+                        Nombre_videojuego = m.juego.Nom_juego
+
+                    }).ToList();
+        }
+
+    }
 }
