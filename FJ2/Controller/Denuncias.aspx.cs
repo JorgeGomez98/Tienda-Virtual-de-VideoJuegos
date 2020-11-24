@@ -25,7 +25,7 @@ public partial class View_Denuncias : System.Web.UI.Page
         denuncias.Mensaje = TBmensaje.Text;
         denuncias.Id_usuario = id_usuario;
         denuncias.Id_videojuego = id_juego;
-        denuncias.Id_estadodenucnia = 2;
+        denuncias.Id_estadodenucnia = 1;
         new DAODenuncia().insertarDenuncia(denuncias);
         Response.Redirect("Videojuego.aspx");
     }
