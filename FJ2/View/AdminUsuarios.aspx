@@ -54,10 +54,10 @@
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                     <asp:BoundField DataField="Nickname" HeaderText="Nickname" SortExpression="Nickname" />
                     <asp:BoundField DataField="Contraseña" HeaderText="Contraseña" SortExpression="Contraseña" Visible="False" />
-                    <asp:BoundField DataField="Id_rol" HeaderText="Id_rol" SortExpression="Id_rol" Visible="False" />
+                    <asp:BoundField DataField="Id_rol" HeaderText="Id_rol" SortExpression="Id_rol" />
                     <asp:BoundField DataField="Correo" HeaderText="Correo" SortExpression="Correo" Visible="False" />
                     <asp:BoundField DataField="Imagen" HeaderText="Imagen" SortExpression="Imagen" Visible="False" />
-                    <asp:BoundField DataField="NombreRol" HeaderText="Rol" SortExpression="Rol" />
+                    <asp:BoundField DataField="NombreRol" HeaderText="Rol" SortExpression="Rol" ReadOnly="True" />
                     <asp:CommandField EditText="Actualizar" HeaderText="Editar" ShowEditButton="True" />
                 </Columns>
                 <EditRowStyle BackColor="#2461BF" />
