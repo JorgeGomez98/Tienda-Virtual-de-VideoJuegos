@@ -101,7 +101,7 @@ public partial class View_VideoJuego : System.Web.UI.Page
 
     protected void B_Comprar_Click(object sender, EventArgs e)
     {
-        if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1 || ((Usuario)Session["user"]).Id_rol == 2)
+        if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
         {
             int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
             int id_usuario = int.Parse(Session["id_usuario"].ToString());
