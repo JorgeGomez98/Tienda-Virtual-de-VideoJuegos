@@ -301,10 +301,6 @@ public class DAOCarrito
                 //Actualización de stock
                 Videojuego juegoDisponible = db.videojuego.Where(x => x.Id_videojuego == juegoAnterior.Id_videojuego).First();
                 juegoDisponible.Cantidad = juegoDisponible.Cantidad - 1;
-                if(juegoDisponible.Cantidad == 0)
-                {
-                    juegoDisponible.Id_estadoV = 2;
-                }
                 new DAOVideojuego().updateVideojuego(juegoDisponible);
 
                 var entry = db.Entry(juegoAnterior);

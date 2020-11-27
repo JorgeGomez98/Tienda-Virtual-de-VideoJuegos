@@ -12,7 +12,6 @@ public class Videojuego
     private int id_videojuego;
     private int id_estadoV;
     private int id_categoría;
-    private int id_plataforma;
     private string nom_juego;    
     private double precio;    
     private string descripcionV;    
@@ -22,7 +21,9 @@ public class Videojuego
     private string imagen;
     private string nombre_estado;
 
+
     private string plataforma;
+
 
     private string comentario;
 
@@ -44,8 +45,6 @@ public class Videojuego
     public string Imagen { get => imagen; set => imagen = value; }    
     [Column("descripcion")]
     public string Descripcion { get => descripcion; set => descripcion = value; }
-    [Column("id_plataforma")]
-    public int Id_plataforma { get => id_plataforma; set => id_plataforma = value; }
     [NotMapped]
     public string DescripcionV { get => descripcionV; set => descripcionV = value; }
     [NotMapped]
@@ -53,8 +52,10 @@ public class Videojuego
     [NotMapped]
     public string Nombre_estado { get => nombre_estado; set => nombre_estado = value; }
 
+
     [NotMapped]
     public string Plataforma { get => plataforma; set => plataforma = value; }
+
 
     [Column("comentario")]
     public string Comentario { get => comentario; set => comentario = value; }
