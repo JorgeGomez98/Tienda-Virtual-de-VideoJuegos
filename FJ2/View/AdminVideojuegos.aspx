@@ -113,7 +113,7 @@
                                     <asp:BoundField DataField="Id_estadoV" HeaderText="Id_estadoV" SortExpression="Id_estadoV" Visible="False" />
                                     <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" SortExpression="Cantidad" />
                                     <asp:BoundField DataField="Imagen" HeaderText="Imagen" SortExpression="Imagen" Visible="False" />
-                                    <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" />
+                                    <asp:BoundField DataField="Categoria" HeaderText="Categoria" SortExpression="Categoria" ReadOnly="True" />
                                     <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" SortExpression="Descripcion" />
                                     <asp:BoundField DataField="DescripcionV" HeaderText="Estado" SortExpression="DescripcionV" Visible="False" />
                                     <asp:TemplateField HeaderText="Image">
@@ -176,14 +176,14 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style4" rowspan="10">
+            <td class="auto-style4" rowspan="12">
                 <asp:Image ID="I_Videojuego" runat="server" Width="60%" />
             </td>
             <td class="auto-style14">
                 <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TB_Nombre" runat="server" CssClass="auto-style19" Width="370px"></asp:TextBox>
+                <asp:TextBox ID="TB_Nombre" runat="server" CssClass="auto-style19" Width="370px" ></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -233,6 +233,21 @@
             </td>
         </tr>
         <tr>
+            <td class="auto-style14">
+                &nbsp;</td>
+            <td colspan="2">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style14">
+                <asp:Label ID="Label6" runat="server" Text="Plataforma:"></asp:Label>
+            </td>
+            <td colspan="2">
+                <asp:DropDownList ID="DDL_Plataformas" runat="server" CssClass="fondoElemento" DataSourceID="ODS_Plataforma" DataTextField="PlataformaJuego" DataValueField="Id_plataforma">
+                </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
             <td class="auto-style21" colspan="3">
                 <asp:Label ID="L_Mensaje" runat="server" CssClass="fondoElemento" ForeColor="Red"></asp:Label>
             </td>
@@ -257,7 +272,9 @@
             <td class="auto-style7" colspan="4">&nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style21" colspan="4">&nbsp;</td>
+            <td class="auto-style21" colspan="4">
+                <asp:ObjectDataSource ID="ODS_Plataforma" runat="server" SelectMethod="obtenerPlataforma" TypeName="DAOPlataforma"></asp:ObjectDataSource>
+            </td>
         </tr>
     </table>
 </asp:Content>

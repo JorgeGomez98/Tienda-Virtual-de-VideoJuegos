@@ -24,6 +24,8 @@ public partial class View_AgregaJuego : System.Web.UI.Page
         B_AgregarVisible.Visible = true;
         DDL_Categorias.Visible = false;
         B_Cancelar.Visible = false;
+        Label6.Visible = false;
+        DDL_Plataformas.Visible = false;
     }
 
     protected void B_Agregar_Click(object sender, EventArgs e)
@@ -48,14 +50,22 @@ public partial class View_AgregaJuego : System.Web.UI.Page
         try
         {
             FU_Imagen.PostedFile.SaveAs(saveLocation);
-            cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo ha sido cargado');</script>");            
+            cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('El archivo ha sido cargado');</script>");
+            /*if (TB_Nombre.Text.Equals("") || TB_descripcion.Text.Equals("") || TB_Cantidad)
+            {
 
+            }*/
             Videojuego videojuego = new Videojuego();
             videojuego.Id_categoría = int.Parse(DDL_Categorias.SelectedValue);
+            videojuego.Id_plataforma = int.Parse(DDL_Plataformas.SelectedValue);
             videojuego.Imagen = "~\\Imagenes\\ImagenesJuegos" + "\\" + nombreArchivo;
             videojuego.Nom_juego = TB_Nombre.Text;
             videojuego.Descripcion = TB_descripcion.Text;
-            
+            /*if (videojuego.Nom_juego.Equals("") || videojuego.Descripcion.Equals("") || )
+            {
+
+            }*/
+
             videojuego.Cantidad = int.Parse(TB_Cantidad.Text);
             if(videojuego.Cantidad == 0)
             {
@@ -111,6 +121,7 @@ public partial class View_AgregaJuego : System.Web.UI.Page
         Label3.Visible = true;
         Label4.Visible = true;
         Label5.Visible = true;
+        Label6.Visible = true;
         TB_Cantidad.Visible = true;
         TB_Nombre.Visible = true;
         TB_descripcion.Visible = true;
@@ -119,6 +130,8 @@ public partial class View_AgregaJuego : System.Web.UI.Page
         B_AgregarVisible.Visible = false;
         DDL_Categorias.Visible = true;
         B_Cancelar.Visible = true;
+        DDL_Plataformas.Visible = true;
+
     }
 
     protected void B_Cancelar_Click(object sender, EventArgs e)
@@ -131,6 +144,7 @@ public partial class View_AgregaJuego : System.Web.UI.Page
         Label3.Visible = false;
         Label4.Visible = false;
         Label5.Visible = false;
+        Label6.Visible = false;
         TB_Cantidad.Visible = false;
         TB_Cantidad.Text = null;
         TB_Nombre.Visible = false;
@@ -142,6 +156,7 @@ public partial class View_AgregaJuego : System.Web.UI.Page
         B_Agregar.Visible = false;
         B_AgregarVisible.Visible = true;
         DDL_Categorias.Visible = false;
+        DDL_Plataformas.Visible = false;
     }
 
     protected void DDL_Categorias_SelectedIndexChanged(object sender, EventArgs e)

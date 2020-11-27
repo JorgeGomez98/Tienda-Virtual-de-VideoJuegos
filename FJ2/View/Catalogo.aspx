@@ -26,8 +26,12 @@
         }
     </style>
     <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
     <table class="auto-style1">
         <tr>
             <td>
@@ -50,9 +54,49 @@
                         </td>
                     </tr>
                     <tr>
+                        <td class="auto-style10">
+                            &nbsp;</td>
+                        <td class="text-right">
+                            &nbsp;</td>
+                        <td class="auto-style12">
+                            &nbsp;</td>
+                        <td>
+                            &nbsp;</td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10">
+                            &nbsp;</td>
+                        <td class="text-right">
+                            <asp:Label ID="Label1" runat="server" CssClass="fuenteNegra" Text="Plataforma: "></asp:Label>
+                        </td>
+                        <td class="auto-style12">
+                            &nbsp;</td>
+                        <td>
+                            <asp:DropDownList ID="DDL_FiltroPlataforma" runat="server" DataSourceID="ODS_Plataforma" DataTextField="PlataformaJuego" DataValueField="Id_plataforma" CssClass="fondoElemento" AutoPostBack="True">
+                            </asp:DropDownList>
+                            <asp:ObjectDataSource ID="ODS_Plataforma" runat="server" SelectMethod="obtenerPlataforma" TypeName="DAOPlataforma"></asp:ObjectDataSource>
+                        </td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10">
+                            &nbsp;</td>
+                        <td class="text-right">
+                            &nbsp;</td>
+                        <td class="auto-style12">
+                            &nbsp;</td>
+                        <td>
+                            &nbsp;</td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
                         <td class="auto-style11">
                             &nbsp;</td>
-                        <td colspan="3">
+                        <td colspan="3" class="newFondo">
                 <asp:DataList ID="DL_Catalogo" runat="server" Width="100%" CellPadding="4" ForeColor="Black" DataSourceID="ODS_Catalogo" DataKeyField="Id_videojuego" OnItemCommand="DL_Catalogo_ItemCommand" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" GridLines="Horizontal"  >
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
@@ -85,10 +129,10 @@
                             <tr>
                                 
                                 <td class="auto-style6" colspan="2">
-                                    <asp:Label ID="L_DescripcionVideojuego" runat="server" CssClass="fuenteGris" Text="Descripción:" Visible="False"></asp:Label>
+                                    <asp:Label ID="L_PlataformaVideojuego" runat="server" CssClass="fuenteGris" Text="Plataforma:"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:Label ID="L_Descripcion" runat="server" CssClass="fuenteGris" Text='<%# Eval("Descripcion") %>' Visible="False"></asp:Label>
+                                    <asp:Label ID="L_Plataforma" runat="server" CssClass="fuenteGris" Text='<%# Eval("Plataforma") %>'></asp:Label>
                                 </td>
                                 
                             </tr>
@@ -112,11 +156,13 @@
                 <asp:ObjectDataSource ID="ODS_Catalogo" runat="server" SelectMethod="obtenerCatalogo" TypeName="DAOVideojuego">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="DDL_Filtro" DefaultValue="0" Name="id_categoria" PropertyName="SelectedValue" Type="Int32" />
+                        <asp:ControlParameter ControlID="DDL_FiltroPlataforma" DefaultValue="0" Name="id_plataforma" PropertyName="SelectedValue" Type="Int32" />
                     </SelectParameters>
                 </asp:ObjectDataSource>
                 <asp:ObjectDataSource ID="ODS_Categoria" runat="server" SelectMethod="obtenerCategorias" TypeName="DAOCategoria"></asp:ObjectDataSource>
             </td>
         </tr>
     </table>
+        
 </asp:Content>
 

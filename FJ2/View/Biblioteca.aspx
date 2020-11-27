@@ -35,11 +35,6 @@
         </tr>
         <tr>
             <td colspan="3">
-                <asp:ObjectDataSource ID="ODS_Catalogo" runat="server" SelectMethod="obtenerCatalogo" TypeName="DAOVideojuego">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="DDL_Filtro" DefaultValue="0" Name="id_categoria" PropertyName="SelectedValue" Type="Int32" />
-                    </SelectParameters>
-                </asp:ObjectDataSource>
                 <asp:ObjectDataSource ID="ODS_Categoria" runat="server" SelectMethod="obtenerCategorias" TypeName="DAOCategoria"></asp:ObjectDataSource>
                 <asp:DataList ID="DL_Biblioteca" runat="server" Width="75%" CellPadding="4" ForeColor="Black" DataSourceID="ODS_Biblioteca" DataKeyField="Id_videojuego" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" GridLines="Horizontal" OnItemCommand="DL_Biblioteca_ItemCommand">
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
