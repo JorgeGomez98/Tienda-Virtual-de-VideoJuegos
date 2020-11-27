@@ -125,4 +125,28 @@ public partial class View_VideoJuego : System.Web.UI.Page
         Response.Redirect("Denuncias.aspx");
 
     }
+
+    protected void BT_EnviarComentario_Click(object sender, EventArgs e)
+    {
+        if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
+        {
+            int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
+            int id_usuario = int.Parse(Session["id_usuario"].ToString());
+            Videojuego comentario = new DAOVideojuego().agregarComentario(id_juego);
+            Videojuego videojuego = new Videojuego();
+            
+            videojuego.Comentario = TB_comentario.Text;
+            videojuego.Id_videojuego = id_juego;
+          
+            
+
+
+            
+            
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }
+    }
 }

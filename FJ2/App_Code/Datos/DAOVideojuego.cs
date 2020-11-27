@@ -33,7 +33,9 @@ public class DAOVideojuego
                         Descripcion = m.v.Descripcion,
                         Categoria = m.c.Categoria,
                         Precio = m.v.Precio,
-                        Cantidad = m.v.Cantidad
+                        Comentario =m.v.Comentario, 
+                        Cantidad = m.v.Cantidad,
+                      
                     }).OrderBy(x => x.Nom_juego).ToList();
         }
 
@@ -97,6 +99,25 @@ public class DAOVideojuego
                     }).FirstOrDefault();
         }
     }
+    public Videojuego agregarComentario(int id_videojuego)
+    {
+        using (var db = new Mapeo())
+        {
+            return (from v in db.videojuego
+                    join c in db.cat on v.Id_categoría equals c.Id_categoria
+                    join e in db.estado on v.Id_estadoV equals e.Id_estadoV
+                    select new
+                    {
+                        v,
+                        e,
+                        c
+                    }).ToList().Select(m => new Videojuego
+                    {
+                        Comentario = m.v.Comentario
+                    }).FirstOrDefault();
+        }
+    }
+                   
 
     /*public List<Videojuego> obtenerVideojuegoInformacion(int id_juego)
     {

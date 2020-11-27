@@ -29,4 +29,6 @@ public partial class View_Denuncias : System.Web.UI.Page
         new DAODenuncia().insertarDenuncia(denuncias);
         Response.Redirect("Videojuego.aspx");
     }
+
+    
 }

@@ -59,6 +59,16 @@
         width: 33%;
         text-align: center;
     }
+        .auto-style23 {
+            height: 23px;
+        }
+        .auto-style24 {
+            height: 10%;
+            width: 10%;
+            font-family: Prototype;
+            font-size: 20px;
+            color: #000000;
+        }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -176,18 +186,21 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3">&nbsp;</td>
-            <td class="auto-style7" colspan="6">
+            <td colspan="3" class="auto-style23">
                 &nbsp;</td>
+            <td class="auto-style7" colspan="6">
+                </td>
         </tr>
         <tr>
-            <td class="auto-style2" colspan="3"></td>
+            <td class="auto-style24" colspan="3">Deja tu comentario.</td>
             <td class="auto-style7" colspan="6">
             </td>
         </tr>
         <tr>
             <td class="auto-style7" colspan="9">
-                &nbsp;</td>
+                <asp:TextBox ID="TB_comentario" Width =" 50%" runat="server" CssClass="fondoElemento"></asp:TextBox>
+                <asp:Button ID="BT_EnviarComentario" runat="server" CssClass="fondoElemento" OnClick="BT_EnviarComentario_Click" Text="Enviar" />
+            </td>
         </tr>
         <tr>
             <td class="auto-style4" colspan="3">

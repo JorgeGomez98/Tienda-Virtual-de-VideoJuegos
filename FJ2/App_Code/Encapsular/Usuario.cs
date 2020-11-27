@@ -43,4 +43,6 @@ public class Usuario
 
     [NotMapped]
     public string NombreRol { get => nombreRol; set => nombreRol = value; }
+
+    
 }
