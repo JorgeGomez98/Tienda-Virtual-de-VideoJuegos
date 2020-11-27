@@ -21,11 +21,11 @@ public class Videojuego
     private int cantidad;
     private string imagen;
     private string nombre_estado;
-<<<<<<< Updated upstream
+
     private string plataforma;
-=======
+
     private string comentario;
->>>>>>> Stashed changes
+
 
     [Key]
     [Column("id_videojuego")]
@@ -52,13 +52,13 @@ public class Videojuego
     public string Categoria { get => categoria; set => categoria = value; }
     [NotMapped]
     public string Nombre_estado { get => nombre_estado; set => nombre_estado = value; }
-<<<<<<< Updated upstream
+
     [NotMapped]
     public string Plataforma { get => plataforma; set => plataforma = value; }
-=======
+
     [Column("comentario")]
     public string Comentario { get => comentario; set => comentario = value; }
->>>>>>> Stashed changes
+
 
     public static implicit operator Videojuego(string v)
     {
