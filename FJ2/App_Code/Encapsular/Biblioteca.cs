@@ -21,6 +21,9 @@ public class Biblioteca
     private string imagen;
     private double precio;
 
+    [Key]
+    [Column("id")]
+    public int Id { get => id; set => id = value; }
     [Column("favorito")]
     public bool Favorito { get => favorito; set => favorito = value; }
     [Column("deseado")]
@@ -31,9 +34,8 @@ public class Biblioteca
     public int Id_videojuego { get => id_videojuego; set => id_videojuego = value; }
     [Column("poseido")]
     public bool Poseido { get => poseido; set => poseido = value; }
-    [Key]
-    [Column("id")]
-    public int Id { get => id; set => id = value; }
+    [Column("cantidad")]
+    public int Cantidad { get => cantidad; set => cantidad = value; }
     [NotMapped]
     public int Id_estado { get => id_estado; set => id_estado = value; }
     [NotMapped]
@@ -46,4 +48,5 @@ public class Biblioteca
     public double Precio { get => precio; set => precio = value; }
     [NotMapped]
     public string Imagen { get => imagen; set => imagen = value; }
+    
 }

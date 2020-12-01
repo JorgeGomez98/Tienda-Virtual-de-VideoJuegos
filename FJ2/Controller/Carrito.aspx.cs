@@ -49,7 +49,7 @@ public partial class View_Carrito : System.Web.UI.Page
             det.Id_videojuego = juego.Id_videojuego;
             det.ValorUnitario = juego.Precio;
             
-            det.Cantidad = 1;
+            det.Cantidad = juego.Cantidad;
             det.ValorTotal = det.Cantidad * det.ValorUnitario;
             det.NombreJuego = juego.Nom_juego;
             detalles.Add(det);

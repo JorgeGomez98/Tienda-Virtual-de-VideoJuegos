@@ -93,7 +93,7 @@ public class DAOVideojuego
                         Descripcion = m.v.Descripcion,
                         Categoria = m.Categoria,
                         Precio = m.v.Precio,
-                        Cantidad = 1
+                        Cantidad = m.v.Cantidad
                     }).FirstOrDefault();
         }
     }
@@ -219,14 +219,7 @@ public class DAOVideojuego
 
 
 
-    public void insertJuego(Videojuego juego)
-    {
-        using (var db = new Mapeo())
-        {
-            db.videojuego.Add(juego);
-            db.SaveChanges();
-        }
-    }
+    
 
     public void updateVideojuego(Videojuego juego)
     {
@@ -287,5 +280,14 @@ public class DAOVideojuego
     public Videojuego ValidacionVideojuego(Videojuego videoJuego)
     {
         return new Mapeo().videojuego.Where(x => x.Nom_juego.Trim().ToUpper().Contains(videoJuego.Nom_juego.Trim().ToUpper()) || x.Descripcion.Trim().ToUpper().Contains(videoJuego.Descripcion.Trim().ToUpper())).FirstOrDefault();
+    }
+
+    public void insertJuego(Videojuego juego)
+    {
+        using (var db = new Mapeo())
+        {
+            db.videojuego.Add(juego);
+            db.SaveChanges();
+        }
     }
 }

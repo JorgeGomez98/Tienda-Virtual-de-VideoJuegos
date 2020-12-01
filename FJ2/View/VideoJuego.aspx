@@ -59,6 +59,10 @@
         width: 33%;
         text-align: center;
     }
+        .auto-style23 {
+            text-align: left;
+            width: 97%;
+        }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -126,10 +130,12 @@
         </tr>
         <tr>
             <td class="auto-style8">
-                &nbsp;</td>
-            <td class="auto-style8" colspan="2">
-                &nbsp;</td>
-            <td class="auto-style8" colspan="2">
+                <asp:Label ID="L_Cantidad" runat="server" CssClass="fondoElemento" Text="Cantidad:"></asp:Label>
+            </td>
+            <td class="auto-style23" colspan="2">
+                <asp:TextBox ID="TB_Cantidad" runat="server" CssClass="fondoElemento" Width="400px"></asp:TextBox>
+            </td>
+            <td class="auto-style21" colspan="2">
                 &nbsp;</td>
             <td class="auto-style8">&nbsp;</td>
         </tr>

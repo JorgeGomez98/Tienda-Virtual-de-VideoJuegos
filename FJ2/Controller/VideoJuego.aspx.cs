@@ -67,6 +67,8 @@ public partial class View_VideoJuego : System.Web.UI.Page
 
                 L_Carrito.Text = (new DAOBiblioteca().cantidadbilioteca(id_usuario).ToString());
                 B_Comprar.Visible = true;
+                L_Cantidad.Visible = true;
+                TB_Cantidad.Visible = true;
                 //B_Deseados.Visible = true;
             }
 
@@ -81,6 +83,8 @@ public partial class View_VideoJuego : System.Web.UI.Page
             I_Perfil.ImageUrl = informacion.Imagen.ToString();
             L_Carrito.Text = "0";
             B_Comprar.Visible = false;
+            L_Cantidad.Visible = false;
+            TB_Cantidad.Visible = false;
             //B_Deseados.Visible = false;
         }
     }
@@ -103,13 +107,53 @@ public partial class View_VideoJuego : System.Web.UI.Page
     {
         if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
         {
-            int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
-            int id_usuario = int.Parse(Session["id_usuario"].ToString());
-            Videojuego añadir = new DAOVideojuego().agragarjuego(id_juego);
-            //añadir.Cantidad = int.Parse(TB_Cantidad.Text);
-            añadir.Cantidad = 1;
-            new DAOBiblioteca().agregarBiblioteca(añadir, id_usuario);
-            Response.Redirect("Catalogo.aspx");
+            ClientScriptManager cm = this.ClientScript;
+            bool entero = validarEntero(TB_Cantidad.Text);
+            if (entero == true)
+            {
+                int cantidadPedida = int.Parse(TB_Cantidad.Text);
+                if(cantidadPedida < 0)
+                {
+                    cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('No se permiten números negativos');</script>");
+                    return;
+                }
+                else if(cantidadPedida <1)
+                {
+                    cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Ingrese una cantidad para comprar');</script>");
+                    return;
+                }else if (cantidadPedida > 10)
+                {
+                    cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('No está permitido adquirir más de 10 juegos');</script>");
+                    return;
+                }
+                else
+                {
+                    int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
+                    int id_usuario = int.Parse(Session["id_usuario"].ToString());
+                    Videojuego añadir = new DAOVideojuego().agragarjuego(id_juego);
+                    if (cantidadPedida > añadir.Cantidad)
+                    {
+                        cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Cantidad excede a la disponible');</script>");
+                        return;
+                    }
+                    else
+                    {
+                        new DAOBiblioteca().agregarBiblioteca(añadir, id_usuario, cantidadPedida);
+                        Response.Redirect("Catalogo.aspx");
+                    }
+                    //añadir.Cantidad = 1;
+                    /*new DAOBiblioteca().agregarBiblioteca(añadir, id_usuario);
+                    Response.Redirect("Catalogo.aspx");*/
+                }
+
+            }
+            else
+            {
+                cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Ingrese un valor válido');</script>");
+                return;
+            }
+
+            
         }
         else
         {
@@ -118,6 +162,19 @@ public partial class View_VideoJuego : System.Web.UI.Page
       
         
 
+    }
+
+    private bool validarEntero(string num)
+    {
+        try
+        {
+            Int32.Parse(num);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     protected void BTdenuncia_Click(object sender, EventArgs e)

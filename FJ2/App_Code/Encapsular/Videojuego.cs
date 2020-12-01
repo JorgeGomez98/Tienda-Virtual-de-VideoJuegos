@@ -9,19 +9,21 @@ using System.Web;
 [Table("videojuego", Schema = "fj2")]
 public class Videojuego
 {
-    private int id_videojuego;
-    private int id_estadoV;
-    private int id_categoría;
-    private int id_plataforma;
-    private string nom_juego;    
-    private double precio;    
-    private string descripcionV;    
-    private string descripcion;
-    private string categoria;
     private int cantidad;
     private string imagen;
     private string nombre_estado;
     private string plataforma;
+    private int id_videojuego;
+ 
+    private string descripcionV;    
+    private string descripcion;
+    private string categoria;
+    private int id_estadoV;
+    private int id_categoría;
+    private int id_plataforma;
+    private string nom_juego;
+    private double precio;
+
 
     [Key]
     [Column("id_videojuego")]
