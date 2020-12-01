@@ -210,7 +210,7 @@ public class DAOCarrito
                         Nom_juego=m.video.Nom_juego,
                         Nombre_estado=m.estado.Descripcion,
                         Descripcion=m.video.Descripcion,
-                        Cantidad=m.uu.Cantidad,
+                        //Cantidad=m.uu.Cantidad,
                         Imagen=m.video.Imagen,
                         Precio=m.video.Precio
                     }).ToList();
@@ -244,7 +244,7 @@ public class DAOCarrito
                          Nom_juego = m.video.Nom_juego,
                          Nombre_estado = m.estado.Descripcion,
                          Descripcion = m.video.Descripcion,
-                         Cantidad=m.uu.Cantidad,
+                         //Cantidad=m.uu.Cantidad,
                          Poseido = true,
                          Imagen = m.video.Imagen,
                          Precio = m.video.Precio
@@ -284,7 +284,6 @@ public class DAOCarrito
                 //cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Uno de los artículos ya no se encuentra disponible');</script>");
                 return;
             }
-
             else
             {
                 juegoAnterior.Id = juego.Id;
@@ -301,11 +300,7 @@ public class DAOCarrito
 
                 //Actualización de stock
                 Videojuego juegoDisponible = db.videojuego.Where(x => x.Id_videojuego == juegoAnterior.Id_videojuego).First();
-                juegoDisponible.Cantidad = juegoDisponible.Cantidad - juego.Cantidad;
-                if(juegoDisponible.Cantidad == 0)
-                {
-                    juegoDisponible.Id_estadoV = 2;
-                }
+                juegoDisponible.Cantidad = juegoDisponible.Cantidad - 1;
                 new DAOVideojuego().updateVideojuego(juegoDisponible);
 
                 var entry = db.Entry(juegoAnterior);

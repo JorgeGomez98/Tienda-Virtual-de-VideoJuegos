@@ -14,7 +14,6 @@ public partial class View_Carrito : System.Web.UI.Page
             if (GV_Carrito.Rows.Count == 0)
             {
                 B_Comprar.Visible = false;
-                Response.Redirect("Catalogo.aspx");
             }
             else
             {
@@ -81,7 +80,6 @@ public partial class View_Carrito : System.Web.UI.Page
         }
 
         GV_Carrito.DataBind();
-        B_Comprar.Visible = false;
     }
 
 
