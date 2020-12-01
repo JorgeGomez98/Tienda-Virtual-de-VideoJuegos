@@ -26,4 +26,5 @@ public class Comentario
     public string Mensaje { get => mensaje; set => mensaje = value; }
     [NotMapped]
     public string Nickname { get => nickname; set => nickname = value; }
+
 }

@@ -187,4 +187,48 @@ public partial class View_VideoJuego : System.Web.UI.Page
 
     }
 
+
+    protected void BT_EnviarComentario_Click(object sender, EventArgs e)
+    {
+        if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
+        {
+            Comentario comentario = new Comentario();
+            Videojuego videojuego = new Videojuego();
+            LB_alerta.Text = "";
+            int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
+            int id_usuario = int.Parse(Session["id_usuario"].ToString());
+
+
+            comentario.Mensaje = TB_comentario.Text;
+            comentario.Id_videojuego = id_juego;
+            comentario.Id_usuario = id_usuario;
+            Comentario validacion = new DAOComentario().ValidacionComentario(comentario);
+            if (TB_comentario.Text == string.Empty)
+            {
+                LB_alerta.Text = "Escribe algo primero.";
+            }
+            else if (validacion == null)
+            {
+                new DAOComentario().agregarComentario(comentario);
+                GD_comentarios.DataBind();
+                TB_comentario.Text = "";
+            }
+            if (validacion != null)
+            {
+
+                if (validacion.Mensaje == comentario.Mensaje)
+                {
+                    LB_alerta.Text = "ya hay un mensaje repetido";
+                }
+
+            }
+
+
+
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }
+    }
 }
