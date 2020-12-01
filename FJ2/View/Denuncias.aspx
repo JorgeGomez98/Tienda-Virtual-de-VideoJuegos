@@ -24,7 +24,7 @@
                 <asp:Label ID="LBmensaje" runat="server" CssClass="fondoElemento" Height="10%" Text="Danos tu motivo de denuncia" Width="50%"></asp:Label>
             </td>
             <td class="fondoElemento">
-                <asp:TextBox ID="TBmensaje" runat="server" CssClass="auto-style12" Height ="100%" Width="80%" ></asp:TextBox>
+                <asp:TextBox ID="TBmensaje" runat="server" CssClass="auto-style12" Height ="100%" Width="80%"></asp:TextBox>
             </td>
         </tr>
         <tr>

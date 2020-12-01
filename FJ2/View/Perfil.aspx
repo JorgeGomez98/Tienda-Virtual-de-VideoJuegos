@@ -82,7 +82,7 @@
                 <asp:Label ID="L_Correo" runat="server" Text="Correo:" CssClass="fuenteNegra"></asp:Label>
             </td>
             <td colspan="2">
-                <asp:TextBox ID="TB_Correo" runat="server" ReadOnly="True" CssClass="fuenteNegra"></asp:TextBox>
+                <asp:TextBox ID="TB_Correo" runat="server" ReadOnly="True" CssClass="fuenteNegra" TextMode="Email"></asp:TextBox>
             </td>
         </tr>
         <tr>

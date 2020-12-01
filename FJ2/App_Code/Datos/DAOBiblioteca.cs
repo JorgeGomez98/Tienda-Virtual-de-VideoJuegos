@@ -21,14 +21,14 @@ public class DAOBiblioteca
         }
     }
 
-    public void agregarBiblioteca(Videojuego juego, int UsuarioId)
+    public void agregarBiblioteca(Videojuego juego, int UsuarioId , int cantidadPedida)
     {
         using (var db = new Mapeo())
         {
             Biblioteca agregar = new Biblioteca();
             agregar.Id_usuario = UsuarioId;
             agregar.Id_videojuego = juego.Id_videojuego;
-            //agregar.Cantidad = juego.Cantidad;
+            agregar.Cantidad = cantidadPedida;
             agregar.Poseido = false;
             agregar.Deseado = false;
             db.lib.Add(agregar);
@@ -97,7 +97,8 @@ public class DAOBiblioteca
                         Id_videojuego = m.Id_videojuego,
                         Id_usuario = m.Id_usuario,
                         Poseido = m.b.Poseido,
-                        Nom_juego = m.b.Nom_juego
+                        Nom_juego = m.b.Nom_juego,
+                        Cantidad = m.b.Cantidad
                     }).FirstOrDefault();
         }
     }

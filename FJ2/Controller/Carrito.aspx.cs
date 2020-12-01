@@ -14,6 +14,7 @@ public partial class View_Carrito : System.Web.UI.Page
             if (GV_Carrito.Rows.Count == 0)
             {
                 B_Comprar.Visible = false;
+                Response.Redirect("Catalogo.aspx");
             }
             else
             {
@@ -48,7 +49,7 @@ public partial class View_Carrito : System.Web.UI.Page
             det.Id_videojuego = juego.Id_videojuego;
             det.ValorUnitario = juego.Precio;
             
-            det.Cantidad = 1;
+            det.Cantidad = juego.Cantidad;
             det.ValorTotal = det.Cantidad * det.ValorUnitario;
             det.NombreJuego = juego.Nom_juego;
             detalles.Add(det);
@@ -80,6 +81,7 @@ public partial class View_Carrito : System.Web.UI.Page
         }
 
         GV_Carrito.DataBind();
+        B_Comprar.Visible = false;
     }
 
     /*protected void GV_CarritoRowDataBound(object sender, GridViewRowEventArgs e)
