@@ -14,6 +14,7 @@ public partial class View_Carrito : System.Web.UI.Page
             if (GV_Carrito.Rows.Count == 0)
             {
                 B_Comprar.Visible = false;
+                Response.Redirect("Catalogo.aspx");
             }
             else
             {
@@ -27,6 +28,7 @@ public partial class View_Carrito : System.Web.UI.Page
         }
         
     }
+
     protected void B_Comprar_Click(object sender, EventArgs e)
     {
         double valorTotal = 0;
@@ -46,16 +48,15 @@ public partial class View_Carrito : System.Web.UI.Page
             valorTotal = valorTotal + juego.Precio;
             det.Id_videojuego = juego.Id_videojuego;
             det.ValorUnitario = juego.Precio;
-
+            
             det.Cantidad = juego.Cantidad;
             det.ValorTotal = det.Cantidad * det.ValorUnitario;
             det.NombreJuego = juego.Nom_juego;
             detalles.Add(det);
             bool existe = new DAOCarrito().existe(id_videojuego: juego.Id_videojuego);
-            if (existe == true)
+            if(existe == true)
             {
                 new DAOCarrito().updateCompra(juego, id_usuario);
-
                 ClientScriptManager cm = this.ClientScript;
                 cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Compra realizada con éxito');</script>");
 
@@ -70,7 +71,7 @@ public partial class View_Carrito : System.Web.UI.Page
 
         }
         //new DAOCarrito().agregarDetalles(detalles);
-        new DAOCarrito().agregarPedido(((Usuario)Session["user"]).Id_usuario, valorTotal);
+        new DAOCarrito().agregarPedido(((Usuario)Session["user"]).Id_usuario , valorTotal);
         Pedido info = new DAOCarrito().obtenerPedido(((Usuario)Session["user"]).Id_usuario);
 
         foreach (var item in detalles)
@@ -80,9 +81,8 @@ public partial class View_Carrito : System.Web.UI.Page
         }
 
         GV_Carrito.DataBind();
+        B_Comprar.Visible = false;
     }
-
-
 
     /*protected void GV_CarritoRowDataBound(object sender, GridViewRowEventArgs e)
     {

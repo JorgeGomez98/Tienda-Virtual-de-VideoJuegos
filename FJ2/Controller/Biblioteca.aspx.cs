@@ -24,7 +24,6 @@ public partial class View_Biblioteca : System.Web.UI.Page
         }
         else
         {
-
             Videojuego game = new Videojuego();
             DL_Biblioteca.SelectedIndex = e.Item.ItemIndex;
             game.Precio = int.Parse(((Label)DL_Biblioteca.SelectedItem.FindControl("L_Precio")).Text);

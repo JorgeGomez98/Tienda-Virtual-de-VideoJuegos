@@ -60,14 +60,8 @@
         text-align: center;
     }
         .auto-style23 {
-            height: 23px;
-        }
-        .auto-style24 {
-            height: 10%;
-            width: 10%;
-            font-family: Prototype;
-            font-size: 20px;
-            color: #000000;
+            text-align: left;
+            width: 97%;
         }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
@@ -136,10 +130,12 @@
         </tr>
         <tr>
             <td class="auto-style8">
-                &nbsp;</td>
-            <td class="auto-style8" colspan="2">
-                &nbsp;</td>
-            <td class="auto-style8" colspan="2">
+                <asp:Label ID="L_Cantidad" runat="server" CssClass="fondoElemento" Text="Cantidad:"></asp:Label>
+            </td>
+            <td class="auto-style23" colspan="2">
+                <asp:TextBox ID="TB_Cantidad" runat="server" CssClass="fondoElemento" Width="400px"></asp:TextBox>
+            </td>
+            <td class="auto-style21" colspan="2">
                 &nbsp;</td>
             <td class="auto-style8">&nbsp;</td>
         </tr>
@@ -186,21 +182,18 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3" class="auto-style23">
-                &nbsp;</td>
+            <td colspan="3">&nbsp;</td>
             <td class="auto-style7" colspan="6">
-                </td>
+                &nbsp;</td>
         </tr>
         <tr>
-            <td class="auto-style24" colspan="3">Deja tu comentario.</td>
+            <td class="auto-style2" colspan="3"></td>
             <td class="auto-style7" colspan="6">
             </td>
         </tr>
         <tr>
             <td class="auto-style7" colspan="9">
-                <asp:TextBox ID="TB_comentario" Width =" 50%" runat="server" CssClass="fondoElemento"></asp:TextBox>
-                <asp:Button ID="BT_EnviarComentario" runat="server" CssClass="fondoElemento" OnClick="BT_EnviarComentario_Click" Text="Enviar" />
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style4" colspan="3">

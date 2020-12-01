@@ -33,9 +33,7 @@ public class DAOVideojuego
                         Descripcion = m.v.Descripcion,
                         Categoria = m.c.Categoria,
                         Precio = m.v.Precio,
-                        Comentario =m.v.Comentario, 
-                        Cantidad = m.v.Cantidad,
-                      
+                        Cantidad = m.v.Cantidad
                     }).OrderBy(x => x.Nom_juego).ToList();
         }
 
@@ -95,19 +93,10 @@ public class DAOVideojuego
                         Descripcion = m.v.Descripcion,
                         Categoria = m.Categoria,
                         Precio = m.v.Precio,
-                        Cantidad = 1
+                        Cantidad = m.v.Cantidad
                     }).FirstOrDefault();
         }
     }
-    public Videojuego agregarComentario(int id_videojuego, int id_usuario)
-    {
-        using (var db = new Mapeo())
-        {
-            db.videojuego.Add(juego);
-            db.SaveChanges();
-        }
-    }
-                   
 
     /*public List<Videojuego> obtenerVideojuegoInformacion(int id_juego)
     {
@@ -175,7 +164,7 @@ public class DAOVideojuego
 
 
 
-    public List<Videojuego> obtenerCatalogo(int id_categoria)
+    public List<Videojuego> obtenerCatalogo(int id_categoria,int id_plataforma)
     {
 
         using (var db = new Mapeo())
@@ -183,12 +172,14 @@ public class DAOVideojuego
             return (from v in db.videojuego
                     join c in db.cat on v.Id_categoría equals c.Id_categoria
                     join e in db.estado on v.Id_estadoV equals e.Id_estadoV
-                    where ((v.Id_categoría == id_categoria) || (id_categoria == 0) && v.Cantidad > 0)
+                    join p in db.plat on v.Id_plataforma equals p.Id_plataforma
+                    where (((v.Id_categoría == id_categoria) || (id_categoria == 0) )&& v.Cantidad > 0 &&( (v.Id_plataforma == id_plataforma) || (id_plataforma == 0)) )
                     select new
                     {
                         v,
                         e.Descripcion,
-                        c.Categoria
+                        c.Categoria,
+                        p.PlataformaJuego
                     }).ToList().Select(m => new Videojuego
                     {
                         Id_estadoV = m.v.Id_estadoV,
@@ -200,7 +191,8 @@ public class DAOVideojuego
                         Descripcion = m.v.Descripcion,
                         Categoria = m.Categoria,
                         Precio = m.v.Precio,
-                        Cantidad = m.v.Cantidad
+                        Cantidad = m.v.Cantidad,
+                        Plataforma = m.PlataformaJuego
                     }).OrderBy(x => x.Nom_juego).ToList();
         }
 
@@ -227,32 +219,33 @@ public class DAOVideojuego
 
 
 
-    public void insertJuego(Videojuego juego)
-    {
-        using (var db = new Mapeo())
-        {
-            db.videojuego.Add(juego);
-            db.SaveChanges();
-        }
-    }
+    
 
     public void updateVideojuego(Videojuego juego)
     {
-        using (var db = new Mapeo())
-        {
-            Videojuego juegoAnterior = db.videojuego.Where(x => x.Id_videojuego == juego.Id_videojuego).First();
-            juegoAnterior.Descripcion = juego.Descripcion;
-            juegoAnterior.Cantidad = juego.Cantidad;
-            juegoAnterior.Categoria = juego.Categoria;
-            juegoAnterior.Nom_juego = juego.Nom_juego;
-            juegoAnterior.Precio = juego.Precio;
-            //juegoAnterior.Id_estadoV = juego.Id_estadoV;
-            db.videojuego.Attach(juegoAnterior);
 
-            var entry = db.Entry(juegoAnterior);
-            entry.State = EntityState.Modified;
-            db.SaveChanges();
+        if (juego.Cantidad<0 || juego.Cantidad>100000 || juego.Precio < 2000 || juego.Precio > 400000 || juego.Nom_juego.Length < 5 || juego.Nom_juego.Length > 50)
+        {
+            return;
         }
+        else
+        {
+            using (var db = new Mapeo())
+            {
+                Videojuego juegoAnterior = db.videojuego.Where(x => x.Id_videojuego == juego.Id_videojuego).First();
+                juegoAnterior.Descripcion = juego.Descripcion;
+                juegoAnterior.Cantidad = juego.Cantidad;
+                juegoAnterior.Categoria = juego.Categoria;
+                juegoAnterior.Nom_juego = juego.Nom_juego;
+                juegoAnterior.Precio = juego.Precio;
+                //juegoAnterior.Id_estadoV = juego.Id_estadoV;
+                db.videojuego.Attach(juegoAnterior);
+
+                var entry = db.Entry(juegoAnterior);
+                entry.State = EntityState.Modified;
+                db.SaveChanges();
+            }
+        }        
     }
 
     public void updateVideojuego(Videojuego juego, int id_categoría)
@@ -287,5 +280,14 @@ public class DAOVideojuego
     public Videojuego ValidacionVideojuego(Videojuego videoJuego)
     {
         return new Mapeo().videojuego.Where(x => x.Nom_juego.Trim().ToUpper().Contains(videoJuego.Nom_juego.Trim().ToUpper()) || x.Descripcion.Trim().ToUpper().Contains(videoJuego.Descripcion.Trim().ToUpper())).FirstOrDefault();
+    }
+
+    public void insertJuego(Videojuego juego)
+    {
+        using (var db = new Mapeo())
+        {
+            db.videojuego.Add(juego);
+            db.SaveChanges();
+        }
     }
 }

@@ -108,8 +108,6 @@ public partial class View_VideoJuego : System.Web.UI.Page
         if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
         {
             ClientScriptManager cm = this.ClientScript;
-
-
             bool entero = validarEntero(TB_Cantidad.Text);
             if (entero == true)
             {
@@ -118,19 +116,15 @@ public partial class View_VideoJuego : System.Web.UI.Page
                 {
                     cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('No se permiten números negativos');</script>");
                     return;
-
                 }
                 else if(cantidadPedida <1)
                 {
                     cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Ingrese una cantidad para comprar');</script>");
                     return;
-
                 }else if (cantidadPedida > 10)
                 {
-
                     cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('No está permitido adquirir más de 10 juegos');</script>");
                     return;
-
                 }
                 else
                 {
@@ -155,7 +149,6 @@ public partial class View_VideoJuego : System.Web.UI.Page
             }
             else
             {
-
                 cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Ingrese un valor válido');</script>");
                 return;
             }
@@ -188,29 +181,5 @@ public partial class View_VideoJuego : System.Web.UI.Page
     {
         Response.Redirect("Denuncias.aspx");
 
-    }
-
-    protected void BT_EnviarComentario_Click(object sender, EventArgs e)
-    {
-        if (Session["user"] != null && ((Usuario)Session["user"]).Id_rol == 1)
-        {
-            int id_juego = int.Parse(Session["IdVideoJuego"].ToString());
-            int id_usuario = int.Parse(Session["id_usuario"].ToString());
-            Videojuego comentario = new DAOVideojuego().agregarComentario(id_juego);
-            Videojuego videojuego = new Videojuego();
-            
-            videojuego.Comentario = TB_comentario.Text;
-            videojuego.Id_videojuego = id_juego;
-          
-            
-
-
-            
-            
-        }
-        else
-        {
-            Response.Redirect("Login.aspx");
-        }
     }
 }

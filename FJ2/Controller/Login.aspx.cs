@@ -22,7 +22,7 @@ public partial class View_Login : System.Web.UI.Page
             Session["user"] = usuario;
             Session["id_usuario"] = usuario.Id_usuario;
             int prueba = int.Parse(Session["id_usuario"].ToString());
-            Response.Redirect("Catalogo.aspx");
+            Response.Redirect("Perfil.aspx");
         }
     }
 
