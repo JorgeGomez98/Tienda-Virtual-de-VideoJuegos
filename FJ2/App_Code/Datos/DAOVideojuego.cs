@@ -33,7 +33,6 @@ public class DAOVideojuego
                         Descripcion = m.v.Descripcion,
                         Categoria = m.c.Categoria,
                         Precio = m.v.Precio,
-                        Comentario =m.v.Comentario, 
                         Cantidad = m.v.Cantidad,
                       
                     }).OrderBy(x => x.Nom_juego).ToList();
@@ -99,14 +98,7 @@ public class DAOVideojuego
                     }).FirstOrDefault();
         }
     }
-    public Videojuego agregarComentario(int id_videojuego, int id_usuario)
-    {
-        using (var db = new Mapeo())
-        {
-            db.videojuego.Add(juego);
-            db.SaveChanges();
-        }
-    }
+    
                    
 
     /*public List<Videojuego> obtenerVideojuegoInformacion(int id_juego)

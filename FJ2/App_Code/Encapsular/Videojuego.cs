@@ -25,7 +25,7 @@ public class Videojuego
     private string plataforma;
 
 
-    private string comentario;
+    
 
 
     [Key]
@@ -57,8 +57,7 @@ public class Videojuego
     public string Plataforma { get => plataforma; set => plataforma = value; }
 
 
-    [Column("comentario")]
-    public string Comentario { get => comentario; set => comentario = value; }
+    
 
 
     public static implicit operator Videojuego(string v)

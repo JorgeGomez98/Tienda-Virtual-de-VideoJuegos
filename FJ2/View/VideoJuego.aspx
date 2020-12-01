@@ -25,11 +25,6 @@
             text-align: right;
         }
 
-        .auto-style13 {
-            text-align: center;
-            width: 146px;
-        }
-
         .auto-style14 {
             text-align: right;
             width: 146px;
@@ -68,6 +63,21 @@
             font-family: Prototype;
             font-size: 20px;
             color: #000000;
+        }
+        .auto-style25 {
+            text-align: center;
+            width: 50%;
+            height: 18px;
+        }
+        .auto-style26 {
+            text-align: center;
+            width: 146px;
+            height: 18px;
+        }
+        .auto-style27 {
+            text-align: right;
+            width: 97%;
+            height: 18px;
         }
     </style>
 <link href="../App_Themes/Fuentes.css" rel="stylesheet" type="text/css" />
@@ -198,17 +208,37 @@
         </tr>
         <tr>
             <td class="auto-style7" colspan="9">
+                <asp:Label ID="LB_alerta" runat="server" CssClass="fondoElemento"></asp:Label>
                 <asp:TextBox ID="TB_comentario" Width =" 50%" runat="server" CssClass="fondoElemento"></asp:TextBox>
                 <asp:Button ID="BT_EnviarComentario" runat="server" CssClass="fondoElemento" OnClick="BT_EnviarComentario_Click" Text="Enviar" />
             </td>
         </tr>
         <tr>
-            <td class="auto-style4" colspan="3">
-                &nbsp;</td>
-            <td class="auto-style13" colspan="2">
-                &nbsp;</td>
-            <td class="auto-style8" colspan="4">
-                &nbsp;</td>
+            <td class="auto-style25" colspan="3">
+                </td>
+            <td class="auto-style26" colspan="2">
+                </td>
+            <td class="auto-style27" colspan="4">
+                </td>
+        </tr>
+        <tr>
+            <td class="text-center" colspan="9">
+              
+                <asp:Panel ID="PN" runat="server">
+                    <asp:GridView ID="GD_comentarios" runat="server" AutoGenerateColumns="False" DataSourceID="ODScomentario">
+                        <Columns>
+                            <asp:BoundField DataField="Nickname" HeaderText="Nickname" SortExpression="Nickname" />
+                            <asp:BoundField DataField="Mensaje" HeaderText="Mensaje" SortExpression="Mensaje" />
+                        </Columns>
+                    </asp:GridView>
+                    <asp:ObjectDataSource ID="ODScomentario" runat="server" SelectMethod="obtenerComentario" TypeName="DAOComentario">
+                        <SelectParameters>
+                            <asp:SessionParameter DefaultValue="0" Name="id_videojuego" SessionField="idVideojuego" Type="Int32" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </asp:Panel>
+              
+            </td>
         </tr>
     </table>
 </asp:Content>
