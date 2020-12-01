@@ -13,6 +13,8 @@ public class DAOPlataforma
         return new Mapeo().plat.OrderBy(x => x.PlataformaJuego).ToList<Plataforma>();
     }
 
+
+
     public List<Plataforma> obtenerPlataforma()
     {
         List<Plataforma> lista = new Mapeo().plat.ToList();

@@ -25,6 +25,7 @@ public class Videojuego
     private double precio;
 
 
+
     [Key]
     [Column("id_videojuego")]
     public int Id_videojuego { get => id_videojuego; set => id_videojuego = value; }

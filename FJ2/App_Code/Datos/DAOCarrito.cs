@@ -284,6 +284,7 @@ public class DAOCarrito
                 //cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('Uno de los artículos ya no se encuentra disponible');</script>");
                 return;
             }
+
             else
             {
                 juegoAnterior.Id = juego.Id;

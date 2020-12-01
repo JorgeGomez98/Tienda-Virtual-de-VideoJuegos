@@ -11,6 +11,7 @@ public partial class View_Catalogo : System.Web.UI.Page
     {
         /* if (Session["user"] != null &&  ((Usuario)Session["user"]).Id_rol==1)
          {
+
              List<Videojuego> lista = new List<Videojuego>();
              if (!IsPostBack)
              {

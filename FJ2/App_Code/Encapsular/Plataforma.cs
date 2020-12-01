@@ -22,4 +22,6 @@ public class Plataforma
     [Column("plataforma")]
     public string PlataformaJuego { get => plataformaJuego; set => plataformaJuego = value; }
 
+
+
 }

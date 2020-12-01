@@ -48,5 +48,6 @@ public class Biblioteca
     public double Precio { get => precio; set => precio = value; }
     [NotMapped]
     public string Imagen { get => imagen; set => imagen = value; }
+
     
 }
