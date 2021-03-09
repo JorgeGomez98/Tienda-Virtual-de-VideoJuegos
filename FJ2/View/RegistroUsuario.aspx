@@ -49,8 +49,7 @@
     <table class="auto-style1">
         <tr>
             <td class="auto-style9" colspan="3">
-                <asp:ImageButton ID="IB_Fj2" runat="server" ImageUrl="~/Imagenes/ImagenesSistema/logo.png" OnClick="IB_Fj2_Click" Width="35%" />
-            </td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style2"></td>
