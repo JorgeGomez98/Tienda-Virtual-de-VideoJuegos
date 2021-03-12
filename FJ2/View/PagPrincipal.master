@@ -34,7 +34,6 @@
         <div class="container">
 
             <article class="col-md-12">
-                <asp:Image ID="I_Logo" runat="server" Height="60%" ImageUrl="~/Imagenes/ImagenesSistema/logo.png" Width="15%" />
             </article>
 
             <nav id="nav">
