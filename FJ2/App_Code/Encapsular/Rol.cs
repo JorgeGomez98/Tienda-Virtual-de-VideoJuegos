@@ -9,7 +9,7 @@ using System.Web;
 /// Descripción breve de Rol
 /// </summary>}
 [Serializable]
-[Table("rol", Schema = "fj2")]
+[Table("rol", Schema = "GST")]
 public class Rol
 {
     [Key]

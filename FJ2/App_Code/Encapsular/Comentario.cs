@@ -9,7 +9,7 @@ using System.Web;
 /// Descripción breve de Comentario
 /// </summary>
 /// [Serializable]
-[Table("comentario", Schema = "fj2")]
+[Table("comentario", Schema = "GST")]
 public class Comentario
 {
     private int id_videojuego;

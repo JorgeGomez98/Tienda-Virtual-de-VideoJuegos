@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 [Serializable]
-[Table("videojuego", Schema = "fj2")]
+[Table("videojuego", Schema = "GST")]
 public class Videojuego
 {
     private int cantidad;

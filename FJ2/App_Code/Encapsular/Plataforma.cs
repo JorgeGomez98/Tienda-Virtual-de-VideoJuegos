@@ -9,7 +9,7 @@ using System.Web;
 /// Descripción breve de Plataforma
 /// </summary>
 [Serializable]
-[Table("plataforma", Schema = "fj2")]
+[Table("plataforma", Schema = "GST")]
 public class Plataforma
 {
     private int id_plataforma;

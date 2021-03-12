@@ -9,7 +9,7 @@ using System.Web;
 /// Descripción breve de Categoria
 /// </summary>
 [Serializable]
-[Table("denuncia", Schema = "fj2")]
+[Table("denuncia", Schema = "GST")]
 public class Denuncias
 {
     private int id_denuncia;

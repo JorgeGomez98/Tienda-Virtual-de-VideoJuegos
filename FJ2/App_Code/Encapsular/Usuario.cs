@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 /// Descripción breve de Usuario
 /// </summary>
 [Serializable]
-[Table("usuario", Schema = "fj2")]
+[Table("usuario", Schema = "GST")]
 public class Usuario
 {
 

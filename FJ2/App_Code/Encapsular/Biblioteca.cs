@@ -9,7 +9,7 @@ using System.Web;
 /// Descripción breve de Biblioteca
 /// </summary>
 [Serializable]
-[Table("biblioteca", Schema = "fj2")]
+[Table("biblioteca", Schema = "GST")]
 public class Biblioteca
 {
     private bool favorito;

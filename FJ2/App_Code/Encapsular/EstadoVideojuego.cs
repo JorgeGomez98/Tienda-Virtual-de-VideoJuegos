@@ -9,7 +9,7 @@ using System.Web;
 /// Descripción breve de Estado
 /// </summary>
 [Serializable]
-[Table("estadoVideojuego", Schema = "fj2")]
+[Table("estadoVideojuego", Schema = "GST")]
 public class EstadoVideojuego
 {
     private int id_estadoV;
