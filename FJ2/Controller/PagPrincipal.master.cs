@@ -46,9 +46,7 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
                 case 1:
                     rolUsuario();
                     break;
-                case 2:
-                    rolModerador();
-                    break;
+                
                 case 3:
                     rolAdmin();
                     break;
@@ -67,7 +65,7 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
     {
         catalogo.Visible = true;
         M_Admin.Visible = false;
-        M_Moderador.Visible = false;
+       
         M_Usuario.Visible = false;
     }
 
@@ -75,23 +73,17 @@ public partial class View_PagPrincipal : System.Web.UI.MasterPage
     {
         catalogo.Visible = true;
         M_Admin.Visible = false;
-        M_Moderador.Visible = false;
+       
         M_Usuario.Visible = true;
     }
 
-    private void rolModerador()
-    {
-        catalogo.Visible = false;
-        M_Usuario.Visible = true;
-        M_Admin.Visible = false;
-        M_Moderador.Visible = true;
-    }
+ 
 
     private void rolAdmin()
     {
         catalogo.Visible = false;
         M_Admin.Visible = true;
-        M_Moderador.Visible = true;
+     
         M_Usuario.Visible = false;
     }
     
