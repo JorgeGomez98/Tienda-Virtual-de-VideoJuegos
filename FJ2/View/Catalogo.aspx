@@ -55,17 +55,17 @@
                     <tr>
                         <td class="auto-style13">
                             </td>
-                        <!--<td class="auto-style14">
+                        <<td class="auto-style14">
                             <asp:Label ID="L_Filtro" runat="server" Text="Categoría: " CssClass="fuenteNegra"></asp:Label>
                         </td>
-                        -->
+                        
                         <td class="auto-style15">
                             </td>
-                        <!--<td class="auto-style16">
+                        <td class="auto-style16">
                             <asp:DropDownList ID="DDL_Filtro" runat="server" DataSourceID="ODS_Categoria" DataTextField="Categoria" DataValueField="Id_categoria" CssClass="fondoElemento" AutoPostBack="True">
                             </asp:DropDownList>
                         </td>
-                        -->
+                       
                         <td class="auto-style16">
                             <asp:ImageButton ID="IB_IrCarrito" runat="server" ImageUrl="~/Imagenes/IconosSistema/CarritoGeneral.png" OnClick="IB_IrCarrito_Click" Width="10%" />
                             <asp:Label ID="L_Carrito" runat="server" CssClass="fuenteGris" ForeColor="Red" Text="0"></asp:Label>
@@ -86,18 +86,18 @@
                     <tr>
                         <td class="auto-style10">
                             &nbsp;</td>
-                        <!--<td class="text-right">
+                        <<td class="text-right">
                             <asp:Label ID="Label1" runat="server" CssClass="fuenteNegra" Text="Plataforma: "></asp:Label>
                         </td>
-                            -->
+                            
                         <td class="auto-style12">
                             &nbsp;</td>
-                        <!--<td>
+                        <td>
                             <asp:DropDownList ID="DDL_FiltroPlataforma" runat="server" DataSourceID="ODS_Plataforma" DataTextField="PlataformaJuego" DataValueField="Id_plataforma" CssClass="fondoElemento" AutoPostBack="True">
                             </asp:DropDownList>
                             <asp:ObjectDataSource ID="ODS_Plataforma" runat="server" SelectMethod="obtenerPlataforma" TypeName="DAOPlataforma"></asp:ObjectDataSource>
                         </td>
-                        -->
+                       
                         <td>
                             &nbsp;</td>
                     </tr>
