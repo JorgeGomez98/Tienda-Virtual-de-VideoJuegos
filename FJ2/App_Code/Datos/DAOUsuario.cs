@@ -16,7 +16,8 @@ public class DAOUsuario
 {
     public Usuario login(Usuario usuario)
     {
-        return new Mapeo().user.Where(x => x.Nickname.ToUpper().Equals(usuario.Nickname.ToUpper()) && x.Contraseña.Equals(usuario.Contraseña)).FirstOrDefault();
+        return new Mapeo().user.Where(x => x.Nickname.Contains(usuario.Nickname) || x.Correo.Contains(usuario.Correo) && x.Contraseña.Contains(usuario.Contraseña)).FirstOrDefault();
+        //return new Mapeo().user.Where(x => x.Nickname.ToUpper().Equals(usuario.Nickname.ToUpper()) && x.Contraseña.Equals(usuario.Contraseña)).FirstOrDefault();
         //return new Mapeo().user.FirstOrDefault();
     }
 
@@ -95,5 +96,20 @@ public class DAOUsuario
             db.user.Remove(usuario);
             db.SaveChanges();
         }
+    }
+
+    public Usuario getUserByUserName(string userName)
+    {
+        return new Mapeo().user.Where(x => (x.Nickname.ToUpper().Equals(userName.ToUpper())) || x.Correo.Equals(userName)).FirstOrDefault();
+    }
+
+    public Usuario getCorreoByCorreos(string correo)//Enviar correo dinamico
+    {
+        return new Mapeo().user.Where(x => (x.Correo.Contains(correo))).FirstOrDefault();
+    }
+
+    public Usuario getContraByUser(string contra) //Validar Contraseña existente
+    {
+        return new Mapeo().user.Where(x => x.Contraseña.Contains(contra)).FirstOrDefault();
     }
 }

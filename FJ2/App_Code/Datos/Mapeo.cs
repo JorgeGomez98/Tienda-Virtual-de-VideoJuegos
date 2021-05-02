@@ -27,6 +27,7 @@ public class Mapeo : DbContext
     public DbSet<Denuncias> Denuncias { get; set; }
     public DbSet<EstadoDenuncia> estadoDenuncias { get; set; }
     public DbSet<Comentario> comentario { get; set; }
+    public DbSet<token> token { get; set; }
 
     public DbSet<Plataforma> plat { get; set; }
 

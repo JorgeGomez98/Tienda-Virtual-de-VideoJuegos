@@ -99,7 +99,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="fondoElemento" colspan="3">&nbsp;</td>
+                                                <td class="fondoElemento" colspan="3">
+                                                    <asp:Button ID="BT_Recuperar" runat="server" OnClick="BT_Recuperar_Click" Text="Recuperar Contraseña" />
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td class="fondoElemento" colspan="3">

@@ -9,6 +9,7 @@ public partial class View_Login : System.Web.UI.Page
     {
         Usuario usuario = new Usuario();
         usuario.Nickname = Login1.UserName;
+        usuario.Correo = Login1.UserName;
         usuario.Contraseña = Login1.Password;
 
         usuario = new DAOUsuario().login(usuario);
@@ -41,5 +42,10 @@ public partial class View_Login : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
         Response.Redirect("Catalogo.aspx");
+    }
+
+    protected void BT_Recuperar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("GenerarToken.aspx");
     }
 }
